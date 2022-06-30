@@ -1,0 +1,50 @@
+<dialogGlobal binddialogevent="dialogevent" componentType="1" id="dialogProtocol" />
+<notificationDialog id="notificationDialog" />
+<view class="page">
+    <commonService bottom='48rpx' bgColor='background: linear-gradient(180deg, #4a499b 0%, #62add5 100%);' wx:if="{{detailFrom.id ||detailFrom.officialRecommendationId}}" bind:openSharePosters="openSharePosters"></commonService>
+    <!-- <canvasdrawer  bind:openSharePosters="openSharePosters"></canvasdrawer> -->
+    <!--  <canvasdrawer bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}'></canvasdrawer> -->
+    <sharePosters bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}' goodsInfo='{{detailFrom}}' wxQrcodeData="{{wxQrcodeData}}"></sharePosters>
+    <view class="product_img">
+        <image src="{{detailFrom.image}}" alt="" class="imgStyle" />
+    </view>
+    <view class="product_body">
+        <view class="body_title">{{detailFrom.title}}</view>
+        <view class="price_info">
+        <!-- style="color:{{themeColor}};" -->
+            <view class="price" >
+                <image src="../../images/price1.png"></image>
+                <view class="text">零售价</view>
+                
+            </view>
+            <view class="price_num" >¥{{detailFrom.retailPrice}}</view>
+        </view>
+        <view class="price_info" style="margin-bottom: 0;">
+            <view class="price member ">
+                <image src="../../images/price2.png"></image>
+                <view class="text">星级价</view>
+            </view>
+            <view class="price_num memberNum" >¥{{detailFrom.starPrice}}</view>
+        </view>
+        <!-- <view class="price_star">
+            <view class="price_star_info">
+                <view class="price_star_price" style="margin:34rpx 20rpx 0 20rpx;    background-image: url(../../images/price2.png);">星级价:</view>
+                <view class="price_star_num" style="margin-top:34rpx;">¥{{detailFrom.starPrice}}</view> 
+            </view>
+            <view bindtap="toH5Join" class="price_star_btn">加入星级顾客</view>
+            <view class="price_star_bottom">申请成为星级顾客，即可享受星级优惠价。</view>
+        </view> -->
+    </view>
+    <view class="product_bottom">
+        <view class="title">组合包含以下产品:</view>
+        <view class="bottom_details">
+            <view  bindtap="goH5Detail" data-item="{{item.itemInfo}}" class="detail_list" wx:for="{{detailFrom.shopProductItemList}}" wx:key="index">
+                <view class="name" data-id="{{item.id}}">{{item.title || '暂无名称'}} </view>
+                <view class="num">数量: <view style="margin-left: 10rpx;display: inline-block;">{{item.total}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="zhanwei"></view>
+    <!-- <commonService bind:openSharePosters="openSharePosters"></commonService> -->
+</view>

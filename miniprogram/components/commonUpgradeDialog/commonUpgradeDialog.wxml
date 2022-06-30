@@ -1,0 +1,17 @@
+<!--components/common_noticeNoticeDialog/common_noticeNoticeDialog.wxml-->
+<view class="common_notice_mask_bg">
+  <view class="common_notice_mask">
+    <view class="common_notice_mask_content_box_bg">
+      <view class="common_notice_mask_content_box">
+        <view class="common_notice_mask_con_logo">
+          <image style="width: 100%;height: 100%;" src="../../images/icons/level_1.png"></image>
+        </view>
+        <view class="common_notice_mask_con_text">恭喜您的如新NU店
+          等级已提升至 <text>v1</text></view>
+          <view class="skinPeeler">店铺换肤功能</view>
+          <view class="award">NU币奖励：100个</view>
+        <view bindtap="openSharePosters" style="background-color: {{themeColor}};" class="common_notice_mask_btn">领取奖励</view>
+      </view>
+    </view>
+  </view>
+</view>

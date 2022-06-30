@@ -1,0 +1,86 @@
+<view class="customerorderdetail">
+    <notificationDialog id="notificationDialog" />
+  <view class="cdetail_header">
+    <view class="cdetail_header_img">
+      <image class="cdetail_header_img" wx:if="{{detailFromData.head}}" src="{{detailFromData.head}}"></image>
+      <image class="cdetail_header_img" wx:else="{{!detailFromData.head}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image> 
+    </view>
+    <view class="cdetail_header_rightbox">
+      <view class="cdetail_header_rightbox_top">
+        <text class="cdetail_header_text">{{detailFromData.nickName}}</text>
+        <view class="customer_icon" wx:if="{{detailFromData.userIdentity=='STAR_CUSTOMERS'}}">
+          <image class="icon_left" wx:if="{{detailFromData.userIdentity}}" src="data:image/svg+xml,{{zuo}}"></image>
+          <view class="icon_right">
+            <image class="customer_right_bg" wx:if="{{detailFromData.userIdentity}}" src="data:image/svg+xml,{{you}}"></image>
+            <view class="icon_right_text">{{identityTagObj[detailFromData.userIdentity?detailFromData.userIdentity:'']}}</view>
+          </view>
+        </view>
+        <!-- 注册顾客 -->
+        <view class="customer_icon" wx:if="{{detailFromData.userIdentity=='ORDINARY_CUSTOMERS'}}">
+          <image class="icon_left" src="data:image/svg+xml,{{zuo2}}"></image>
+          <view class="icon_right">
+            <image class="customer_right_bg" wx:if="{{detailFromData.userIdentity}}" src="data:image/svg+xml,{{you2}}"></image>
+            <view class="icon_right_text">{{identityTagObj[detailFromData.userIdentity?detailFromData.userIdentity:'']}}</view>
+          </view>
+        </view>
+        <image wx:if="{{detailFromData.userIdentity=='RETAIL_CUSTOMERS'}}" class="cdetail_header_img1" src="../../../images/icons/retailCustorm.svg" alt=""></image>
+      </view>
+      <text class="cdetail_center_ctoptext1">下单时间：{{detailFromData.orderMain.orderDt?detailFromData.orderMain.orderDt:''}}</text>
+    </view>
+  </view>
+  <view class="codetail_contentAll">
+    <view class="codetail_content1" wx:for="{{detailFromData.packageList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="codetail_ctext1">包裹{{index+1}}</view>
+      <view class="codetail_cbox" wx:for="{{item.packageItems}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+        <image class="codetail_cbox_img" src="{{item1.imgUrl}}"></image>
+        <view class="codetail_cbox_right">
+                <view class="codetail_cbox_righttext1">{{item1.itemName}}</view>
+            <view class="codetail_cbox_righttext2">{{item1.itemPriceName}}：¥{{item1.itemPrice}} <text class="codetail_cbox_righttext3">x{{item1.itemNum}}</text></view>
+        </view>
+        <view style="width: 100%;display: flex;margin-left: 22rpx;" wx:for="{{item1.itemTeamDtos}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2">
+            <image style="width: 120rpx;height: 120rpx;" src="{{item2.imgUrl}}"></image>
+            <view style="width: calc(100% - 180rpx);margin-left: 36rpx;line-height: 80rpx;">
+                <text class="codetail_cbox_righttext1">{{item2.itemName}}</text>
+                <text class="codetail_cbox_righttext3">x{{item2.itemNum}}</text>
+            </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="codetail_footer">
+  
+     <view class="codetail_footer_item">
+       <text class="codetail_footer_itemtext1">产品数量</text>
+       <text class="codetail_footer_itemtext2">{{detailFromData.orderMain.totalItemNum?detailFromData.orderMain.totalItemNum:''}}</text>
+     </view>
+     <view class="codetail_footer_item">
+       <text class="codetail_footer_itemtext1">产品总金额</text>
+       <text class="codetail_footer_itemtext3">{{detailFromData.orderMain.itemAmount?'¥'+detailFromData.orderMain.itemAmount:''}}</text>
+     </view>
+     <view class="codetail_footer_item">
+       <text class="codetail_footer_itemtext1">邮费</text>
+       <text class="codetail_footer_itemtext3">{{detailFromData.orderMain.freightAmount == 0 ? "免邮" : "¥" + detailFromData.orderMain.freightAmount}}</text>
+     </view>
+    <!-- 促销优惠活动 -->
+    <view class="codetail_footer_item" wx:if="{{detailFromData.orderMain.eventDiscountAmount}}">
+        <text class="codetail_footer_itemtext1">促销活动优惠金额</text>
+        <text class="codetail_footer_itemtext3">{{detailFromData.orderMain.eventDiscountAmount}}</text>
+    </view>
+    <!-- enjoy点数抵扣金额 -->
+    <view class="codetail_footer_item" wx:if="{{detailFromData.orderMain.virtualCoinAmount}}">
+        <text class="codetail_footer_itemtext1">enjoy点数抵扣金额</text>
+        <text class="codetail_footer_itemtext3">-{{detailFromData.orderMain.virtualCoinAmount?'¥'+detailFromData.orderMain.virtualCoinAmount:''}}</text>
+    </view>
+    <!-- 优惠金额 -->
+    <view class="codetail_footer_item" wx:if="{{detailFromData.orderMain.itemDiscountAmount}}">
+        <text class="codetail_footer_itemtext1">优惠金额</text>
+        <text class="codetail_footer_itemtext3">-{{detailFromData.orderMain.itemDiscountAmount?'¥'+detailFromData.orderMain.itemDiscountAmount:''}}</text>
+    </view>
+     <view class="codetail_footer_item">
+       <text class="codetail_footer_itemtext6">应付款</text>
+       <text class="codetail_footer_itemtext5">{{detailFromData.orderMain.payAmount?'¥'+detailFromData.orderMain.payAmount:''}}</text>
+     </view>
+  </view>
+
+</view>

@@ -1,0 +1,9 @@
+
+<view class="common_header_bg">
+<view class="common_header" style="background:{{bg?'rgba(0,0,0,0)':'#fff'}}">
+  <view>
+  <image class="left_logo" src="data:image/svg+xml,{{logo}}" mode="widthFix"></image>
+  </view>
+  <text class="header_title">{{titleText}}</text>
+</view>
+</view>

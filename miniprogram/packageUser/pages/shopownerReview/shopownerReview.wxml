@@ -1,0 +1,4 @@
+<view>
+  <commonGlobal/>
+  <commonOwenrSet itemShow="{{itemShow}}"  ifShow="{{thisShow}}" bind:goEdit="goEdit"> </commonOwenrSet>
+</view>

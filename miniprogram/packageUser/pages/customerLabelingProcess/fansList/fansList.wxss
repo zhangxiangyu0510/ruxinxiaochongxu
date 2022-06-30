@@ -1,0 +1,52 @@
+page {
+  min-height: 100%;
+  padding: 48rpx 32rpx 0;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+.flist_item {
+  padding: 32rpx;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.flist_item_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  float: left;
+}
+
+.flist_item_text {
+  float: left;
+  margin-left: 24rpx;
+  overflow: hidden;
+  font-family: PingFang SC;
+  font-style: normal;
+}
+
+.flist_item_text1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 400rpx;
+  font-weight: 500;
+  height: 44rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  display: block;
+  color: #333333;
+}
+
+.flist_item_text2 {
+
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-top: 16rpx;
+
+  color: #333333;
+}

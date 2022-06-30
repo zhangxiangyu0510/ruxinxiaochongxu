@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "f2": "/components/wx-f2",
+        "TextGuide": "/components/wx-f2",
+        "commonGlobal": "../../../components/commonGlobal/commonGlobal"
+    },
+    "navigationBarTitleText": "用户分析"
+}

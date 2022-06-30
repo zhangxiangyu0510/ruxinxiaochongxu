@@ -1,0 +1,64 @@
+<!--packageUser/pages/userAnalysis/fansAnalysis/fansAnalysis.wxml-->
+<!--pages/userAnalysis/visitorsAnalysis/visitorsAnalysis.wxml-->
+<commonHeader titleText='访客分析'></commonHeader>
+<view class="visitorsAnalysis">
+  <view class="date">
+    <view class="month" style="background:{{themeColor+10}};color:{{themeColor}}">
+     {{date}}
+    </view>
+    <view class="change">
+      <picker start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month"> 切换月份</picker>
+
+    </view>
+
+  </view>
+  <view class="topText">该数据仅供参考，数据截止日期：{{lastDay}}</view>
+  <view class="chart1Wrap wrap">
+    <view class="top">
+      <view class="title">
+        粉丝分析
+      </view>
+
+    </view>
+    <view class="content">
+      <view class="chart1">
+        <f2 class="f2-chart" onInit="{{onInitChart}}" />
+      </view>
+    </view>
+  </view>
+  <view class="tab">
+    <view class="tabContent">
+      <view wx:for="{{tabList}}" bindtap="tabChange" wx:key="{{item.type}}" data-index="{{item}}"
+      class="tabItem {{index==active?'active':''}}" >{{item.name}}
+      <view class="line"  style="{{'background:'+themeColor}}"></view>
+      </view>
+
+    </view>
+  </view>
+  <view class="visitList" >
+  
+    <view class="visitList" wx:if="{{personList.length>0}}">
+    <view class="visitItem" wx:for="{{personList}}">
+      <view class="awata">
+        <image src="{{item.userImage}}">
+        </image>
+      </view>
+      <view class="text">
+        <view class="textTop">
+          <view class="nickName">{{item.userName}}</view>
+        </view>
+        <view class="textBottom">
+          <view class="visitTime">最近访问时间：{{item.lastViewTime}}</view>
+          <view class="visitNumber">访问次数：{{item.cntView}}</view>
+        </view>
+      </view>
+    </view>
+    <view  class="nomore" wx:if="{{noMore}}">没有更多了</view>
+  
+ 
+  </view>
+  <view  class="nomore" wx:if="{{loadding}}">加载中...</view>
+  <no-data wx:if="{{empty}}" titleText="暂无顾客"></no-data>
+
+</view>
+</view>

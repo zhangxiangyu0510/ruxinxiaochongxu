@@ -1,0 +1,75 @@
+<!--pages/customersStatistics/customersStatistics.wxml-->
+<commonHeader titleText='顾客统计'></commonHeader>
+<view class="customersStatistics">
+  <view class="date">
+    <view class="month" style="background:{{themeColor+10}};color:{{themeColor}}">
+      {{date}}
+    </view>
+    <view class="change">
+      <picker start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month"> 切换月份</picker>
+    </view>
+    
+
+  </view>
+  <view class="topText">该数据仅供参考，数据截止日期：{{lastDay}}</view>
+  <view class="content">
+    <view class="top">
+      <view class="title">顾客消费情况</view>
+      <view class="more" bindtap="toExpense">查看详情</view>
+    </view>
+    <view class="wrap">
+      <view class="data">
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{orderNumber}}</view>
+          <view class="text">累计订单数</view>
+        </view>
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">¥ {{totalNumber}}</view>
+          <view class="text">累计订单金额</view>
+        </view>
+      </view>
+      <view class="echart">
+        <f2 class="f2-chart" onInit="{{onInitChart}}" />
+
+      </view>
+  
+    </view>
+  </view>
+  <view class="content">
+    <view class="top">
+      <view class="title">加购未下单</view>
+      <view class="more" bindtap="toGoodsUser">查看详情</view>
+    </view>
+    <view class="wrap">
+      <view class="tip">注：展示开店以来加购未下单数据，不受顶部时间切换控制</view>
+      <view class="data">
+        
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{addNoPayGoods}}<text>个</text></view>
+          <view class="text">加购未下单商品</view>
+        </view>
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{addNoPayUser}}<text>位</text></view>
+          <view class="text">加购未下单用户</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="top">
+      <view class="title">首次购买商品</view>
+      <view class="more" bindtap="toFirstGoods">查看详情</view>
+    </view>
+    <view class="wrap">
+      <view class="tip">注：展示开店以来首次下单商品数据，不受顶部时间切换控制</view>
+      <view class="chart" style="{{'color:'+themeColor}}">
+      <view class="text" >
+      <view class="number">{{firstBuy}}</view><view>个</view>
+      </view>
+        <f2 class="chart" id="container" onInit="{{onInitChart1}}" />
+      </view>
+
+    </view>
+  </view>
+
+</view>

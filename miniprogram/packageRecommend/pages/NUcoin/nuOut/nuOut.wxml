@@ -1,0 +1,49 @@
+
+
+    <notificationDialog id="notificationDialog" /> 
+<view class="nu_detail_box">
+  <view class="nu_detail_header" wx:if="{{record.length!=0}}">
+  <!-- <view class="nu_detail_notice"></view> -->
+    <view class="nu_detail_header_title">
+      {{ListType=='1'?'即将过期NU币：':'待生效NU币：'}}<text class="nu_detail_header_num" style="color: {{themeColor}};">{{expireNuCoin}}</text>
+    </view>
+  </view>
+  <view wx:if="{{record.length!=0}}">
+    <view  wx:for="{{record}}" wx:key="index" bindtap="slideChange" style="margin-bottom:48rpx;">
+        <view class="nu_detail_coll_box" data-index="{{index}}" bindtap="checkOpen">
+        <view class="nu_detail_coll_title">
+            {{item.date}}
+        </view>
+        <view class="nu_detail_coll_title">
+            合计NU币：{{item.sum}}
+        </view>
+        <!-- <view class="nu_detail_coll_num">合计NU币：1000</view> -->
+        <view class="nu_detail_coll_icon">
+            <image wx:if="{{!item.isOpen}}" class="coll_icon" src="/packageRecommend/images/up_arrows.svg"></image>
+            <image wx:else="{{item.isOpen}}" class="coll_icon" src="/packageRecommend/images/down_arrows.svg"></image>
+            <view class="coll_icon_text">{{item.isOpen?'展开':'收起'}}</view>
+        </view>
+        </view>
+        <view class="nu_detail_coll_item_box" wx:if="{{item.isOpen}}" wx:for="{{item.list}}" wx:key="index1" wx:for-item="item1" wx:for-key="index1">
+        <view class="nu_detail_coll_item">
+            <view class="nu_detail_coll_item_left">
+            <text class="nu_detail_coll_left_top">{{item1.cause}}</text>
+            <view class="nu_detail_coll_left_bottom">{{item1.date}}</view>
+            </view>
+            <view class="nu_detail_coll_item_right" style="color: {{themeColor}};">
+            +{{item1.num}}
+            </view>
+        </view>
+        </view>
+    </view>
+  </view>
+  <view wx:else="{{record.length==0}}" class="undraw_happy">
+    <view class="empty">
+        <image  src="{{emptyBg}}"></image>
+        <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image>
+    </view>
+    <view style="text-align: center;">
+        <text class="noFans">{{ListType=='1'?'暂无即将过期NU币':'暂无待生效NU币'}}</text>
+    </view>
+  </view>
+</view>

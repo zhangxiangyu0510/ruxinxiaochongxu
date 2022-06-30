@@ -1,0 +1,17 @@
+{
+  "name": "myShop-miniprogram",
+  "version": "1.0.0",
+  "description": "如新商城",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "tim-wx-sdk": "^2.19.1",
+    "weui-miniprogram": "^1.2.2",
+    "weui.js": "^1.2.12"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^2.8.3-1"
+  }
+}

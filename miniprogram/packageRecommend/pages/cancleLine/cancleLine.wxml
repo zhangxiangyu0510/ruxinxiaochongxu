@@ -1,0 +1,27 @@
+
+  <!-- 有推荐 -->
+  <!-- <commonNoticeDialog/> -->
+    <!-- 分享 -->
+    <notificationDialog id="notificationDialog" />
+    <sharePosters goodsInfo='{{goodsInfo}}' bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}'></sharePosters>
+<view class="myRecommend_box ">
+
+
+      <!-- 已推荐 -->
+      <view class="recommend_commodity" >
+      <view class="picture">
+        <image src="{{recommends.itemImage}}"></image>
+      </view>
+      <view class="introduce">
+        <view class="introduce-title">{{recommends.itemName}}</view>
+        <view class="original-price">
+          <text class="retail">零售价</text>
+          <text class="retail-price">¥{{recommends.retailPrice}}</text>
+        </view>
+        <view class="special-price">
+          <text class="discount" style="background: {{themeColor}};">星级价</text>
+          <text class="discount-price" style="color:{{themeColor}};">¥{{recommends.starPrice}}</text>
+        </view>
+      </view>
+    </view>
+</view>

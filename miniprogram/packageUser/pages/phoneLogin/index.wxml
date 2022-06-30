@@ -1,0 +1,91 @@
+<commonToast  wx:if="{{errorText.length}}" bindHideToast="bindHideToast" innerText="{{errorText}}"></commonToast>
+<view class="phoneLogin" >
+    <indexDialog show="{{showSingleStop}}"  maskClosable="{{false}}" title="友情提示" bindbuttontap="tapDialogButton" buttons="{{[{text: '知道了'}]}}">
+    <view class="index_dialog_title">抱歉，当前卡号处于终止状态无法登录如新NU店</view>
+</indexDialog>
+<!-- 登录大背景图 -->
+ <image class="isImage isTop" src="../../images/icons/user_login_bg.png" mode="widthFix"></image>
+<!-- 头部logo -->
+    <view class="user_login_top">
+        <image class="left_logos" src="data:image/svg+xml,{{logo}}" mode="widthFix"></image>
+        <!-- <image class="left_logos" src="data:image/svg+xml,{{logo}}" mode="widthFix"></image>
+        <image class="center_Rectangle946" src="data:image/svg+xml,{{Rectangle946}}" mode="widthFix"></image>
+        <image class="right_Group" src="data:image/svg+xml,{{Group}}" mode="widthFix"></image> -->
+    </view>
+
+    <view class="login_tab">
+        <view  class="to_login" bindtap="loginTab" data-current="1">
+    <!-- color:{{current==1?{{themeColor}}:''}} -->
+    <text style=" border-bottom:{{current==1?'4rpx solid '+themeColor:''}} ;color:{{current==1?themeColor:'#A7A7A7'}}">账号登录</text>
+    </view>
+    <view class="login_tab_septal_line"></view>
+    <view  data-current="2" class="phone_login" style=" border-bottom:{{current==2?'4rpx solid '+themeColor:''}} ;color:{{current==2?themeColor:'#A7A7A7'}}"bindtap="loginTab">
+    <text>手机验证码登录</text>
+    </view>
+
+    </view>
+
+
+<!-- --------------------------------------- -->
+<view class="phoneDialog_bg" wx:if="{{showPhoneDialog2}}">
+<view class="phone_dialogs">
+<view class="dialog_text" style="font-weight: normal;">当前账号尚未绑定手机号，是否使用当前授权手机号进行绑定？</view>
+<view class="dialog_btnss">
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" bindtap="closeDialog" style="font-weight: normal;">暂不绑定</button></view>
+<view style="width:2rpx;height:100rpx;background: #f1f1f1;"></view>
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-num="2" style="font-weight: normal;color: #576B95;">确认绑定</button></view>
+</view>
+</view>
+</view>
+
+<!-- end -->
+    <view class="form_box_login" >
+   <!-- 账号登录 -->
+   <block wx:if="{{current==1}}">
+    <view class="single_line"  >
+
+<view class="loginPage_icon"><image src="../../images/icons/loginPage_phone.svg"></image></view>
+<view class="loginPage_input">
+<input wx:key="1" class="weui-input" auto-focus placeholder="{{form.account ? '' : placeHolder1}}" placeholder-class="input-placeholder" value="{{form.account}}" bindinput="phoneHandle"/></view>
+</view>
+<view class="single_line" >
+<view class="loginPage_icon"><image src="../../images/icons/loginPage_mark.svg"></image></view>
+<view class="loginPage_input">
+<input  password class="weui-input" maxlength="20" placeholder="{{form.loginPassWord?'':placeHolder3}}" placeholder-class="input-placeholder" value="{{form.loginPassWord}}" bindinput="smsHandle"/>
+</view>
+
+</view>
+   </block>
+
+    <!-- 账号登录 end-->
+    <block  wx:if="{{current==2}}">
+        <view class="single_line" >
+    <view class="loginPage_icon"><image src="../../images/icons/loginPage_phone.svg"></image></view>
+    <view class="loginPage_input">
+    <input wx:key="2" class="weui-input" type="number" maxlength="11" auto-focus placeholder="{{form.mobile?'':placeHolder2}}" placeholder-class="input-placeholder" value="{{form.mobile}}" bindinput="phoneHandle"/>
+    </view>
+    </view>
+    <view class="single_line" >
+    <view class="loginPage_icon"><image src="../../images/icons/loginPage_lock.svg"></image></view>
+    <view class="loginPage_input"><input class="weui-input" placeholder="{{form.image_code?'':placeHolder4}}" placeholder-class="input-placeholder" value="{{form.image_code}}" bindinput="imgHandle"/></view>
+    <view class="img_code" bindtap="changeImgCode"><image src="{{imageCode}}"></image></view>
+    </view>
+    <view class="single_line" >
+    <view class="loginPage_icon"><image src="../../images/icons/loginPage_mark.svg"></image></view>
+    <view class="loginPage_input"><input class="weui-input" type="number" maxlength="6" placeholder="{{form.smsCode?'':placeHolder5}}" placeholder-class="input-placeholder" value="{{form.smsCode}}" bindinput="smsHandle"/></view>
+    <view class="{{bgHightColor?'getPhone_code_height':'getPhone_code'}}" wx:if="{{!phoneDisabled}}">
+    <button style="background: {{bgHightColor&&themeColor}};"  hover-class="none" bindtap="getPhoneCode"disabled="{{smsDisabled}}">获取验证码</button>
+      </view>
+      <view class="getPhone_code" wx:else>
+      <button hover-class="none" disabled>{{time}}s</button>
+      </view>
+    </view>
+    </block>
+
+    </view>
+    <view class="submitLogin">
+    <button bindtap="submitForm" hover-class="btn-hover" style="background:{{themeColor}};"   lang="zh_CN">登录</button>
+    </view>
+    <view class="over_card" bindtap="goOverCard" style="color:{{themeColor}};">终止卡号激活</view>
+    <!-- <image class="isImage isBottom" src="../../images/icons/login_bottom.png"></image> -->
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设置店铺信息",
+  "usingComponents": {
+    "switchCustom":"../../../components/switch/switch"
+  }
+}

@@ -1,0 +1,34 @@
+<!--pages/worker/worker.wxml-->
+<!-- headers -->
+<dialogGlobal componentType="1"  id="dialogProtocol"/>
+<dialogGlobal shopKeeperInfo="{{userInfo}}" componentType="3"/>
+<commonHeader titleText='工作台'></commonHeader>
+<commonGlobal/>
+<notificationDialog id="notificationDialog" />
+<view class="worker">
+  <view class="work_single_box">
+    <view class="single_box_title">店铺管理</view>
+    <view class="single_box_items single_box_items_spe1">
+    <view class="single_item" wx:for="{{shopsProduct}}" wx:key="index"  data-item="{{item}}" bindtap="goRelativePage">
+      <view class="item_icon">
+        <image  class="headIcon" src="data:image/svg+xml,{{item.icon}}"></image>
+      </view>
+      <view class="item_text">{{item.name}}</view>
+    </view>
+    </view>
+  </view>
+  <view class="work_single_box speMargin">
+    <view class="single_box_title">统计报告</view>
+    <view class="single_box_items single_box_items_spe2">
+    <view class="single_item" data-item="{{item}}" wx:for="{{reportData}}" wx:key="index" bindtap="goRelativePage">
+      <view class="item_icon">
+        <image  class="headIcon" src="data:image/svg+xml,{{item.icon}}"></image>
+      </view>
+      <view class="item_text">{{item.name}}</view>
+    </view>
+    </view>
+  </view>
+
+
+
+</view>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "notificationDialog":"/components/notificationDialog/notificationDialog"
+    },
+    "navigationBarTitleText": "我的笔记"
+  }

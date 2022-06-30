@@ -1,0 +1,15 @@
+<view class="custormlabel">
+    <notificationDialog id="notificationDialog" /> 
+    <view wx:for="{{arrayData}}" wx:key="index" class="clabel_nameAll" wx:for-item="item">
+        <view class="clabel_all" data-id="{{item.id}}" style="width:100%;margin-left:0;" bindtap="goCustomerlabelList">
+        <view class="clabel_name">
+            <text class="clabel_nameN">{{item.name}}</text>
+            <image class="clabel_nameArrow" src="../../../images/icons/right_arrows.svg" alt=""></image>
+        </view>
+        <view class="clabel_detail">
+            <text class="clabel_detail_text" wx:for="{{item.tagValues}}" wx:for-item="item1" wx:for-key="index1" wx:key="index1" wx:if="{{index < 6}}">{{item1.label}}</text>
+            <text wx:if="{{item.tagValues.length>6}}">...</text>
+        </view>
+        </view>
+    </view>
+</view>

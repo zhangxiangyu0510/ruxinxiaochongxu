@@ -1,0 +1,26 @@
+<!--packageRecommend/pages/firstAdjust/firstAdjust.wxml-->
+<!--packageRecommend/pages/recommendAdjust/recommendAdjust.wxml-->
+<view  style="margin:0 32rpx;padding-bottom:200rpx;">
+  <recommendList showOperate="3" wx:if="{{isGuidance}}"  recommends="{{list1}}" ></recommendList>
+
+  <view wx:if="{{isGuidance}}" class="beginnerGuidance">
+    <!-- 第二部 -->
+    <view   class="partesSecunda">
+      <view class="contentBox">
+        <view class="dialogBox">
+          <view class="text">
+            <view>
+              第三步点击这里
+            </view>
+            确认推荐
+          </view>
+          <view bindtap="backPage" data-number="2" style="background-color: {{themeColor}};" class="butNext">
+            完成新手引导
+          </view>
+        </view>
+        <view class="triangleDown"></view>
+
+      </view>
+    </view>
+  </view>
+</view>

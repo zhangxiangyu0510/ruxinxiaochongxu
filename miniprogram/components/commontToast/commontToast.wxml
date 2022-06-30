@@ -1,0 +1,8 @@
+<!--components/commontToast/commontToast.wxml-->
+<view id="toast" >
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast">
+        <text class="weui-icon-success-no-circle weui-icon_toast"></text>
+        <view class="weui-toast__content">{{hintText}}</view>
+    </view>
+</view>

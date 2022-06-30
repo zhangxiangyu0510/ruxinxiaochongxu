@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "noData":"../../../../components/noData",
+    "notificationDialog":"/components/notificationDialog/notificationDialog"
+  },
+  "navigationBarTitleText": "顾客订单列表"
+
+}

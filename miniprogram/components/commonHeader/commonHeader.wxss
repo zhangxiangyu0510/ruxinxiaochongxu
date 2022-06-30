@@ -1,0 +1,27 @@
+.common_header_bg{
+  position: fixed;
+  width:750rpx;
+  height:176rpx;
+  z-index:999999;
+}
+.common_header {
+  background: #fff;
+  width:750rpx;
+  height:176rpx;
+  padding-top:108rpx;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+.common_header .left_logo{
+  position: absolute;
+  left:32rpx;
+  top:100rpx;
+  width:92rpx;
+  height:64rpx;
+ /* background: red; */
+}
+.common_header  .header_title{
+  font-weight: 500;
+  font-size: 34rpx;
+}

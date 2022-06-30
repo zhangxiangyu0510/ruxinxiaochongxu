@@ -1,0 +1,48 @@
+<view class="customerorderlist">
+  <!-- <view class="colist_header">
+       
+   </view> -->
+   <notificationDialog id="notificationDialog" />
+   <view wx:if="{{boxData.length!=0}}">
+        <view class="concernedCustorm" wx:for="{{boxData}}" wx:key="index">
+            <view class="clist_center">
+
+            <!-- <text class="clist_ccText">已关注顾客</text> -->
+            <view class="clist_ccTextBox">
+                <text class="clist_ccText1">{{item.time}}</text>
+                <text class="clist_ccText2">合计金额：¥{{item.totalAcount}}</text>
+            </view>
+            <view class="clist_ccArrow">
+                <!-- <text wx:if="{{!item.ellipsis}}" class="clist_ccArrow1" decode="true">&gt;</text>
+                <text wx:else="{{item.ellipsis}}" class="clist_ccArrow2" decode="true">&lt;</text> -->
+                <image wx:if="{{!item.ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+                <image wx:else="{{item.ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+                <text class="openOrClose" bindtap="openOrClose" data-index='{{index}}' data-ellipsis='{{item.ellipsis}}'>{{item.ellipsis?'展开':'收起'}}</text>
+            </view>
+            </view>
+            <view class="{{item.ellipsis?'clist_center2':'clist_center1'}}">
+            <view class="colist_header_content">
+
+                <view class="cdetail_center_center" data-id="{{item1.orderNo}}" bindtap="goOrderDetail" wx:for="{{item.orderItem}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+                <view class="cdetail_center_ctop">
+                    <text class="cdetail_center_ctoptext1">下单时间：{{item1.orderTime}}</text>
+                    <text class="cdetail_center_ctoptext2">共{{item1.totalItemNum}}件</text>
+                    <text class="cdetail_center_ctoptext3" style="color: {{themeColor}};">¥{{item1.totalAmount}}</text>
+
+                </view>
+                <view class="cdetail_center_cbody">
+                    <image wx:for="{{item1.images}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2" class="cdetail_center_cbodybox1" src="{{item2}}"></image>
+                </view>
+                </view>
+
+            </view>
+
+
+
+            </view>
+        </view>
+   </view>
+  <view wx:else="{{boxData.length==0}}">
+        <noData titleText='暂无订单列表数据'></noData>
+  </view>
+</view>

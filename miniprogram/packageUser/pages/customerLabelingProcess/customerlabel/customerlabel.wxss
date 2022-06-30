@@ -1,0 +1,185 @@
+page {
+  width: 100%;
+  min-height: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+.custormlabel {
+  margin-bottom: 44rpx;
+}
+
+.clabel_nameAll {
+  margin-top: 32rpx;
+  height: 132rpx;
+}
+.clabel_nameAll_ss{
+    height: 106rpx;
+}
+.clabel_nameAll_ss2{
+    /* border-bottom: 1px solid #EFEFEF; */
+}
+.cellsBox {
+  width: 100%;
+  height: 100%;
+}
+
+.weui-icon-checked {
+  width: 48rpx;
+  height: 48rpx;
+  /* margin-top: -28rpx; */
+  margin-top: 42rpx;
+  float: left;
+}
+
+.clabel_all {
+  /* width:calc(100% - 80rpx); */
+  float: left;
+  /* margin-left: 32rpx; */
+}
+
+.clabel_all_ss{
+    float: left;
+    width:606rpx;
+    margin-left:32rpx
+}
+.mpCheckBox {
+  width: 48rpx;
+  float: left;
+}
+
+.clabel_name {
+  width: 100%;
+  height: 44rpx;
+
+  display: flex;
+  justify-content: space-between;
+  line-height: 44rpx;
+
+
+}
+.clabel_name_ss{
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EFEFEF;
+}
+.weui-cells_checkbox .weui-check__label:before {
+  left: 0;
+  content: unset;
+}
+.weui-cells:after, .weui-cells:before ,.weui-cells:after, .weui-cells::after {
+ content: unset;
+}
+.weui-cell {
+ padding: 0;
+}
+.clabel_nameN {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32rpx;
+
+  /* 标题文字 */
+  color: #404040;
+
+  mix-blend-mode: normal;
+}
+
+.clabel_nameArrow {
+  color: #7F7F7F;
+  float: right;
+  width: 24rpx;
+  height: 36rpx;
+  margin-top: 5rpx;
+}
+
+.clabel_detail {
+  width: 100%;
+  overflow:hidden; 
+
+  text-overflow:ellipsis;
+  
+  /* display:-webkit-box;  */
+  
+  -webkit-box-orient:vertical;
+  
+  -webkit-line-clamp:2; 
+  height: 88rpx;
+
+
+  border-bottom: 1px solid #EFEFEF;
+}
+.clabel_detail2{
+  width: 100%;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+/* .clabel_detail::after{
+  content: '';
+  position: absolute;
+  bottom: -24rpx;
+  width: 10%;
+  height: 2rpx;
+  background-color:#EFEFEF ;
+} */
+.clabel_detail text{
+  line-height: 88rpx;
+}
+.clabel_detail_text {
+  float: left;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 88rpx;
+
+  /* identical to box height */
+
+  /* 内容文字 */
+  color: #4A4A4A;
+
+  mix-blend-mode: normal;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-right: 24rpx;
+}
+.btnBox{
+  width: 100%;
+  height: 128rpx;
+  z-index: 100;
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 40rpx;
+  left: 0;
+}
+.save {
+  border-radius: 16rpx;
+  height: 84rpx;
+  width: calc(100% - 64rpx) !important;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  line-height: 84rpx;
+  padding: 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.icon_style{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -26rpx;
+    cursor: pointer;
+    top: 17px;
+    border-radius: 10px;
+}

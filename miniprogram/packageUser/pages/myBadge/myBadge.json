@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "commonHeader":"../../../components/commonHeader/commonHeader",
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "badgePopup":"../../../components/badgePopup/badgePopup"
+  },
+  "navigationBarTitleText": "徽章馆",
+  "enablePullDownRefresh":false
+}

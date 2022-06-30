@@ -1,0 +1,21 @@
+<svg width="208" height="208" viewBox="0 0 208 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_4773_38825" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="208" height="208">
+<rect opacity="0.1" width="208" height="208" rx="100" fill="url(#paint0_radial_4773_38825)"/>
+</mask>
+<g mask="url(#mask0_4773_38825)">
+<path d="M104 104L127.644 198.578H80.3556L104 104Z" fill="#404040"/>
+<path d="M104 104L198.578 80.3557V127.645L104 104Z" fill="#404040"/>
+<path d="M104 104L80.3556 9.42243L127.644 9.42244L104 104Z" fill="#404040"/>
+<path d="M104 104L9.42241 127.645L9.42241 80.3557L104 104Z" fill="#404040"/>
+<path d="M104 104L222.222 174.933L174.933 222.222L104 104Z" fill="#404040"/>
+<path d="M104 104L174.934 -14.2222L222.222 33.0666L104 104Z" fill="#404040"/>
+<path d="M104 104L-14.2218 33.067L33.0671 -14.2219L104 104Z" fill="#404040"/>
+<path d="M104 104L33.0666 222.222L-14.2222 174.933L104 104Z" fill="#404040"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_4773_38825" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(104 104) rotate(90) scale(108.622)">
+<stop stop-color="#545454"/>
+<stop offset="1" stop-color="#545454" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

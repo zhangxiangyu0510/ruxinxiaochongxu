@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "noData":"../../../../components/noData"
+  },
+  "navigationBarTitleText": "粉丝列表"
+}

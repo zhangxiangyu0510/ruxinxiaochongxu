@@ -1,0 +1,193 @@
+/* components/recommendList/recommendList.wxss */
+.recommend_components_box{
+  /* padding-bottom:100rpx; */
+
+}
+.recommend_components_box .recommend_out_time{
+  background: #EEEEEE;
+  height:64rpx;
+  width:100%;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  color: #4A4A4A;
+  padding-left: 34rpx;
+  padding-bottom:200rpx;
+}
+.recommend_components_box .recommend_commodity {
+  display: flex;
+  background: #fff;
+  padding: 32rpx;
+  margin-top:36rpx;
+  border-radius: 16rpx;
+  position:relative;
+}
+.recommend_components_box .recommend_commodity .picture {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 16rpx;
+  background: skyblue;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+.recommend_components_box .recommend_commodity image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 16rpx;
+ 
+}
+.recommend_components_box .recommend_commodity .introduce-title {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  height:114rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.recommend_components_box .recommend_commodity .original-price {
+  margin-top: 8rpx;
+  display: flex;
+}
+.recommend_components_box .recommend_commodity .original-price .retail {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  background: #888888;
+  border-radius: 4rpx;
+  color: #fff;
+  padding: 0 6rpx;
+  height:32rpx;
+}
+.recommend_components_box .recommend_commodity .original-price .retail-price {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #888888;
+  margin-left: 16rpx;
+  height:28rpx;
+  margin-top: 4rpx;
+
+}
+.recommend_components_box .recommend_commodity .special-price {
+  margin-top: 8rpx;
+  display: flex;
+}
+.recommend_components_box .recommend_commodity .special-price .discount {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  color: #FFFFFF;
+  padding: 0 6rpx;
+  /* background: #FF5E00; */
+  border-radius: 4rpx;
+  height:32rpx;
+}
+.recommend_components_box .recommend_commodity .special-price .discount-price {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  height:32rpx;
+  /* color: #FF5E00; */
+  margin-left: 16rpx;
+}
+.recommend_components_box .operate-box {
+  background: rgba(255, 94, 0, 0.1);
+  border-radius: 16rpx;
+  display: flex;
+  height: 94rpx;
+  align-items: center;
+}
+.recommend_components_box .operate-box .up-and-down {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  height: 94rpx;
+  align-items: center;
+}
+.recommend_components_box .operate-box .up-and-down .operate {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #888888;
+}
+.recommend_components_box .operate-box .share-sort::before {
+  content: "";
+  width: 1rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  background: #000;
+  opacity: 0.1;
+}
+.recommend_components_box .operate-box .share-sort {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  height: 94rpx;
+  align-items: center;
+}
+.recommend_components_box .operate-box .share-sort .operate {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  /* color: #FF5E00; */
+}
+.recommend_components_box .operate-box .picture {
+  width: 32rpx;
+  height: 32rpx;
+  /* background: skyblue; */
+  margin-right: 8rpx;
+}
+.recommend_components_box .operate-box .picture image{
+  width:100%;
+  display: block;
+}
+.recommend_components_box .share-sort .picture image{
+  width:100%;
+  display: block;
+}
+ .noBtn{
+  color: #FF5E00 !important;
+  opacity: 0.9 !important;
+}
+.yesBtn{
+  color: #404040 !important;
+}
+.remove{
+  position: absolute;
+  right: 8.53%;
+  bottom: 10%;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rpx;
+  text-align: right;
+  color: #7F7F7F;
+}
+.recommend_components_box .recommend_commodity .remove image{
+  width: 30rpx;
+  height:30rpx;
+  vertical-align: middle;
+  margin-right:8rpx;
+
+}

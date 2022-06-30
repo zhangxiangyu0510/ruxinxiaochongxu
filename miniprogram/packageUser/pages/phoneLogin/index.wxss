@@ -1,0 +1,381 @@
+page{
+position: relative;
+
+  /* min-height: 100%;
+  background: #fafafa;
+  padding-bottom: env(safe-area-inset-bottom); */
+}
+/*  */
+/* .phoneLogin{
+} */
+
+/* login_img 内容 */
+.user_login_top  {
+    display: flex;
+    padding-top: 80rpx;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+/* padding: 0px 52rpx; */
+}
+.user_login_top .left_logos{
+    width: 540rpx;
+    height: 144rpx !important;
+    margin-left: 106rpx;
+}
+/* .user_login_top .left_logos{
+    width: 200rpx;
+    height: 144rpx;
+    margin-left: 106rpx;
+} */
+
+/* .user_login_top   .center_Rectangle946{
+    margin-top: 38rpx;
+    width: 8rpx;
+    height: 72rpx;
+}
+
+.user_login_top  .right_Group{
+    width: 122rpx;
+    height: 140rpx;
+    margin-right: 104rpx;
+} */
+/*  */
+
+.phoneLogin{
+  width:100%;
+  /* position:relative; */
+}
+.isImage{
+  width:100%;
+}
+.isTop{
+  position:absolute;
+  top:0;
+  left:0;
+  height:200rpx;
+}
+.isBottom{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:710rpx;
+  z-index:-1;
+}
+.form_box_login{
+  /* height:550rpx; */
+  width:612rpx;
+  height: 308rpx;
+  margin:0 auto;
+  /* background: rgba(0,0,0,.1); */
+  margin-top:110rpx;
+}
+
+.login_tab{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 144rpx;
+ font-family: 'PingFang SC';
+font-style: normal;
+font-weight: 400;
+font-size: 32rpx;
+line-height: 44rpx;
+color: #A7A7A7;
+}
+.login_tab .to_login  {
+  text-align: center;
+width: 240rpx;
+height: 44rpx;
+box-sizing: border-box;
+margin-right: 48rpx;
+}
+
+.login_tab .phone_login{
+  text-align: center;
+height: 44rpx;
+box-sizing: border-box;
+margin-left: 48rpx;
+
+}
+ .login_tab_septal_line{
+  width: 2rpx;
+  height: 24rpx;
+  background: #EBEBEB;
+ }
+ .weui-dialog__title{
+    outline: none !important;
+}
+
+.single_line{
+  padding-bottom:22rpx;
+  display: flex;
+  border-bottom:2rpx solid #ebebeb;
+  margin-top:56rpx;
+  position: relative;
+}
+.img_code{
+  width:180rpx;
+  height:96rpx;
+  /* background: skyblue; */
+  position:absolute;
+  bottom:8rpx;
+  right:0;
+}
+.img_code image{
+  width:180rpx;
+  height:96rpx;
+}
+.getPhone_code{
+  position:absolute;
+  right:0;
+  bottom:26rpx;
+  height:60rpx;
+  width:152rpx;
+}
+.getPhone_code_height{
+  position:absolute;
+  right:0;
+  bottom:26rpx;
+  height:60rpx !important;
+  width:152rpx !important;
+}
+.getPhone_code button{
+  height:60rpx !important;
+  width:152rpx !important;
+  background: #7F7F7F10;
+  border-radius: 8rpx;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rpx;
+  line-height: 43rpx;
+  text-align: center;
+  color: #7F7F7F;
+  padding: 10rpx 16rpx !important;
+  box-sizing: border-box;
+}
+.getPhone_code_height button{
+  height:60rpx !important;
+  width:152rpx !important;
+  /* background: linear-gradient(90deg, #4A4099 0%, #53ABD3 100%); */
+  border-radius: 8rpx;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rpx;
+  line-height: 43rpx;
+  text-align: center;
+  color: #fff !important;
+  padding: 10rpx 16rpx !important;
+  box-sizing: border-box;
+}
+.loginPage_icon{
+  height:32rpx;
+  width:32rpx;
+  /* background: red; */
+  position:relative;
+  top:-2rpx;
+}
+.loginPage_icon image{
+  height:32rpx;
+  width:32rpx;
+}
+.loginPage_input{
+  width:70%;
+  margin-left:18rpx;
+  /* background-color: skyblue; */
+  height:40rpx;
+  line-height: 40rpx;
+  color: #A7A7A7;
+}
+.input-placeholder{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #A7A7A7;
+}
+.submitLogin{
+  /* width: 652rpx;
+  height: 92rpx;
+  background: linear-gradient(90deg, #4A4099 0%, #53ABD3 100%);
+  border-radius: 76rpx; */
+  margin:0 auto;
+  margin-top:92rpx;
+}
+.submitLogin button{
+  width: 652rpx !important;
+  height: 92rpx;
+
+  /* background: linear-gradient(90deg, #4A4099 0%, #53ABD3 100%); */
+  border-radius: 76rpx;
+  color: #fff;
+  box-sizing: border-box;
+  padding:0 !important;
+  line-height: 92rpx;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  text-align: center;
+}
+.over_card{
+  position: relative;
+  text-align: left;
+  margin-top:20rpx;
+  margin-left:70rpx;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-decoration-line: underline;
+  /* color: #3781A1; */
+}
+.common_dialog_bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999999;
+}
+.phone_dialog{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.phone_dialog_content_box_bg{
+  position:absolute;
+  /* height: 496rpx; */
+  width:598rpx;
+  /* margin:0 76rpx; */
+  /* height: 723rpx; */
+  background: #fff;
+  border-radius: 16rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+}
+.phone_dialog_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  box-sizing: border-box;
+}
+.phone_dialog_title{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34rpx;
+  line-height: 52rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+  padding-top:36rpx;
+}
+.phone_dialog_phone{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34rpx;
+  /* line-height: 40rpx; */
+  color: rgba(0, 0, 0, 0.3);
+  margin:48rpx 0;
+  text-align: center;
+  padding:0 48rpx;
+}
+.phone_btn_box{
+  height:95rpx;
+  display: flex;
+  width:100%;
+  /* background: red; */
+  justify-content: space-between;
+  border-top:2rpx solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+.phone_btn1,.phone_btn2{
+  height:95rpx;
+  /* width:192rpx !important; */
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34rpx;
+  line-height: 95rpx !important;
+  text-align: center !important;
+  color:  rgba(129, 64, 64, 0.3);
+  text-align: center;
+  padding:0 !important;
+  margin:0 !important;
+  background: transparent;
+  border-radius: 8rpx;
+
+}
+.phone_line{
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+/*  */
+.phoneDialog_bg{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+}
+.phone_dialogs{
+  /* width: 320px; */
+  margin: 0 auto;
+  position: fixed;
+  /* height:300rpx; */
+    z-index: 5000;
+    top: 50%;
+    left: 16px;
+    right: 16px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    max-height: 90%;
+}
+.dialog_text{
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 32px 24px 16px;
+}
+.dialog_btnss{
+    display: flex;
+    margin-top:32rpx;
+    border-top:2rpx solid #f1f1f1;
+    justify-content: space-between;
+}
+.single_btn button{
+    width:100% !important;
+}
+.dialog_btnss button{
+
+  background: #fff;
+  height:100rpx;
+  font-size:30rpx !important;
+  line-height:60rpx;
+}
+.dialog_btnss .single_btn{
+    width:48%;
+}

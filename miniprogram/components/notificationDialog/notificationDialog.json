@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "sharePosters": "../canvasdrawer/canvasdrawer",
+        "indexDialog":"/miniprogram_npm/weui-miniprogram/dialog/dialog"
+    }
+}

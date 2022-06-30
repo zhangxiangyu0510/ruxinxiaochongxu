@@ -1,0 +1,80 @@
+<!--components/recommendList/recommendList.wxml-->
+<view class="recommend_components_bg">
+  <view class="recommend_components_box" wx:for="{{recommends}}" wx:key="{{index}}" bindtap="goH5Detail" data-item="{{item.itemInfo}}">
+    <!-- <view class="recommend_out_time">2022年01月</view> -->
+    <view class="recommend_commodity">
+      <view class="picture">
+        <image src="{{item.product.itemImage||item.itemImage||item.itemInfo.itemImage}}"></image>
+      </view>
+      <view class="introduce">
+        <view class="introduce-title">{{item.product.itemName||item.itemName||item.itemInfo.itemName}}</view>
+        <view class="original-price">
+          <text class="retail">零售价</text>
+          <text class="retail-price">¥{{item.product.retailPrice||item.retailPrice||item.itemInfo.retailPrice}}</text>
+        </view>
+        <view class="special-price">
+          <text class="discount" style="background: {{themeColor}};">星级价</text>
+          <text class="discount-price" style="color:{{themeColor}};">¥{{item.product.starPrice||item.starPrice||item.itemInfo.starPrice}}</text>
+        </view>
+        <view class="remove" catchtap="removeItem" data-item="{{item}}"  wx:if="{{showOperate==3}}" >
+            <image src="../../packageRecommend/images/delete.svg" mode="widthFix"></image><text class="operate">移除产品</text>
+        </view>
+        <view class="remove" catchtap="toUpUp" data-item="{{item}}"  wx:if="{{showOperate==4}}" >
+            <image src="../../packageRecommend/images/toUpUp.svg" mode="widthFix"></image><text class="operate">置顶</text>
+        </view>
+      </view>
+    </view>
+    <view class="operate-box" wx:if="{{showOperate==1}}" style="background: {{themeColor+10}};">
+      <view class="up-and-down" catchtap="outProduct" data-item="{{item}}">
+        <view class="picture">
+          <image src="../../packageRecommend/images/cancel.svg" mode="widthFix"></image>
+        </view><text class="operate">取消推荐</text>
+        <!-- <view class="picture"></view><text class="operate">下架产品</text> -->
+      </view>
+      <view catchtap="openSharePosters" data-item="{{item}}" class="share-sort">
+        <view class="picture">
+          <image src="data:image/svg+xml,{{recommend_share}}" mode="widthFix"></image>
+        </view><text class="operate" style="color: {{themeColor}};">分享产品</text>
+      </view>
+    </view>
+    <view class="operate-box" wx:if="{{showOperate==2}}" style="background: {{themeColor+10}};">
+      <view class="up-and-down" catchtap="deleteItem" data-item="{{item}}">
+        <view class="picture">
+          <image src="../../packageRecommend/images/delete.svg" mode="widthFix"></image>
+        </view><text class="operate">删除记录</text>
+        <!-- <view class="picture"></view><text class="operate">下架产品</text> -->
+      </view>
+      <view catchtap="recommend" data-item="{{item}}" class="share-sort">
+        <view class="picture">
+          <image src="data:image/svg+xml,{{recommend_re}}" mode="widthFix"></image>
+        </view><text class="operate" style="color: {{themeColor}};">重新推荐</text>
+      </view>
+    </view>
+    <view class="operate-box" wx:if="{{showOperate==3||showOperate==4}}" style="background: {{themeColor+10}};">
+      <view class="up-and-down" data-index="{{index}}"  catchtap="toUp" data-item="{{item}}">
+        <view class="picture">
+          <image wx:if="{{index==0}}" src="{{toup1}}"mode="widthFix"></image>
+          <image wx:else src="data:image/svg+xml,{{toup}}" mode="widthFix"></image>
+        </view><text class="operate" style="color:{{index==0?'#7f7f7f':themeColor}} {{}};">排序上移</text>
+        <!-- <view class="picture"></view><text class="operate">下架产品</text> -->
+      </view>
+      <view catchtap="toDown" data-index="{{index}}" data-item="{{item}}" class="share-sort">
+        <view class="picture">
+          <image wx:if="{{index==recommends.length-1}}" src="{{todown1}}" mode="widthFix"></image>
+          <image wx:else src="data:image/svg+xml,{{todown}}" mode="widthFix"></image>
+        </view><text class="operate" style="color: {{index==recommends.length-1?'#7f7f7f':themeColor}};">排序下移</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="myRecommend_bottom_btn_bg" wx:if="{{showOperate==3}}">
+    <view class="myRecommend_bottom_btn" bindtap="toRecommend" style="background: {{themeColor}};">确认推荐</view>
+</view>
+<view class="myRecommend_bottom_btn_bg" wx:if="{{showOperate==4}}">
+  <view class="myRecommend_bottom_btn" bindtap="update" style="background: {{themeColor}};">保存调整</view>
+</view>
+
+<!-- 下架产品 -->
+<!-- <dialog show="{{pointShow}}" maskClosable="{{false}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '否',extClass:'noBtn'}, {text: '是',extClass:'yesBtn'}]}}">
+  <view class="index_dialog_title">是否取消推荐“{{outProductName}}“</view>
+</dialog> -->

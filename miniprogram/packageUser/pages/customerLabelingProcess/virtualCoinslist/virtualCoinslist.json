@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "noData":"../../../../components/noData",
+    "notificationDialog":"/components/notificationDialog/notificationDialog"
+  },
+  "navigationBarTitleText": "即将失效点数"
+
+}

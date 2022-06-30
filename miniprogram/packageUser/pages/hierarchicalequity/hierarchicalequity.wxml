@@ -1,0 +1,36 @@
+    <notificationDialog id="notificationDialog" /> 
+<view class="hierarchicalequity">
+   <view class="he_header">
+   
+      <view class="he_header_text">等级</view>
+      <view class="he_header_text1">权益</view>
+   </view>
+
+   <view class="he_content_item" wx:for="{{levelData}}" wx:key="index">
+   
+     <image class="he_content_item_img" src="{{item.levelImage}}"></image>
+     <view class="he_content_item_right">
+        <view wx:if="{{item.ruleScript.newRightsAndInterests.shopEdit}}">
+            <view class="he_content_item_cilcle"></view>
+            <view class="he_content_item_text">基本功能</view>
+        </view>
+        <view wx:if="{{item.ruleScript.newRightsAndInterests.skin}}">
+            <view class="he_content_item_cilcle"></view>
+            <view class="he_content_item_text">店铺换肤</view>
+        </view>
+        <view wx:if="{{item.ruleScript.newRightsAndInterests.nuCoin}}">
+            <view class="he_content_item_cilcle"></view>
+            <view class="he_content_item_text">NU币奖励：{{item.ruleScript.newRightsAndInterests.nuCoin}}个</view>
+        </view>
+        <view wx:if="{{item.ruleScript.newRightsAndInterests.brandActivityQualification}}">
+            <view class="he_content_item_cilcle"></view>
+            <view class="he_content_item_text">品牌活动⼊围资格</view>
+        </view>
+        <view wx:if="{{!item.ruleScript.newRightsAndInterests.shopEdit&&!item.ruleScript.newRightsAndInterests.skin&&!item.ruleScript.newRightsAndInterests.nuCoin&&!item.ruleScript.newRightsAndInterests.brandActivityQualification}}">
+            <view class="he_content_item_cilcle"></view>
+            <view class="he_content_item_text">无</view>
+        </view>
+     </view>
+   </view>
+
+</view>

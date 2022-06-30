@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "组合推荐",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+      "sharePosters":"/components/jigsaw/jigsaw"
+    }
+}

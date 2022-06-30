@@ -1,0 +1,28 @@
+<!--pages/ucenter/NUShopping/NUShopping.wxml-->
+<view class="NUShopping">
+  <mp-tabs tabs="{{tabs}}" activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+  </mp-tabs>
+  <view class="allBut">
+    <view class="allgoods">全部产品</view>
+    <image class="iconBox" src="{{imageUrl}}/icons/arrows_below.svg" alt=""></image>
+  </view>
+  <view class="NUgoodsbox">
+    <view wx:for="{{3}}" wx:key="index" class="NUGoodsItem">
+      <view class="leftImg"></view>
+      <view class="rightGoodsInfo">
+        <view class="name">星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券</view>
+        <view class="operation">
+          <view class="numbreBox">
+            <view class="quantity">
+              <text class="number">160</text>Nu币
+            </view>
+            <view class="grade">店主等级V5可兑换</view>
+          </view>
+          <view bindtap="viewDetails" class="viewDetails">查看详情</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,140 @@
+<!--components/notificationDialog/notificationDialog.wxml-->
+<view  class="notification-container" wx:if="{{ messageList.length > 0 }}">
+    <block wx:for="{{messageList}}" wx:for-item="message" wx:key="{{ message.messageId }}">
+        <template is="{{ message.messageType }}" data="{{ index, message,messageList,themeColor}}" />
+    </block>
+</view>
+<template name="productOnShelf">
+  
+    <view class="notification-content" style="z-index: {{ 1000000 + index }};">
+        <view class="notTip" bindtap="notTip" wx:if="{{index==messageList.length-1}}"  data-index="{{ index }}">
+            <image src="/images/icons/notTip.svg" />不再提示
+        </view>
+        <view class="close" bindtap="close" data-index="{{ index }}">
+            <image src="/images/nav/close.svg" />
+        </view>
+        <view class="row-1">
+            <image src="{{message.image}}" />
+        </view>
+        <view class="row-2">
+            <text class="margin-top">官方好物推荐有更新</text>
+        </view>
+        <view class="row-3"  style="background: {{themeColor}};" bindtap="jump" data-path="/packageRecommend/pages/offcialRecommend/offcialRecommend" data-index="{{ index }}" >查看详情</view>
+    </view>
+</template>
+<template name="productOffShelf" >
+   
+    <view class="notification-content" style="z-index: {{ 1000000 + index }};">
+        <view class="notTip" wx:if="{{index==messageList.length-1}}" bindtap="notTip" data-index="{{ index }}">
+            <image src="/images/icons/notTip.svg" />不再提示
+        </view>
+        <view class="close" bindtap="close" data-index="{{ index }}">
+            <image src="/images/nav/close.svg" />
+        </view>
+        <view class="row-1">
+            <image src="{{message.body.itemImage}}" />
+        </view>
+        <view class="row-2">
+            <text class="margin-top">官方产品取消推荐通知</text>
+        </view>
+        <view data-index="{{ index }}" style="background: {{themeColor}};" 
+        data-item="{{message.body}}"data-path="/packageRecommend/pages/cancleLine/cancleLine" bindtap="jump" class="row-3">查看详情</view>
+    </view>
+</template>
+<template name="groupOnShelf">
+   
+    <view class="notification-content" style="z-index: {{ 1000000 + index }};">
+        <view class="notTip" wx:if="{{index==messageList.length-1}}"  bindtap="notTip" data-index="{{ index }}">
+            <image src="/images/icons/notTip.svg" />不再提示
+        </view>
+        <view class="close" bindtap="close" data-index="{{ index }}">
+            <image src="/images/nav/close.svg" />
+        </view>
+        <view class="row-1">
+            <image src="/images/nav/group_bg.png" />
+        </view>
+        <view class="row-2">
+            <text class="margin-top">组合产品推荐有更新</text>
+        </view>
+        <view bindtap="jump" data-path="/packageRecommend/pages/hybridRecommend/hybridRecommend" data-index="{{ index }}" style="background: {{themeColor}};"  class="row-3">查看详情</view>
+    </view>
+</template>
+<template name="groupOffShelf">
+
+    <view class="notification-content " style="z-index: {{ 1000000 + index }};">
+        <view class="notTip" wx:if="{{index==messageList.length-1}}"  bindtap="notTip" data-index="{{ index }}">
+            <image src="/images/icons/notTip.svg" />不再提示
+        </view>
+        <view class="close" bindtap="close" data-index="{{ index }}">
+            <image src="/images/nav/close.svg" />
+        </view>
+        <view class="row-1">
+            <image src="{{message.image}}" />
+        </view>
+        <view  class="row-2">
+            <text class="margin-top">组合产品取消推荐通知</text>
+        </view>
+        <view bindtap="jump" data-path='/packageRecommend/pages/cancelRecommended/cancelRecommended'  data-type='groupOffShelf' style="background-color: {{themeColor}};"   data-index="{{ index }}" class="row-3">查看详情</view>
+    </view>
+
+</template>
+<template name="officialGroupOffShelf">
+<view class="notification-content " style="z-index: {{ 1000000 + index }};">
+    <view class="notTip" wx:if="{{index==messageList.length-1}}"  bindtap="notTip" data-index="{{ index }}">
+        <image src="/images/icons/notTip.svg" />不再提示
+    </view>
+    <view class="close" bindtap="close" data-index="{{ index }}">
+        <image src="/images/nav/close.svg" />
+    </view>
+    <view class="row-1">
+        <image src="{{message.image}}" />
+    </view>
+    <view  class="row-2">
+        <text class="margin-top">官方组合产品取消推荐通知</text>
+    </view>
+    <view bindtap="jump" data-path='/packageRecommend/pages/cancelRecommended/cancelRecommended'  data-type='groupOffShelf' style="background-color: {{themeColor}};"   data-index="{{ index }}" class="row-3">查看详情</view>
+</view>
+</template>
+<template name="shopLevelUp" >
+    <view class="notification-content badgeStyle" style="z-index: {{ 1000000 + index }};width: 496rpx;height: 780rpx;">
+      
+        <!-- <view class="close" bindtap="close" data-index="{{ index }}">
+            <image src="/images/nav/close.svg" />
+        </view> -->
+        <view class="row-1" style="margin: 0 auto;background: url({{message.body.imageUrlImg}}) no-repeat center center; display: flex; justify-content: center; align-items: center;background-size: 100% 100%;">
+            <image src="{{message.body.levelImage}}" style="width: 320rpx; height: 320rpx;" />
+        </view>
+        <view class="row-2">
+            <text style="font-size: 35rpx">恭喜您的如新NU店</text>
+            <text style="font-size: 35rpx;margin-bottom: 20rpx;">等级已提升至<text style="color: {{themeColor}}; margin-left: 20rpx;">V.{{ message.body.level }}</text></text>
+            <view style="font-size: 25rpx; font-weight: normal; margin-top: 5rpx;" wx:if="{{message.body.rightsAndInterests.shopEdit}}">解锁店铺基本功能</view>
+            <view style="font-size: 25rpx; font-weight: normal; margin-top: 5rpx;" wx:if="{{message.body.rightsAndInterests.skin}}">解锁店铺换肤功能</view>
+            <view style="font-size: 25rpx; font-weight: normal;" wx:if="{{message.body.rightsAndInterests.nuCoin}}">NU币奖励: {{message.body.rightsAndInterests.nuCoin}}个</view>
+            <view style="font-size: 25rpx; font-weight: normal; margin-top: 5rpx;" wx:if="{{message.body.rightsAndInterests.brandActivityQualification}}">解锁店铺品牌活动⼊围资格功能</view>
+        </view>
+        <view class="row-3" data-url="{{message.body.levelImage}}" data-messageid="{{ message.messageId }}" style="background-color: {{themeColor}};width: 400rpx;height: 84rpx;margin: 0 auto;" bindtap="openSharePosters" >领取奖励</view>
+    </view>
+</template>
+<template name="getBadge" >
+    <view class="notification-content badgeStyle" style="z-index: {{ 1000000 + index }};width: 248px;height: 366px;">
+        <view class="close" bindtap="closeBadge" style="margin-left: 480rpx;margin-top: -88rpx;" data-messageid="{{ message.messageId }}">
+            <image src="/images/nav/close.svg" />
+        </view>
+        <view class="row-1" style="margin: 0 auto;background: url({{message.body.imageUrlImg}}) no-repeat center center; display: flex; justify-content: center; align-items: center;background-size: 100% 100%;">
+            <image src="{{message.body.lighting?message.body.imageAchieve:message.body.imageNoAchieve}}" style="width: 274rpx; height: 254rpx;margin-top:0;" />
+        </view>
+        <view class="row-2" style="margin-top: 0;">
+            <text class="badge_title_top" style="margin-top: 0;">{{message.body.multiGrade?message.body.badgeGradeName:message.body.name}}</text>
+            <text class="badge_title">{{message.body.upgradeDescription}}</text>         
+        </view>
+        <view class="row-3" data-index="{{ index }}" data-messageid="{{ message.messageId }}" data-item="{{message.body}}" style="background-color: {{themeColor}};height: 120rpx;" bindtap="goBadgeDetail">点击查看</view>
+    </view>
+</template>
+<sharePosters bind:closeSharePosters="closeSharePosters" levelImageValue="{{levelImageValue}}"  wx:if="{{showShare}}"
+  painting='{{painting}}' wxQrcodeData='{{wxQrcodeData}}'></sharePosters>
+<!-- 解绑换绑 -->
+<template name="mobileChange">
+    <indexDialog show="{{true}}" maskClosable="{{false}}" data-index="{{ index }}" bindbuttontap="tapDialogButton" title="友情提示" buttons="{{[{text: '重新登录'}]}}">
+    <view class="index_dialog_title">您的手机号已解绑/已更换，请重新登录</view>
+</indexDialog>
+</template>

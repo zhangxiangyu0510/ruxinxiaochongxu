@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-tabs": "/components/tabs/index",
+    "notificationDialog":"/components/notificationDialog/notificationDialog"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "顾客列表"
+
+}

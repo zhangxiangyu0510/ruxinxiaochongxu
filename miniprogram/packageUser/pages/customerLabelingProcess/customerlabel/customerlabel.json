@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-checkbox-group": "/components/checkbox-group/checkbox-group",
+    "mp-checkbox": "/components/checkbox/checkbox",
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "mp-cells": "/components/cells/cells"
+  },
+  "navigationBarTitleText": "我的笔记",
+  "enablePullDownRefresh": true
+}

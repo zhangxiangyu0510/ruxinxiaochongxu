@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "notificationDialog":"/components/notificationDialog/notificationDialog"
+  },
+  "navigationBarTitleText": "店铺等级",
+  "disableScroll": true
+}

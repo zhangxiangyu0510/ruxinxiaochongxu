@@ -1,0 +1,66 @@
+{
+    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "miniprogramRoot": "miniprogram/",
+    "compileType": "miniprogram",
+    "libVersion": "2.22.1",
+    "projectname": "nuskin-myshop-user-miniprogram",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": false,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "useIsolateContext": false,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": true,
+        "packNpmRelationList": [
+            {
+                "packageJsonPath": "/miniprogram/package.json",
+                "miniprogramNpmDistDir": "/miniprogram"
+            }
+        ],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": [
+            "typescript"
+        ],
+        "ignoreUploadUnusedFiles": true,
+        "useStaticServer": true
+    },
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "appid": "wx99682bbd6fd2a91e",
+    "srcMiniprogramRoot": "miniprogram/",
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "condition": {}
+}

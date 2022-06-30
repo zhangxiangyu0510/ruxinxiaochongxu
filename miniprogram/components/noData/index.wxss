@@ -1,0 +1,19 @@
+.noFansImg{
+    width: 100%;
+    /* height: 480rpx; */
+    margin-top: 200rpx;
+}
+.undraw_happy{
+    width: 520rpx;
+    margin: 0 auto;
+    margin-top: 200rpx;
+}
+.noFans{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #808080;
+}

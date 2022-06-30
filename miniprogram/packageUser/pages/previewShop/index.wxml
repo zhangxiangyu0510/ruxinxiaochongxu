@@ -1,0 +1,173 @@
+<!--index.wxml-->
+<!-- headers -->
+<!-- <commonNoticeDialog></commonNoticeDialog> -->
+<dialogGlobal binddialogevent="dialogevent" componentType="1" isTrue="true" id="dialogProtocol" />
+<commonGlobal bind:shopInfo="shopInfo" shopId="{{shopId}}" payDialog="{{payDialog}}"></commonGlobal>
+<!-- <commonService bind:openSharePosters="openSharePosters"></commonService> -->
+<!-- <commonGlobal/> -->
+<!-- <commonService bind:openSharePosters="openSharePosters" wx:if="{{hasUserInfo}}"></commonService> -->
+<!-- <sharePosters bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}'></sharePosters> -->
+<view style="background: url(http://{{bg}});" >
+<commonHeader titleText='如新NU店' bg="{{showBg}}"></commonHeader>
+<view class="pageHome" wx:if="{{showDialog}}">
+  <!-- 搜索 -->
+  <view class="topSearch">
+    <form class="weui-search-bar__form search_form" >
+      <div class="weui-search-bar__box">
+        <i class="weui-icon-search"></i>
+        <!-- bindfocus -->
+        <input disabled="{{true}}" type="search" class="weui-search-bar__input search_left_icon" id="search_input" placeholder="搜索你想要的宝贝" />
+        <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+      </div>
+    </form>
+  </view>
+  <!-- <view bindtap="test">点击</view> -->
+  <!-- swpier -->
+  <view class="index_swiper_box_bg">
+    <view class="index_swiper_box  swiper-no-swiping ">
+      <swiper class="index_swiper_banner" indicator-dots="true" circular="true" indicator-color="{{themeColor+40}}" indicator-active-color="{{themeColor}}">
+        <swiper-item  wx:for="{{banners}}" wx:key="index">
+          <image  data-banner="{{item.bannerItemVo}}" wx:if="{{item.bannerItemVo.imageUrl}}" src="{{item.bannerItemVo.imageUrl}}" mode="widthFix"></image>
+          <!-- </navigator> -->
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- wx:if="{{hasUserInfo}}" -->
+  <view>
+    <view class="user_info_box">
+      <view class="left_user_Info">
+        <view class="user_photo_box">
+          <view class="user_photo" style="border-color: {{themeColor}};">{{shopInfo.partnerProfile.avatar}}
+            <image src="{{shopInfo&&shopInfo.partnerProfile&&shopInfo.partnerProfile.avatar?shopInfo.partnerProfile.avatar:'data:image/svg+xml,'+my_header_avater}}"></image>
+          </view>
+        </view>
+        <view class="user_name" style="color: {{themeColor}};">Hi,我是{{shopInfo&&shopInfo.partnerProfile&&shopInfo.partnerProfile.nickname||'--'}}!</view>
+      </view>
+      <view wx:if="{{!isAttention}}" class="rightBut" style="color: {{themeColor}};border-color:{{themeColor}}">关注</view>
+      <view wx:if="{{isAttention}}"class="rightText">查看详情</view>
+    </view>
+  </view>
+
+  <view class="card_box" style="background: {{themeColor}};">
+    <view class="fans_bg">
+      <image class="icon_box" src="data:image/svg+xml,{{fansbBgIcon}}" mode="widthFix"></image>
+    </view>
+    <view class="followersCount" style="min-width:182rpx">
+      <view class="followersCount_text">
+        <image src="{{imageUrl}}/icons/fans.svg" mode="widthFix"></image>
+      </view>
+      <view class="followersCount_number" wx:if="{{fontFamily}}" style="font-family: {{fontFamily}};">{{shopInfo&&shopInfo.shop.fansCount||'0'}}<text class="unit">个</text> </view>
+    </view>
+    <view class="store_age followersCount" wx:if="{{age}}">
+      <view class="store_age_text followersCount_text" style="width:52rpx;">
+        <image src="{{imageUrl}}/icons/shopAge.svg" mode="widthFix"></image>
+      </view>
+      <view class="store_age_number followersCount_number" wx:if="{{fontFamily}}" style="font-family: {{fontFamily}};">{{shopInfo&&shopInfo.shopTime}}<text class="unit">年</text> </view>
+    </view>
+    <view class="store_age followersCount" wx:if="{{!age}}">
+      <view class="card-message" wx:for="{{codeInfo}}" wx:key="index">
+        <view class="message-img phone-icon">
+          <image class="" src="{{item.iconPath}}"></image>
+        </view>
+        <view class="message_text">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="right_box">
+      <view class="icon_box_level_bg" style="top:45rpx;right:18rpx"></view>
+      <image wx:if="{{shopInfo.shop&&shopInfo.shop.level}}" style="top:60rpx;right:36rpx" src="{{levelImage}}"></image>
+    </view>
+    <!-- <view class="phone_box" wx:if="{{age}}">
+      <image class="phone_icon" src="{{imageUrl}}/icons/mobile.svg"></image>
+      <view class="phone_number" wx:if="{{fontFamily}}" style="font-family: {{fontFamily}};">{{shopInfo&&shopInfo.partner&&shopInfo.partner.mobile||'-'}}</view>
+    </view> -->
+  </view>
+
+  <!-- 轮播部分 -->
+  <view wx:if="{{swiperData.length}}">
+    <view class="swiper_box">
+      <view class="title_Icon_box">
+        <image class="headIcon" src="data:image/svg+xml,{{youxuanIcon}}"></image>
+
+        <!-- <image src="/images/icons/youxuan.svg">
+      </image> -->
+      </view>
+    </view>
+    <view class="top_slideshow">
+      <swiper previous-margin='76rpx' bindchange="swiperChange" >
+        <block wx:for="{{swiperData}}" wx:key="index">
+          <swiper-item  >
+
+            <view  data-item="{{item}}" style="border-color: {{themeColor}};" class="swiper-item-content {{swiperIndex==index ? '' : 'active'}}">
+              <view style="background-color: {{themeColor+10}};" class="backgColor">
+              </view>
+              <view style="background-color: {{themeColor+15}};" class="backgColorTwo"></view>
+              <view class="content_item">
+                <view>
+                  <view class="shop_synopsis">
+                    {{item.title || '暂无名称'}}
+                  </view>
+                  <!-- {{userLevel}} -->
+                  <view wx:if="{{userLevel!=3}}">
+                    <view class="preferentialPrice_item">
+                      <text class="preferentialPrice" style="background: {{themeColor}};">零售价</text> <text class="number"><text style="color: {{themeColor}};">￥{{item.retailPrice || 0}}</text></text>
+                    </view>
+                    <view class="retailPrice_item">
+                      <text class="retailPrice">星级价</text> <text class="number"><text>￥{{item.starPrice || 0}}</text></text>
+                    </view>
+                  </view>
+                  <view wx:else class="productItem_box_left">
+                    <view class="retailPrice_item">
+                      <text class="retailPrice">零售价</text> <text class="number"><text>￥{{item.retailPrice || 0}}</text></text>
+                    </view>
+                    <view class="preferentialPrice_item">
+                      <text class="preferentialPrice" style="background: {{themeColor}};">星级价</text> <text class="number"><text style="color: {{themeColor}};">￥{{item.starPrice || 0}}</text></text>
+                    </view>
+
+                  </view>
+                </view>
+                <view class="imgBox">
+                  <image src="{{item.image}}"></image>
+                </view>
+              </view>
+            </view>
+
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 店主推荐 -->
+  <view class="classify_tabs">
+    <view  class="recommend_img">
+      <image src="data:image/svg+xml,{{shopkeeperRecommendIcon}}"></image>
+      <view wx:if="{{classifyChangeIndex==-1}}" style="border-color: {{themeColor}};" class="whippletree"></view>
+    </view>
+    <view class="item_box">
+      <view class="item_center" wx:for="{{tabs}}" wx:key="index">
+        <view class="long_string"></view>
+        <view  data-index="{{index}}" style="{{ classifyChangeIndex==index ? 'color:'+themeColor :''}}" class='classify_item {{classifyChangeIndex==index ? "classifyChange" : ""}}'>
+          {{item.title}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goods_item">
+    <!-- <scroll-view class="goodsScrollView" scroll-y='{{true}}' bindscrolltolower='scrolltolower'> -->
+    <productItem  wx:if="{{goodsListData.length}}" goodsListData='{{goodsListData}}' themeColor="{{themeColor}}"></productItem>
+    <view class="hintText" wx:if="{{isLoading && !goodsListData.length}}">正在加载...</view>
+    <view wx:if="{{!isLoading && !goodsListData.length}}" class="noData">
+      <image src="{{imageUrl}}/icons/nologin.png"></image>
+      <view class="text">暂无店主推荐产品</view>
+    </view>
+
+    <!-- </scroll-view> -->
+  </view>
+</view>
+<!-- 未登录 -->
+<!-- <view class="index_noauth_box" wx:if="{{!hasUserInfo}}">
+  <view class="index_noauth_icon"><image src="../../images/icons/nologin.png" mode="widthFix"></image></view>
+  <button  class="index_noauth_text" style="color: {{themeColor}};" wx:if="{{canIUse}}" open-type="getUserInfo" bindtap='getUserProfile'>登录</button>
+  </view> -->
+<!-- </view> -->
+</view>

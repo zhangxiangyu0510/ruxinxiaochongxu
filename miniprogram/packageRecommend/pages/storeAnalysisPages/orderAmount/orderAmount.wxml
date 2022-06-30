@@ -1,0 +1,74 @@
+<!--packageRecommend/pages/storeAnalysisPages/orderAmount/orderAmount.wxml-->
+<view class="storeAnalysis">
+  
+  <picker class="pickerDate" start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month">
+    <view class="storeAnalysis-date">
+      <view class="currentDate" style="color: {{themeColor}};">
+        <text>{{changeYear}}年{{changeMonth}}月</text>
+      </view>
+      <view class="changeDate">
+        切换月份
+      </view> 
+    </view>
+  </picker>
+  <view class="statement-title">该数据仅供参考，数据截止日期：{{currentDate}}</view>
+  <!-- 月订单金额 -->
+  <view class="storeAnalysis-type">
+    <view class="type-title">
+      <view class="title-name">月订单金额</view>
+      <view class="look-detail">仅限如新NU店，业绩查询请至星享城</view>
+    </view>
+    <view class="type-content">
+      <view class="content-title">
+        <view class="content-title-top">本月订单金额</view>
+        <!-- <view class="content-title-bottom">仅限NU店，业绩查询请至星享城</view> -->
+      </view>
+      <view class="content-data">
+        <view class="content-left" style="color: {{themeColor}};">
+          <text>¥ </text>
+          <text>{{listData.amtTotalOrder}}</text>
+        </view>
+        <view class="content-right">
+          <view class="right-top">
+            <text>较上月同期增长</text>
+            <text style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{listData.amtTotalOrderMom}}%</text>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+          <view class="right-bottom">
+            <view>较去年同期增长</view>
+            <view style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{listData.amtTotalOrderYoy}}%</view>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单列表 -->
+  <view class="storeAnalysis-type">
+    <view class="type-title">
+      <view class="title-name">订单列表</view>
+    </view>
+    <view class="type-content margin-bottom-16" wx:for="{{orderList}}" wx:key="index" bindtap="toOrderDetailsPage" data-id="{{item.orderNo}}">
+      <view class="content-title-list">
+        <view class="title-list">
+            <view>下单时间：</view>
+            <view>{{item.orderTime}}</view>
+            <view class="total">共{{item.numItems}}件</view>
+        </view>
+        <view class="total-amount" style="color: {{themeColor}};">¥{{item.amtOrder}}</view>
+      </view>
+      <view class="content-data-list">
+        <view class="img-list" wx:for="{{item.itemImagesList}}" wx:for-index="i" wx:for-item="imgUrl" wx:key="i">
+            <image src="{{imgUrl}}"></image>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isShowNotDataTitle}}" class="notData">
+        暂无数据
+    </view>
+  </view>
+</view>

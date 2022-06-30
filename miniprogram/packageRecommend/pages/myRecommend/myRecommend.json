@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "recommendList": "../../../components/recommendList/recommendList",
+        "sharePosters": "../../../components/canvasdrawer/canvasdrawer",
+        "commonNoticeDialog": "../../../components/commonNoticeDialog/commonNoticeDialog",
+        "commonGlobal": "../../../components/commonGlobal/commonGlobal"
+    },
+    "navigationBarTitleText": "单品推荐",
+    "enablePullDownRefresh": false
+}

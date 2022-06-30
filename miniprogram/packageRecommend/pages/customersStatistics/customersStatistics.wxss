@@ -1,0 +1,156 @@
+/* pages/customersStatistics/customersStatistics.wxss */
+page {
+  min-height: 100%;
+  background: #fafafa;
+  /* padding-bottom:108rpx; */
+}
+.customersStatistics{
+  padding:32rpx;
+}
+.date{
+  margin-top:16rpx;
+  display: flex;
+  vertical-align: bottom;
+}
+.topText{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24rpx;
+  color: #7F7F7F;
+  margin-top:32rpx;
+
+}
+.month{
+  padding: 12rpx 20rpx;
+  background: rgba(115, 64, 179, 0.1);
+  border-radius: 8rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  text-align: center;
+
+/* identical to box height, or 150% */
+
+
+color: #7340B3;
+}
+.change{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: 300;
+font-size: 24rpx;
+line-height: 34rpx;
+/* identical to box height */
+margin-left:16rpx;
+
+text-align: right;
+
+color: #4A4A4A;
+vertical-align: bottom;
+margin-top:30rpx;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  margin-top:48rpx;
+  
+}
+.title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #404040;
+}
+.more{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 24rpx;
+line-height: 34rpx;
+color: #4A4A4A;
+}
+.wrap{
+  width:630rpx;
+  background:#fff;
+  margin-top:32rpx;
+  padding:32rpx;
+  border-radius: 16rpx;
+}
+.data{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+.number{
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72rpx;
+  text-align: center;
+}
+.number text{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 22rpx;
+align-items: center;
+text-align: center;
+
+color: #333333;
+}
+.dataItem{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 28rpx;
+/* identical to box height */
+
+text-align: center;
+
+/* 内容文字 */
+
+color: #4A4A4A;
+}
+.text{
+  margin-top:8rpx;
+}
+.echart{
+  height:466rpx;
+  /* border:1px solid #ccc; */
+  margin-top:70rpx;
+
+}
+.tip{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #4A4A4A;
+}
+.chart{
+  height:500rpx;
+  /* border:1px solid #ccc; */
+  position:relative;
+}
+.chart .text{
+  width:20rpx;
+  position: absolute;
+  left:45%;
+  top:65%;
+  text-align:center;
+}
+.chart .text .number{
+  font-family: 'Verlag';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 68rpx;
+  text-align: center;
+}
+.f2-chart{
+  width:100%;
+  height:100%;
+}

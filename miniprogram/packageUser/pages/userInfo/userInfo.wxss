@@ -1,0 +1,143 @@
+/* miniprogram/pages/ucenter/userInfo/index.wxss */
+.my_user_info {
+    width: 750rpx;
+    padding: 0 32rpx;
+    background-color: #fafafa;
+    padding-bottom: 44rpx;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .my_user_info .user_photo {
+    width: 64rpx;
+    height: 64rpx;
+  }
+  .user_info_form{
+    margin-bottom: 150rpx;
+  }
+  .show-title-tips{
+      min-width: 180rpx;
+    font-size: 20rpx;
+    color: #999999;
+}
+  .user_info_form .user_info_form_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #efefef;
+    padding: 30rpx 0;
+  }
+
+.user_info_form .user_info_form_item .right_item {
+    /* position: relative; */
+  display: flex;
+  align-items: center;
+}
+
+  .user_info_form .user_info_form_item .right_item .user_photo {
+    /* background-color: #ccc; */
+    border-radius: 8rpx;
+    margin-right: 22rpx;
+  }
+
+.user_info_form .user_info_form_item .right_item .right_text {
+    /* position: absolute;
+    right: 0; */
+  width: 390rpx;
+  padding-right: 22rpx;
+  /* color: #A6A6A6; */
+  text-align: right;
+  font-size: 28rpx;
+}
+
+  .user_info_form .user_info_form_item .right_item .right_icon {
+    color: #A6A6A6;
+    width: 32rpx;
+    height: 44rpx;
+  }
+  .user_info_form .user_info_form_item .right_item .right_icon image{
+    width: 100%;
+    height: 32rpx;
+  }
+  .user_info_form .user_info_form_item .right_data{
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    color: #404040;
+    mix-blend-mode: normal;
+    max-width: 500rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .user_info_form .user_info_form_item .form_lable{
+  color: #4A4A4A;
+  font-size: 28rpx;
+  }
+
+
+
+
+  /* 底部按钮样式 */
+  .butText {
+    font-size: 32rpx;
+    color: #333333;
+    font-weight: 500;
+  }
+
+  .my_user_info .bootom_but {
+    /* margin-top: 208rpx;
+    margin-bottom: 100rpx; */
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 50rpx;
+    width: 686rpx;
+    background-color: #fafafa;
+    z-index: 88;
+  }
+
+  .my_user_info .bootom_but .confirm_but {
+    background-color: #FF5E00;
+    width: 328rpx;
+    margin-left: 30rpx;
+  }
+
+  .my_user_info .bootom_but .cancel_but {
+    width: 328rpx;
+  }
+
+  .my_user_info .bootom_but .confirm_but .butText {
+    color: #efefef;
+  }
+
+  /* 条款管理和隐私政策 */
+.my_user_info .terms_andagreements{
+    background: #FFFFFF;
+    border-radius: 16rpx;
+    margin-top: 44rpx;
+
+    font-family: 'PingFang SC';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height */
+/* 标题文字 */
+color: #404040;
+}
+.my_user_info .terms_andagreements .terms_and_privacyPolicy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 104rpx;
+  padding: 0 32rpx;
+}
+.my_user_info .terms_andagreements .terms_and_privacyPolicy:nth-child(1){
+    border-bottom: 1rpx solid rgba(0,0,0,0.05);
+}
+
+.my_user_info .terms_andagreements .terms_and_privacyPolicy image{
+    width: 32rpx;
+    height: 32rpx;
+}

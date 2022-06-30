@@ -1,0 +1,52 @@
+/* components/commonFooter/commonFooter.wxss */
+.common_footer_bg{
+  position: fixed;
+  width:750rpx;
+  height:96rpx;
+  z-index:999999;
+  background: #fff;
+  margin-top: 300rpx;
+}
+.common_footer{
+  display: flex;
+  justify-content: space-between;
+}
+.common_footer_single_box{
+  width:188rpx;
+  height:96rpx;
+  /* background: red; */
+  position:relative;
+  text-align: canter;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 24rpx;
+  text-align: center;
+  flex: none;
+  order: 2; 
+  flex-grow: 0;
+}
+.footer_icon{
+  height:40rpx;
+  width:40rpx;
+  background: #000;
+  position: absolute;
+  top:14rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.footer_normal_text{
+  color: #4A4A4A;
+  position: absolute;
+  bottom:6rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.footer_active_text{
+  color: #FF5E00;
+  position: absolute;
+  bottom:6rpx;
+  left:50%;
+  transform: translateX(-50%);
+}

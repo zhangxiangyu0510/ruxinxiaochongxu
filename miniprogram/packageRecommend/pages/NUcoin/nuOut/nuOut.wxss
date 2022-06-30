@@ -1,0 +1,248 @@
+page {
+  background: #fff;
+}
+.nu_detail_box{
+
+}
+.nu_detail_header{
+  margin:48rpx 32rpx;
+  /* background: red; */
+  position:relative;
+}
+.nu_detail_notice{
+  position:absolute;
+  right:0;
+  top:8rpx;
+  height:40rpx;
+  width:40rpx;
+  background: skyblue;
+}
+.nu_detail_header_title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #404040;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+.nu_detail_header_num{
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48rpx;
+  line-height: 48rpx;
+  color: #7340B3;
+  
+}
+.nu_detail_common_nu{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: #7F7F7F;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+.nu_detail_out_time{
+  margin:16rpx 0;
+}
+.nu_detail_tab_box{
+  width: 100%;
+  /* background: skyblue; */
+  width: calc(100% - 64rpx);
+  margin: 32rpx auto;
+}
+.nu_detail_box .weui-tabs-bar__wrp {
+  background: unset !important;
+
+}
+.nu_detail_box .tab-item {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #4A4A4A;
+}
+.nu_detail_box .tab-item:last-child {
+  margin-left: 80rpx;
+}
+.nu_detail_box .weui-tabs-bar__item {
+  background-color: #fafafa !important;
+}
+.nu_detail_box .weui-tabs-bar__content {
+  background-color: #fafafa;
+}
+.nu_detail_box .weui-tabs {
+  margin-left: -80rpx;
+}
+
+.nu_detail_box .weui-tabs-swiper {
+  display: none;
+}
+
+.nu_detail_box .tab-bar-title__selected {
+  border: unset !important;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #404040;
+}
+
+.nu_detail_box .tab-bar-title__selected::after {
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  display: block;
+  margin: 8rpx auto 0;
+  border-bottom: 4rpx solid #7340B3;
+  position: relative;
+}
+.nu_detail_coll_box {
+  width: 100%;
+  height: 64rpx;
+  background-color: #EBEBEB;
+  line-height: 64rpx;
+  display: flex;
+  position:relative;
+}
+
+.nu_detail_coll_title {
+  /* width: 100%; */
+  height: 64rpx;
+  margin-left: 36rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #333333;
+}
+.nu_detail_coll_num{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #333333;
+  margin-left:24rpx;
+}
+.nu_detail_coll_icon{
+  position:absolute;
+  height:34rpx;
+  width:76rpx;
+  /* background: red; */
+  top:50%;
+  transform: translateY(-50%);
+  right:32rpx;
+  display: flex;
+  justify-content: space-between;
+
+}
+.empty{
+    /* width:604rpx; */
+    height:600rpx;
+    margin-top: 314rpx;
+    position:relative;
+    width:70%;
+    margin-left:15%;
+  }
+  .empty image{
+    width:100%;
+    height:100%;
+  }
+  .empty .emptyBox{
+    position: absolute;
+    width:90%;
+    left:5%;
+    top:0;
+    
+  }
+.coll_icon{
+  height:11rpx;
+  width:20rpx;
+  position:relative;
+  top:11.5rpx;
+
+}
+.coll_icon_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  text-align: right;
+  color: #7F7F7F;
+  position: relative;
+  top:-16rpx;
+}
+.nu_detail_coll_item_box {
+  margin: 0 32rpx;
+}
+.nu_detail_coll_item {
+  margin-top: 48rpx;
+  display: flex;
+  justify-content: space-between;
+  position:relative;
+}
+.nu_detail_coll_item_left {
+  width: 538rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+}
+.nu_detail_coll_left_top {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #404040;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+ 
+}
+
+.nu_detail_coll_left_bottom {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #4A4A4A;
+}
+
+.nu_detail_coll_item_right {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48rpx;
+  line-height: 48rpx;
+  margin-top: 24rpx;
+  color: #7340B3;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right:0;
+}
+
+.noFansImg{
+    width: 100%;
+    /* height: 480rpx; */
+    margin-bottom: 82rpx;
+}
+.undraw_happy{
+    width: 520rpx;
+    margin: 0 auto;
+}
+.noFans{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #808080;
+}

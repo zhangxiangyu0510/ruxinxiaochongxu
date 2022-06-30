@@ -1,0 +1,147 @@
+<!--pages/ucenter/confirmRecommended/confirmRecommended.wxml-->
+<!-- 确认推荐页面 -->
+<notificationDialog id="notificationDialog" />
+<view class="{{isGuidance ? 'overHode confirm_recommended' :'confirm_recommended'}}">
+  <sharePosters bind:givePicture='givePicture' bind:closeSharePosters="closeSharePosters" painting='{{painting}}' wx:if="{{showShare}}"></sharePosters>
+  <view class="top_title">组合名称</view>
+  <input disabled="{{inputDisabled}}" bindinput='inputVal' value="{{title}}" class="weui-input my_top_input" type="text" placeholder="请填写" />
+  <view class="yulan">
+    <view class="yulan_text">预览</view>
+    <!-- 产品 -->
+    <view class="goods_box">
+      <view class="goods_item">
+        <view class="goods_item_content">
+          <view class="left_img_box">
+            <image src="{{jointImagePath}}" alt="" />
+          </view>
+          <view class="right_box">
+            <view class="goods_synopsis">{{title || '请填写组合名称'}}</view>
+            <view class="retailPrice_item">
+              <text class="retailPrice">零售价</text> <text class="number"><text>￥{{goodsRetailPrice || 0}}</text></text>
+            </view>
+            <view class="preferentialPrice_item_box">
+              <view class="preferentialPrice_item">
+                <text style="background-color: {{themeColor}};" class="preferentialPrice">星级价</text> <text style="color:{{themeColor}}" class="number"><text>￥{{goodsStarPrice || 0}}</text></text>
+              </view>
+
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <!-- 包含以下产品 -->
+    <view class="yulan">
+      <view class="yulan_text">包含以下产品</view>
+      <!-- 产品 -->
+      <view class="goods_box">
+        <view wx:for="{{HybridRecommendListData}}" wx:key="{{index}}">
+          <view class="goods_item  goods_item_sort">
+            <view>
+              <view class="goods_item_content">
+                <view class="left_img_box">
+                  <image src="{{item.itemImage}}"></image>
+                </view>
+                <view class="right_box">
+                  <view class="goods_synopsis">{{item.itemName}}</view>
+                  <view class="retailPrice_item">
+                    <text class="retailPrice">零售价</text> <text class="number"><text>￥{{item.retailPrice || 0}}</text></text>
+                  </view>
+                  <view class="preferentialPrice_item_box">
+                    <view class="preferentialPrice_item">
+                      <text style="background-color: {{themeColor}};" class="preferentialPrice">星级价</text> <text class="number"><text style="color:{{themeColor}}">￥{{item.starPrice || 0}}</text></text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <!-- 移除产品  -->
+            <view class="removeProduct_box">
+              <view bindtap="removeGoods" data-index="{{index}}" data-item="{{item}}" class="removeProduct">
+                <!-- <image class="icon" src="/images/icons/hybridRecommend_remove.svg" alt=""></image> -->
+                <image class="icon" src="data:image/svg+xml,{{removeIcon}}" mode="widthFix"></image>
+
+                <text>移除产品</text>
+              </view>
+              <view class="right_input">
+                <image data-type="reduce" bindtap="revampGoodsNumber" data-item="{{item}}" class="icon leftImage" src="/packageRecommend/images/subtract.svg" mode="widthFix"></image>
+                <input bindinput="changeNumber" data-index="{{index}}" value="{{item.total}}" class="weui-input goods_input" type="number" />
+                <image bindtap="revampGoodsNumber" data-type="add" data-item="{{item}}" class="icon" src="data:image/svg+xml,{{addIcon}}" mode="widthFix"></image>
+              </view>
+            </view>
+          </view>
+          <!-- 产品底部排序 -->
+          <view style="background-color: {{themeColor+10}};" class="goods_sort_tools">
+            <view bindtap="changeListSort" data-type="up" data-index="{{index}}" data-item="{{item}}" class="flex-conter">
+              <!-- <image class="icon" src="data:image/svg+xml,{{moveUpIcon}}" mode="widthFix"></image>
+              <view style="color:{{themeColor}}" class="moveUp">排序上移</view> -->
+              <image  class="icon" src="{{index==0 ? '../../images/hybridRecommend_moveUp.svg'  :  'data:image/svg+xml,'+moveUpIcon}}" mode="widthFix"></image>
+                <view style="color:{{index==0 ? '#7F7F7F' : themeColor}}" class="moveUp">排序上移</view>
+            </view>
+            <view class="longString"></view>
+            <view bindtap="changeListSort" data-index="{{index}}" data-type="down" data-item="{{item}}" class="flex-conter">
+              <!-- <image class="icon" src="data:image/svg+xml,{{moveDownIcon}}" mode="widthFix"></image>
+              <view style="color:{{themeColor}}" class="moveUp">排序下移</view> -->
+              <image class="icon" src="{{index==HybridRecommendListData.length-1 ? '../../images/hybridRecommend_moveDown.svg'  :  'data:image/svg+xml,'+moveDownIcon}}"  mode="widthFix"></image>
+                <view style="color:{{index==HybridRecommendListData.length-1 ? '#7F7F7F' : themeColor}}"  class="moveUp">排序下移</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class="footer_but">
+
+    <button bindtap="affirmSubmit" style="background-color: {{themeColor}};" class="confirm_but" type="primary"> <text class="butText">确认推荐</text></button>
+  </view>
+
+  <!-- <view style="width: 0rpx; height: 0rpx; overflow: hidden;"></view> -->
+  <view wx:if="{{isGuidance}}" class="beginnerGuidance">
+    <view wx:if="{{guidanceIndex==3}}">
+      <view class="thirdStep">
+        <view class="guidanceInput">
+          <input placeholder="请填写" class="my_top_input" />
+          <view class="triangle"></view>
+          <view class="text">第三步输入组合名称 </view>
+        </view>
+      </view>
+      <view class="partesSecunda thirdStepTwo">
+        <view class="contentBox">
+          <view class="dialogBox">
+            <view class="text">
+              <view>
+                调整产品数量
+              </view>
+            </view>
+            <view bindtap="guidanceNext" style="background-color: {{themeColor}};" class="butNext">
+              下一步
+            </view>
+          </view>
+          <view class="triangleDown"></view>
+        </view>
+        <view class="numInput">1</view>
+      </view>
+    </view>
+    <!-- 第二部 -->
+    <view wx:if="{{guidanceIndex==4}}" class="partesSecunda">
+
+      <view class="contentBox">
+        <view class="dialogBox">
+          <view class="text">
+            <view>
+              第四步点击这里
+            </view>
+            确认推荐
+          </view>
+          <view bindtap="backPage" data-number="2" style="background-color: {{themeColor}};" class="butNext">
+            完成新手引导
+          </view>
+        </view>
+        <view class="triangleDown"></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{isSubmit}}" class="maskLayer"></view>

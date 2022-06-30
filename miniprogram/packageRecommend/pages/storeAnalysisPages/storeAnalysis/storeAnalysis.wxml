@@ -1,0 +1,161 @@
+<!--packageRecommend/pages/storeAnalysis/storeAnalysis.wxml-->
+<view class="storeAnalysis">
+  
+  <picker class="pickerDate" start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month">
+    <view class="storeAnalysis-date">
+      <view class="currentDate" style="color: {{themeColor}};">
+        <text>{{changeYear}}年{{changeMonth}}月</text>
+      </view>
+      <view class="changeDate">
+        切换月份
+      </view>
+    </view>
+  </picker>
+  <view class="statement-title">该数据仅供参考，数据截止日期：{{currentDate}}</view>
+  
+  <!-- 月订单金额 -->
+  <view class="storeAnalysis-type">
+    <view class="type-title">
+      <view class="title-name">月订单金额</view>
+      <view class="look-detail" bindtap="toOrderAmountPage">查看详情</view>
+    </view>
+    <view class="type-content">
+      <view class="content-title">
+        <view class="content-title-top">本月订单金额</view>
+        <view class="content-title-bottom">仅限NU店，业绩查询请至星享城</view>
+      </view>
+      <view class="content-data">
+        <view class="content-left" style="color: {{themeColor}};">
+          <text>¥ </text>
+          <text>{{storeAnalysisData.amtTotalOrder}}</text>
+        </view>
+        <view class="content-right">
+          <view class="right-top">
+            <text>较上月同期增长</text>
+            <text style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateAmtTotalOrderMom}}%</text>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+          <view class="right-bottom">
+            <view>较去年同期增长</view>
+            <view style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateAmtTotalOrderYoy}}%</view>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 月购买人数-->
+  <view class="storeAnalysis-type">
+    <view class="type-title">
+      <view class="title-name">月购买人数</view>
+      <view class="look-detail" bindtap="toNumberBuyersPage">查看详情</view>
+    </view>
+    <view class="type-content">
+      <view class="content-title">
+        <view class="content-title-bottom-people">仅显示当前月NU店购买人数占比</view>
+        <view class="content-title-top-people">本月购买人数</view>
+      </view>
+      <view class="content-data">
+        <view class="content-left-big" style="color:{{themeColor}};">
+          <text>{{storeAnalysisData.numBuyer}}</text>
+          <text>人</text>
+        </view>
+        <view class="content-right">
+          <view class="right-top">
+            <text>较上月同期增长</text>
+            <text style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateNumBuyerMom}}%</text>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+          <view class="right-bottom">
+            <view>较去年同期增长</view>
+            <view style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateNumBuyerYoy}}%</view>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="chart">
+        <f2 class="f2-chart" onInit="{{onInitChart1}}" />
+        <view class="chart-title">
+            <view>{{value1}}</view>
+            <view class="people-title">人</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 月新关注粉丝 -->
+  <view class="storeAnalysis-type">
+    <view class="type-title">
+      <view class="title-name">月新关注粉丝</view>
+      <view class="look-detail" bindtap="toNewFansPage">查看详情</view>
+    </view>
+    <view class="type-content">
+      <view class="content-title">
+        <view class="content-title-bottom-people">仅显示当前月NU店新关注粉丝占比</view>
+        <view class="content-title-top-people">本月新关注粉丝数</view>
+      </view>
+      <view class="content-data">
+        <view class="content-left-big" style="color: {{themeColor}};">
+          <text>{{storeAnalysisData.numNewFans}}</text>
+          <text>人</text>
+        </view>
+        <view class="content-right">
+          <view class="right-top">
+            <text>较上月同期增长</text>
+            <text style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateNumNewMom}}%</text>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+          <view class="right-bottom">
+            <view>较去年同期增长</view>
+            <view style="color: {{themeColor}};margin: 0 4rpx 0 8rpx;">{{storeAnalysisData.rateNumNewYoy}}%</view>
+            <view class="img">
+              <image src="{{'data:image/svg+xml,'+arrowUpIcon}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="chart">
+        <f2 class="f2-chart" onInit="{{onInitChart2}}" />
+        <view class="chart-title">
+            <view>{{value2}}</view>
+            <view class="people-title">人</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 粉丝转化率 -->
+  <view class="storeAnalysis-rate">
+    <view class="rate-title">
+      <view class="title-name title-name-rate">粉丝转化率</view>
+      <view class="look-detail">仅显示当前月NU店粉丝转化率</view>
+    </view>
+    <view class="rate-content">
+      <view class="content-title">
+        释义：周期内,新访问用户关注成为粉丝的数量占所有新访问用户的比率。
+      </view>
+      <view class="rate-data">
+        <view>
+          <view>新访问人数</view>
+          <view class="data-number" style="color:{{themeColor}};">{{storeAnalysisData.numViewIsNotFans}}</view>
+        </view>
+        <view class="chart-annular">
+          <!-- <f2 class="f2-chart" onInit="{{annularChart}}" /> -->
+          <canvas type="2d" id="myCanvas" width="100" height="100"></canvas>
+        </view>
+        <view>
+          <view>粉丝转换</view>
+          <view class="data-number" style="color:{{themeColor}};">{{storeAnalysisData.numViewIsNotFansBeFans}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

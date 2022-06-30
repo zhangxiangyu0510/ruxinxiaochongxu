@@ -1,0 +1,9 @@
+.protocol{
+  padding:24rpx;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: #4A4A4A;
+}

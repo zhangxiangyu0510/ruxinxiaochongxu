@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "commonOwenrSet":"../../../components/commonOwenrSet/commonOwenrSet"
+  },
+  "navigationBarTitleText": "NU店信息"
+
+
+}

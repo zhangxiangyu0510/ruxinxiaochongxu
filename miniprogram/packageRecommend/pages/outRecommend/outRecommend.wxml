@@ -1,0 +1,18 @@
+<view class="outRecommend_box">
+<recommendList showOperate="{{false}}" recommends="{{outRecommend}}"></recommendList>
+<!-- <view class="outRecommend_commodity" wx:for="{{outRecommend}}" wx:key="index">
+      <view class="picture">
+      </view>
+      <view class="introduce">
+        <view class="introduce-title">如新滢白三效修护霜（暂为非直销品）</view>
+        <view class="original-price">
+         <text class="retail">零售价</text> 
+         <text class="retail-price">¥1200</text>
+        </view>
+        <view class="special-price">
+        <text class="discount">星级价</text> 
+        <text class="discount-price">¥1100</text>
+        </view>
+      </view>
+    </view> -->
+    </view>

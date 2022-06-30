@@ -1,0 +1,231 @@
+/* pages/ucenter/myChange/myChange.wxss */
+.myChange {
+  padding: 48rpx 32rpx 64rpx 32rpx;
+  background-color: #fcfcfc;
+  height: 100vh;
+
+}
+
+.xx_tabs {
+  /* padding-left: 64rpx; */
+  /* margin-top: 24rpx; */
+  /* background-color: #fff; */
+  /* height: 104rpx; */
+  /* width: 232rpx;
+  height: 560rpx; */
+
+}
+
+
+
+.myChange .tab-item {
+  padding: 22rpx 0;
+  margin-right: 64rpx;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 46rpx;
+  text-align: center;
+  color: #7F7F7F;
+  mix-blend-mode: normal;
+
+}
+
+.myChange .weui-tabs-bar__item {
+  background-color: #fcfcfc !important;
+  padding-left: 0rpx;
+
+}
+
+.myChange .weui-tabs-bar__content {
+  background-color: #fcfcfc;
+
+}
+
+.myChange .weui-tabs-swiper {
+  display: none;
+}
+
+.myChange .weui-tabs-bar__content:nth-child(1) .weui-tabs-bar__title {
+  padding-left: 0;
+}
+
+.myChange .tab-bar-title__selected {
+  /* border-bottom: 4rpx solid #FF5E00; */
+  border-bottom-color: transparent !important;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  /* identical to box height */
+  text-align: center;
+  /* 标题文字 */
+  color: #404040;
+  mix-blend-mode: normal;
+
+}
+
+.tab-bar-title__selected::after {
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #7340B3;
+  position: relative;
+  /* top: 10rpx; */
+}
+
+.allBut {
+  display: flex;
+  align-items: center;
+  width: 174rpx;
+  padding: 12rpx 0;
+  background: #F1ECF7;
+  border-radius: 4px;
+  margin-top: 10rpx;
+
+}
+
+.allButItem {
+
+  margin-top: 10rpx;
+
+  display: flex;
+  color: #7340B3;
+}
+
+
+
+.allButItem .allgoods {
+  background: #F1ECF7;
+  padding: 12rpx 20rpx;
+  border-radius: 4px;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #7340B3;
+  margin-right: 32rpx;
+}
+.allButItem .changeItem {
+  background: #7340B3;
+  border-radius: 4px;
+  color: #fff;
+
+}
+.myChange .numbreBox {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #7340B3;
+  margin-top: 20rpx;
+  margin-left: 24rpx;
+
+}
+
+.allBut .allgoods {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #7340B3;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.allBut .iconBox {
+  width: 20rpx;
+  height: 11rpx;
+}
+
+.NUgoodsbox {
+  margin-top: 32rpx;
+}
+
+.NUgoodsbox .NUGoodsItemContent {
+  display: flex;
+}
+
+.NUgoodsbox .NUGoodsItemContent .leftImg {
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.NUgoodsbox .NUGoodsItemContent .rightGoodsInfo {
+  margin-left: 24rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.NUgoodsbox  .operation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.NUgoodsbox .NUGoodsItemContent .rightGoodsInfo .name {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #4A4A4A;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.NUgoodsbox .numbreBox .quantity {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #4A4A4A;
+
+}
+
+.NUgoodsbox .numbreBox .number {
+  font-size: 28rpx;
+  line-height: 32rpx;
+  color: #7340B3;
+  margin: 0px 8rpx;
+}
+
+.NUgoodsbox .numbreBox .grade {
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #808080;
+}
+
+.NUgoodsbox .viewDetails {
+  background: #F1ECF7;
+  border-radius: 8rpx;
+  padding: 10rpx 12rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #7340B3;
+
+}
+
+.NUgoodsbox .viewDetailsTwo {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  /* identical to box height */
+  text-align: right;
+  color: #888888;
+}
+
+.myChange .NUGoodsItem {
+  background-color: #ffffff;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  margin-bottom: 32rpx;
+
+
+}
+
+.myChange .changeTime {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #7F7F7F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "recommendList": "../../../components/recommendList/recommendList"
+  },
+  "navigationBarTitleText": "新手引导",
+  "enablePullDownRefresh": false
+}

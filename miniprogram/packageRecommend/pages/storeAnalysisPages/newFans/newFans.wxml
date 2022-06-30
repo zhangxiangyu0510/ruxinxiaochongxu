@@ -1,0 +1,20 @@
+<!--packageRecommend/pages/storeAnalysisPages/newFans/newFans.wxml-->
+<view class="newFans">
+    <view class="statement-title">该数据仅供参考，数据截止日期：{{currentDate}}</view>
+    <view class="nar-bar">
+        <view class="nar-bar-content">
+            <view class="nar-bar-title {{isactive===index?'active':''}}" style="min-width: {{item.width}}rpx;" wx:for="{{narBar}}" wx:key="index" bindtap="handleActive" data-index="{{index}}" data-item="{{item}}">
+                <text>{{item.text}}</text>
+                <view class="line" style="background-color: {{themeColor}};"></view>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view wx:for="{{listData}}" class="common-list" wx:key="index">
+            <infoList infoData="{{item}}" bindtap="toDetail" data-id="{{item.userId}}"></infoList>
+        </view>
+    </view>
+    <view wx:if="{{isShowNotDataTitle}}" class="notData">
+        暂无数据
+    </view>
+</view>

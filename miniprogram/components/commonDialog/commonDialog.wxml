@@ -1,0 +1,16 @@
+<!--components/commonDialog/commonDialog.wxml-->
+  <!-- catchtouchmove="preventTouchMove" hidden="{{maskFlag}}" -->
+  <cover-view class="common_mask_bg">
+  <cover-view class="common_mask">
+  <cover-view class="common_close_btn"></cover-view>
+  <cover-view class="common_mask_content_box_bg">
+    <cover-view class="common_mask_content_box">
+    <cover-view class="common_mask_con_logo">
+    </cover-view>
+    <cover-view class="common_mask_con_text">一见倾心</cover-view>
+    <cover-view class="common_mask_sub_text">恭喜获得新勋章一见倾心</cover-view>
+    <cover-view class="common_mask_btn">点击查看</cover-view>
+    </cover-view>
+  </cover-view>
+  </cover-view>
+  </cover-view>

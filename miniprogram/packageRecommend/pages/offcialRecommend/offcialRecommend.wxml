@@ -1,0 +1,39 @@
+<!--pages/recommend/offcialRecommend/offcialRecommend.wxml-->
+<notificationDialog id="notificationDialog" /> 
+<view class="officalRecommend_box">
+  <view class="officalRecommend_title">当前为官方推荐产品</view>
+  <view class="officalRecommend_title" style="margin-bottom:48rpx;">这是官方为您推荐的明星产品，
+您也可以点击下方<text style="color:{{themeColor}}">“店主自定义推荐”</text>，完成您自己的推荐。</view>
+  <view class="officalRecommend_single_box" wx:for="{{offList}}" wx:key="index"  bindtap="goH5Detail"  data-item="{{item}}" >
+    <view class="officalRecommend_radio">
+      <checkbox  data-index="{{index}}" checked="{{item.check}}"  data-item="{{item}}" catchtap="check" />
+    </view>
+    <view class="officalRecommend_products">
+        <view class="picture">
+        <image src="{{item.itemInfo.itemImage}}"></image>
+        </view>
+        <view class="introduce">
+          <view class="introduce-title">{{item.itemInfo.itemName}}</view>
+          <view class="original-price">
+          <text class="retail">零售价</text>
+          <text class="retail-price">¥{{item.itemInfo.itemPrice[0].salePrice}}</text>
+          </view>
+          <view class="special-price">
+          <text class="discount" style="background:{{themeColor}}">星级价</text>
+          <text class="discount-price" style="color:{{themeColor}}">¥{{item.itemInfo.itemPrice[2].salePrice}}</text>
+          </view>
+        </view>
+    </view>
+  </view>
+  <!-- 底部按钮组合 -->
+  <view class="officalRecommend_btns_box">
+    <view class="officalRecommend_btns_radio">
+      <checkbox  bindtap="selectAll" checked="{{check}}"/>
+    </view>
+    <view class="officalRecommend_btns_text">
+    全选
+    </view>
+    <view class="officalRecommend_diy_btn" bindtap="toRecommend" style="color:{{themeColor}};border:none;background:{{themeColor+10}}">店主自定义推荐</view>
+    <view class="officalRecommend_submit_btn" bindtap="putRecommend" style="background:{{themeColor}};">确认推荐</view>
+  </view>
+</view>

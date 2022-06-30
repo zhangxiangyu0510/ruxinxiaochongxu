@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "infoList":"/components/commonInfoList/commonInfoList"
+  },
+  "navigationBarTitleText": "月新增粉丝"
+}

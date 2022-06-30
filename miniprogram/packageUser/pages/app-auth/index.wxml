@@ -1,0 +1,52 @@
+<commonToast  wx:if="{{errorText.length}}" bindHideToast="bindHideToast" innerText="{{errorText}}"></commonToast>
+<view class="login_box">
+<!-- 手机弹窗 -->
+<view class="phoneDialog_bg" wx:if="{{showPhoneDialog1}}">
+<view class="phone_dialog">
+<view class="dialog_text">您未授权手机号，请先授权手机号</view>
+<view class="dialog_btns">
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" bindtap="closeDialog">取消</button></view>
+<view style="width:2rpx;height:100rpx;background: #f1f1f1;"></view>
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" style="color:skyblue" open-type="getPhoneNumber" data-num="1" bindgetphonenumber="getPhoneNumber">确认授权</button></view>
+</view>
+</view>
+</view>
+<view class="phoneDialog_bg"  wx:if="{{showPhoneDialog2}}">
+<view class="phone_dialog">
+<view class="dialog_text" style="font-weight: normal;">当前账号尚未绑定手机号，是否使用当前授权手机号进行绑定</view>
+<view class="dialog_btns">
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" bindtap="closeDialog" style="font-weight: normal;">暂不绑定</button></view>
+<view style="width:2rpx;height:100rpx;background: #f1f1f1;"></view>
+<view class="single_btn"><button class="mini-btn" hover-class="btn-hover" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-num="2" style="font-weight: normal;color: skyblue;">确认绑定</button></view>
+</view>
+</view>
+</view>
+<indexDialog show="{{showSingleStop}}" maskClosable="{{false}}" bindbuttontap="tapDialogButton" title="友情提示" buttons="{{[{text: '知道了'}]}}">
+    <view class="index_dialog_title">当前卡号处于终止状态，请您再接再厉先成为如新的业务代表，如新NU店欢迎您</view>
+</indexDialog>
+<view class="login_img">
+    <!-- <image src="../../images/icons/login_img.png" mode="widthFix"></image> -->
+    <image src="../../images/icons/login_newImg.png" mode="widthFix"></image>
+    <view class="login_content">
+        <image class="left_logos" src="data:image/svg+xml,{{logo}}" mode="widthFix"></image>
+        <!-- <image class="left_logos" src="data:image/svg+xml,{{logo}}" mode="widthFix"></image> -->
+        <!-- <image class="center_Rectangle946" src="data:image/svg+xml,{{Rectangle946}}" mode="widthFix"></image>
+        <image class="right_Group" src="data:image/svg+xml,{{Group}}" mode="widthFix"></image> -->
+    </view>
+</view>
+<view class="controls_box">
+  <radio-group>
+    <label class="radio" catchtap='radioChange'>
+      <radio  value="r1" checked="{{checked}}" />
+    </label>
+    <view class="controls_title">已阅读并同意<view class="text_spe_control" bindtap="goProtocol" data-index="0">《如新用户注册协议》</view>和<view class="text_spe_control" bindtap="goProtocol" data-index="1">《隐私协议》</view></view>
+    </radio-group>
+
+  </view>
+  <view class="controls_btns">
+    <button class="wechat_btn" hover-class="btn-hover" wx:if="{{!checked}}" bindtap="isAgree">微信一键登录</button>
+    <button class="wechat_btn" hover-class="btn-hover" wx:if="{{checked}}" bindtap="goLogin">微信一键登录</button>
+    <!-- <button type="primary" class="wechat_btn" wx:if="{{checked&&isNewUser=='true'}}" hover-class="btn-hover"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" lang="zh_CN">微信一键登录</button> -->
+    <button type="default" plain="true" class="other_btn" hover-class="btn-hover" bindtap="goOtherLogin">CN号/证件号/手机号登录</button>
+  </view>
+</view>

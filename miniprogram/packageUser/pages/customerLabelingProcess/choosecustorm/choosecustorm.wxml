@@ -1,0 +1,94 @@
+<view class="setlabel">
+    <notificationDialog id="notificationDialog" /> 
+  <view class="clist_header_input">
+    <image class="clist_hIcon" src="/images/icons/search.svg" alt=""></image>
+    <input bindblur="goodsSearch" class="clist_hInput" type="text" placeholder="搜索" placeholder-class="clist_hPl" />
+  </view>
+
+
+  <view class="concernedCustorm">
+    <view class="clist_center" bindtap="openOrClose">
+
+      <text class="clist_ccText">注册顾客</text>
+      <view class="clist_ccArrow">
+        <image wx:if="{{!ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text class="openOrClose">{{ellipsis?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsis?'clist_center2':'clist_center1'}}">
+      <mp-cells ext-class="cellsBox" title="">
+        <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+          <view class="checkBoxAll" wx:for="{{checkboxItems}}" wx:key="value" wx:if="{{!item.isSelected}}">
+
+            <mp-checkbox class="mpCheckBox" label="{{}}" value="{{item.userId}}" checked="{{item.checked}}">
+            </mp-checkbox>
+            <image src="{{item.avatar}}" class="checkImg"></image>
+            <text class="checkText">{{item.nickname}}</text>
+          </view>
+
+        </mp-checkbox-group>
+      </mp-cells>
+
+
+
+    </view>
+  </view>
+  <view class="retailconcernedCustorm">
+    <view class="clist_center" bindtap="openOrCloseRetail">
+
+      <text class="clist_ccText">零售顾客</text>
+      <view class="clist_ccArrow">
+        <image wx:if="{{!ellipsisRetail}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsisRetail}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text class="openOrClose">{{ellipsisRetail?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsisRetail?'clist_center4':'clist_center3'}}">
+      <mp-cells ext-class="cellsBox" title="">
+        <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange1">
+          <view class="checkBoxAll" wx:for="{{checkboxItems1}}" wx:key="value" wx:if="{{!item.isSelected}}">
+
+            <mp-checkbox class="mpCheckBox" label="{{}}" value="{{item.userId}}" checked="{{item.checked}}">
+            </mp-checkbox>
+            <image src="{{item.avatar}}" class="checkImg"></image>
+            <text class="checkText">{{item.nickname}}</text>
+          </view>
+
+        </mp-checkbox-group>
+      </mp-cells>
+    </view>
+  </view>
+  <view class="notconcernedCustorm">
+    <view class="clist_center" bindtap="openOrClose1">
+
+      <text class="clist_ccText">星级顾客</text>
+      <view class="clist_ccArrow">
+        <image wx:if="{{!ellipsis1}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsis1}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text class="openOrClose">{{ellipsis1?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsis1?'clist_center4':'clist_center3'}}">
+      <mp-cells ext-class="cellsBox" title="">
+        <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange2">
+          <view class="checkBoxAll" wx:for="{{checkboxItems2}}" wx:key="value" wx:if="{{!item.isSelected}}">
+
+            <mp-checkbox class="mpCheckBox" label="{{}}" value="{{item.userId}}" checked="{{item.checked}}">
+            </mp-checkbox>
+            <image src="{{item.avatar}}" class="checkImg"></image>
+            <text class="checkText">{{item.nickname}}</text>
+          </view>
+
+        </mp-checkbox-group>
+      </mp-cells>
+    </view>
+  </view>
+
+  <view class="btnBox">
+    <button bindtap="save" class="save" style="background-color: {{themeColor}};">保 存</button>
+  
+  </view>
+
+
+</view>

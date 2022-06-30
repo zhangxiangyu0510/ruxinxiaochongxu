@@ -1,0 +1,274 @@
+/* pages/ucenter/productClassification/productClassification.wxss */
+.storeRanking {
+  background-color: #fcfcfc;
+  padding: 48rpx 32rpx;
+}
+
+.storeRanking .topButs {
+  display: flex;
+  align-items: center;
+
+}
+
+.storeRanking .record .tobs {
+  display: flex;
+  align-items: center;
+  margin-top: 50rpx;
+
+}
+
+.storeRanking .record {
+  margin-bottom: 32rpx;
+}
+
+.record_explain{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24rpx;
+    height: 34rpx;
+    margin-bottom: 16rpx;
+    line-height: 34rpx;
+    color: #7F7F7F;
+}
+
+.storeRanking .record .tobs .item {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  color: #404040;
+  margin-right: 48rpx;
+  font-size: 40rpx;
+
+}
+
+.storeRanking .record .tobs .item:nth-child(4) {
+  margin-right: 0rpx;
+}
+
+.storeRanking .record .tobs .changeItem {
+  font-weight: 600;
+  position: relative;
+}
+
+.storeRanking .record .tobs .changeItem::after {
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #7340B3;
+  position: relative;
+}
+
+.storeRanking .topButs .butItem {
+  padding: 12rpx 20rpx;
+  background: rgba(115, 64, 179, 0.1);
+  border-radius: 8rpx;
+  margin-right: 32rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #7340B3;
+}
+
+.storeRanking .topButs .changeButItem {
+  color: #FFFFFF;
+}
+
+.storeRanking .topButs .changeButItem .icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+
+
+}
+
+.storeRanking .shopkeeperInfo {
+  margin-bottom: 196rpx;
+}
+
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem {
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .photograph {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  margin-right: 30rpx;
+
+}
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .name {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    color: #333333;
+    height: 44rpx;
+}
+
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .icon {
+  width: 43rpx;
+  height: 36rpx;
+  margin-top: 14rpx;
+}
+
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .rightIcon {
+  width: 42rpx;
+  height: 46rpx;
+}
+
+.storeRanking .shopkeeperInfo .fans {
+  margin-top: 55rpx;
+  height: 86rpx;
+}
+
+.storeRanking .shopkeeperInfo .fans .number {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72rpx;
+  color: #7A4AB7;
+  display: inline-block;
+  margin-left: 32rpx;
+}
+
+.storeRanking .shopkeeperInfo .fans .nameText {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #4A4A4A;
+  display: inline-block;
+}
+
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .ranking {
+    width: 60rpx;
+    height: 48rpx;
+    position: relative;
+}
+.storeRanking .shopkeeperInfo .shopkeeperInfoItem .rankingNum{
+    position: absolute;
+    width: 40rpx;
+    height: 28rpx;
+    left: 13rpx;
+    top: 9.5rpx;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20rpx;
+    line-height: 28rpx;
+    color: #FFFFFF;
+}
+.storeRanking .footerCard {
+  background: #FFFFFF;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 24px 24px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 52rpx 32rpx;
+  left: 0;
+  box-sizing: border-box;
+  height: 196rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #4A4A4A;
+}
+
+.storeRanking .footerCard text {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #7A4AB7;
+}
+
+.flex {
+  display: flex;
+}
+
+.align_i_conter {
+  align-items: center;
+
+}
+
+.ju-con-sb {
+  justify-content: space-between;
+}
+
+.ju-con-sa {
+  justify-content: space-around;
+}
+
+.storeRanking .page-body {
+  width: 90%;
+
+
+}
+
+.storeRanking .pickerModel {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+
+}
+
+.storeRanking .container {
+  padding: 104rpx 0;
+  width: 750rpx;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  height: 500rpx;
+  background-color: #fff;
+  left: 0;
+  border-radius: 24px 24px 0px 0px;
+  box-sizing: content-box;
+}
+.storeRanking .bottons{
+  position: absolute;
+  bottom: 104rpx;
+  left: 142rpx;
+}
+
+.storeRanking .bottons .cancel {
+  padding: 0rpx 72rpx;
+  background: rgba(247, 247, 247, 0.9);
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 34rpx;
+  text-align: center;
+  color: #7340B3;
+  margin-right: 32rpx;
+  border-radius: 8rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.storeRanking .bottons .confirm {
+  background: #7340B3;
+  border-radius: 8rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 34rpx;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 72rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+
+
+}

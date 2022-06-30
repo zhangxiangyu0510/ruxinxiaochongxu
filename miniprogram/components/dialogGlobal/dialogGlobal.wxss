@@ -1,0 +1,441 @@
+
+.common_dialog_bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99999999999999999;
+}
+/* 补全信息 */
+.addInfo_dialog{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.common_close_btn{
+  height:35rpx;
+  width:35rpx;
+  position: absolute;
+  background-color: skyblue;
+  right:120rpx;
+  top:22%;
+  transform: translateY(-50%);
+  z-index:1000000;
+}
+.addInfo_dialog_content_box_bg{
+  position:absolute;
+  width: 496rpx;
+  /* height: 723rpx; */
+  background: #FFF;
+  border-radius: 16rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.addInfo_dialog_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  padding:80rpx 48rpx 48rpx 48rpx;
+  box-sizing: border-box;
+}
+.addInfo_dialog_con_logo{
+  height:200rpx;
+  width:200rpx;
+  /* background: skyblue; */
+  margin:0 auto;
+}
+.addInfo_dialog_con_logo image{
+  height:200rpx;
+  width:200rpx;
+  display: block;
+}
+.addInfo_dialog_con_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48rpx;
+  line-height: 68rpx;
+  color: #333333;
+  text-align: center;
+  margin:48rpx 0;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.addInfo_dialog_sub_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  height:40rpx;
+  text-align: center;
+  color: #888888;
+}
+.addInfo_dialog_btn{
+  border-radius: 8rpx;
+  width:100%;
+  height:84rpx;
+  margin-top: 56rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  line-height: 84rpx;
+  text-align: center;
+  color: #FFF;
+}
+/* 徽章弹窗 */
+.getBradge_dialog{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.common_close_btn{
+  height:35rpx;
+  width:35rpx;
+  position: absolute;
+  background-color: skyblue;
+  right:120rpx;
+  top:22%;
+  transform: translateY(-50%);
+  z-index:1000000;
+}
+.getBradge_dialog_content_box_bg{
+  position:absolute;
+  width: 508rpx;
+  /* height: 723rpx; */
+  background: #FFF;
+  border-radius: 16rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.getBradge_dialog_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  padding:48rpx;
+  box-sizing: border-box;
+}
+.getBradge_dialog_con_logo{
+  height:320rpx;
+  width:320rpx;
+  background: skyblue;
+  margin:0 auto;
+}
+.getBradge_dialog_con_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48rpx;
+  line-height: 68rpx;
+  color: #404040;
+  text-align: center;
+  margin:32rpx 0;
+}
+.getBradge_dialog_sub_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #888888;
+}
+.getBradge_dialog_btn{
+  background: #FF5E00;
+  border-radius: 8rpx;
+  width:100%;
+  height:72rpx;
+  margin-top: 72rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color: #FFF;
+}
+/* 隐私弹窗 */
+.protocol_dialog{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.protocol_dialog_content_box_bg{
+  position:absolute;
+  width: 600rpx;
+  /* height: 723rpx; */
+  background: #FFF;
+  border-radius: 14rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.protocol_dialog_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  padding:40rpx;
+  box-sizing: border-box;
+}
+.protocol_title{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36rpx;
+  line-height: 52rpx;
+  text-align: center;
+  color: #404040;
+  margin-bottom:40rpx;
+}
+.protocol_con{
+  height:514rpx;
+  /* overflow-y: auto; */
+  font-family: 'PingFang SC' !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 28rpx !important;
+  line-height: 40rpx !important;
+  color: #4A4A4A !important;
+  /* margin:48rpx 0; */
+  word-break: break-all;
+}
+.protocol_btn_box{
+  margin-top: 40rpx;
+  height:98rpx;
+  display: flex;
+  width:100%;
+  /* background: red; */
+  justify-content: space-between;
+}
+.pro_btn1,.pro_btn2{
+  height:98rpx;
+  width:242rpx !important;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 98rpx !important;
+  text-align: center !important;
+  color: #4A4A4A;
+  text-align: center;
+  padding:0 !important;
+  margin:0 !important;
+  background: #4A4A4A10;
+  border-radius: 8rpx;
+}
+.spe_btn2{
+  height:98rpx;
+  width:242rpx !important;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 98rpx !important;
+  text-align: center !important;
+  text-align: center;
+  padding:0 !important;
+  margin:0 !important;
+  color: #FFF !important;
+}
+/* 客服电话 */
+.phone_dialog{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.phone_dialog_content_box_bg{
+  position:absolute;
+  /* height: 496rpx; */
+  width:598rpx;
+  /* margin:0 76rpx; */
+  /* height: 723rpx; */
+  background: #FFF;
+  border-radius: 16rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+}
+.phone_dialog_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  /* padding:48rpx; */
+  box-sizing: border-box;
+}
+.phone_dialog_title{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38rpx;
+  line-height: 52rpx;
+  text-align: center;
+  color: #404040;
+  padding-top:36rpx;
+}
+.phone_dialog_phone{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  color: #4A4A4A;
+  margin:48rpx 0;
+  text-align: center;
+}
+.phone_btn_box{
+  height:95rpx;
+  display: flex;
+  width:100%;
+  /* background: red; */
+  justify-content: space-between;
+  border-top:2rpx solid #f1f1f1;
+  box-sizing: border-box;
+}
+.phone_btn1,.phone_btn2{
+  height:95rpx;
+  /* width:192rpx !important; */
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 95rpx !important;
+  text-align: center !important;
+  color: #4A4A4A;
+  text-align: center;
+  padding:0 !important;
+  margin:0 !important;
+  background: transparent;
+  border-radius: 8rpx;
+
+}
+.phone_line{
+  border: 0.5px solid #f1f1f1;
+}
+.common_notice_mask_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999999; 
+  }
+  .common_notice_mask{
+    position: relative;
+    height:100%;
+    width:100%;
+  }
+  .common_notice_btn{
+    height:32rpx;
+    width:32rpx;
+    position: absolute;
+    background-color: skyblue;
+    left:120rpx;
+    top:22%;
+    transform: translateY(-50%);
+    /* z-index:1000000; */
+  }
+  .common_notice_text{
+    height:20rpx;
+    width:80rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    position: absolute;
+    left:166rpx;
+    top:22%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index:1000000;
+  }
+  .common_notice_close_btn{
+    height:32rpx;
+    width:32rpx;
+    position: absolute;
+    background-color: skyblue;
+    right:120rpx;
+    top:22%;
+    transform: translateY(-50%);
+    z-index:1000000;
+  }
+  
+  .common_notice_mask_content_box_bg{
+    position:absolute;
+    width: 508rpx;
+    /* height: 723rpx; */
+    background: #FFF;
+    border-radius: 16rpx;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }
+  .common_notice_mask_content_box{
+    position:relative;
+    height:100%;
+    width:100%;
+    padding:48rpx;
+    box-sizing: border-box;
+  }
+  .common_notice_mask_con_logo{
+    height:264rpx;
+    width:284rpx;
+    /* background: skyblue; */
+    margin:0 auto;
+    margin-top: 28rpx;
+    margin-bottom: 60rpx;
+  }
+  .common_notice_mask_con_text{
+    width: 306rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36rpx;
+    text-align: center;
+    color: #404040;
+    margin: 0 auto;
+    /* margin:48rpx 0 44rpx 0; */
+  }
+  .common_notice_mask_con_text text{
+    color: #7340B3;
+  
+  }
+  .common_notice_mask_btn{
+    /* background: #7340B3; */
+    border-radius: 8rpx;
+    width:100%;
+    height:84rpx;
+    margin-top: 32rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-size: 28rpx;
+    line-height: 84rpx;
+    text-align: center;
+    color: #FFF;
+  }
+  .skinPeeler{
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28rpx;
+    text-align: center;
+    color: #4A4A4A;
+    margin-top: 20rpx;
+  }
+  .award{
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28rpx;
+    text-align: center;
+    color: #4A4A4A;
+  
+  }

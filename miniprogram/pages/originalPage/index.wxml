@@ -1,0 +1,12 @@
+
+<view class="originalPage">
+   <sharePosters bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}' h5GoodsInfo='{{h5IntroductionData}}' wxQrcodeData='{{wxQrcodeData}}'></sharePosters>
+  <!-- <indexDialog show="{{noLogin}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '去登录'}]}}">
+    <view class="index_dialog_title">注册成为星际顾客，领取好礼！</view>
+</indexDialog> -->
+  <view class="bg">
+    <image src="data:image/svg+xml,{{bg}}"></image>
+  </view>
+  <!-- 客服 -->
+  <showPhoneDialog phone="{{customerPhone}}" showCallPhone="{{hasPhone}}" bindmiddleChangePosition="positionevent" componentType="2"></showPhoneDialog>
+</view>

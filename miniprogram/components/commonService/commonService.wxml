@@ -1,0 +1,16 @@
+<!--components/commonService/commonService.wxml-->
+<view class="commonService" style="{{ 'bottom:'+bottom}}">
+<view class="commonService_share" bindtap="openSharePosters"  style="{{ bgColor ? bgColor : 'background:'+themeColor}}" wx:if="{{showShare}}">
+<view class="commonService_bg"><image class="commonService_bg_img" src="{{imageUrl}}/icons/service_bg.svg" mode="widthFix"></image></view>
+<view class="commonService_icon"><image class="add_image" src="{{imageUrl}}/icons/share.svg" mode="widthFix"></image></view>
+<view class="commonService_text">分享</view>
+</view>
+<view class="commonService_customer" bindtap="onService" style="{{ bgColor ? bgColor : 'background:'+themeColor}}" wx:if="{{showCustomer}}">
+  <view class="commonService_bg"><image 
+    class="commonService_bg_img" src="{{imageUrl}}/icons/service_bg.svg" mode="widthFix"></image></view>
+  <view class="commonService_icon"><image class="add_image" src="{{imageUrl}}/icons/customer.svg" mode="widthFix"></image></view>
+  <view class="commonService_text">客服</view>
+</view>
+<!-- 拨打电话 -->
+<showPhoneDialog phone="{{customerPhone}}" showCallPhone="{{hasPhone}}" bindmiddleChangePosition="positionevent" componentType="2"></showPhoneDialog>
+</view>

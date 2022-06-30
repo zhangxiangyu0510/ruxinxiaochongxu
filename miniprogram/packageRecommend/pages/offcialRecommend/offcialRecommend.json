@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "commonNoticeDialog": "../../../components/commonNoticeDialog/commonNoticeDialog"
+  },
+  "navigationBarTitleText": "官方推荐",
+  "enablePullDownRefresh":false
+}

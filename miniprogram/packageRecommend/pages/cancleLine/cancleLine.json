@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+      "recommendList": "../../../components/recommendList/recommendList",
+      "sharePosters": "../../../components/canvasdrawer/canvasdrawer",
+      "commonNoticeDialog": "../../../components/commonNoticeDialog/commonNoticeDialog"
+  },
+  "navigationBarTitleText": "取消推荐产品",
+  "enablePullDownRefresh": false
+}

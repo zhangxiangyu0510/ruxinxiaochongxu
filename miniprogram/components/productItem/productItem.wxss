@@ -1,0 +1,160 @@
+.productItem {
+  overflow: hidden;
+  width: calc(100% - 48rpx);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.productItem_item {
+  width: 340rpx;
+  background-color: white;
+  height: 544rpx;
+  /* float: left; */
+  margin-bottom: 22rpx;
+  border-radius: 16rpx;
+
+}
+
+/* .productItem_item:nth-child(odd) {
+  margin-right: 22rpx;
+} */
+
+.productItem_item_header {
+  width: 340rpx;
+  height: 340rpx;
+  /* background-color: #7340B3; */
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+
+
+}
+
+.productItem_item_header image {
+  width: 340rpx;
+  height: 340rpx;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+
+}
+
+.productItem_item_body {
+  height: 204rpx;
+  width: calc(100% - 48rpx);
+  margin: 18rpx auto 0;
+
+}
+
+.productItem_text1 {
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #333333;
+  text-align: left;
+  min-height: 66rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.productItem_box_left1 {
+  height: 32rpx;
+  margin-top: 16rpx;
+
+}
+
+.productItem_box_left1_text1 {
+  height: 32rpx;
+  /* width: 72rpx; */
+  text-align: center;
+  background-color: #7F7F7F;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  border-radius: 4rpx;
+  float: left;
+  padding: 0 6rpx;
+
+  /* identical to box height, or 100% */
+
+  color: #FFFFFF;
+}
+
+.productItem_box_left1_text2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  float: left;
+  margin-left: 16rpx;
+  /* identical to box height */
+
+  /* 辅助文字 */
+  color: #888888;
+}
+
+.productItem_box_left2 {
+  height: 32rpx;
+  margin-top: 10rpx;
+
+}
+
+.productItem_box_left1_text3 {
+  height: 32rpx;
+  /* width: 72rpx; */
+  text-align: center;
+  /* background-color: #7340B3; */
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  border-radius: 4rpx;
+  float: left;
+  padding: 0 6rpx;
+
+  /* identical to box height, or 100% */
+
+  color: #FFFFFF;
+}
+
+.productItem_box_left1_text4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  float: left;
+  margin-left: 16rpx;
+  /* identical to box height */
+
+  /* 辅助文字 */
+  color: #440099;
+}
+
+.productItem_box_left {
+  float: left;
+}
+
+.productItem_box_right {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  /* background-color: #7340B3; */
+  padding: 14rpx;
+  margin-right: 10rpx;
+  margin-top: 34rpx;
+  position: relative;
+  left: 24rpx;
+}

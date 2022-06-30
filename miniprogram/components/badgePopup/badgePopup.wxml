@@ -1,0 +1,23 @@
+<!--components/badgePopup/badgePopup.wxml-->
+<view class="toast" wx:if="{{isShow}}">
+    <view class="toast-content">
+        <view class="close" bindtap="toClose">
+            <image src="{{closeIcon}}" alt=""/>
+        </view>
+        <view class="content">
+            <view class="bgImg"></view>
+            <view class="content-img">
+                <image src="{{imgUrl}}"></image>
+            </view>
+            <view class="theme-text">
+                <text>一见倾心</text>
+            </view>
+            <view class="negative-text">
+                <text >恭喜获得新徽章</text>
+            </view>
+            <view class="button textCenter" bindtap="toDetail">
+                <text>点击查看</text>
+            </view>
+        </view>
+    </view>
+</view>

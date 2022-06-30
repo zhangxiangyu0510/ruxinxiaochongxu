@@ -1,0 +1,31 @@
+
+<!--index.wxml-->
+<view class="sharePostersBox" wx:if="{{visiable}}">
+<view class="closeDialog" bindtap="closeDialog">X</view>
+    <view class="sharePosters">
+        <image src="{{shareImage}}" class="share-image"></image>
+        <!-- 按钮 -->
+        <view class="sharebut">
+            <view class="butItem" >
+                <view class="img_box"></view>
+                <button class="shareBtn" hover-class="none" open-type='share'>
+                <view class="but_text">分享给好友</view>
+                </button>
+            </view>
+            <view class="longString"></view>
+            <view bindtap="eventSave" class="butItem" catchtap="createShareImage">
+                <view class="img_box"></view>
+                <view class="but_text">保存到相册</view>
+            </view>
+
+        </view>
+        <!-- <view class="btn-wrap">
+            <button class="btn" bindtap="eventSave">保存到本地</button>
+        </view> -->
+
+    </view>
+
+
+
+
+</view>

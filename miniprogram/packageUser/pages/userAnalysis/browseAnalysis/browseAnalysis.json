@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "f2": "/components/wx-f2",
+        "no-data": "../../../../components/noData"
+    },
+    "navigationBarTitleText": "浏览统计"
+}

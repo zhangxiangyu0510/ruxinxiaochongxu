@@ -1,0 +1,180 @@
+{
+    "setting": {
+        "compileHotReLoad": true,
+        "urlCheck": false
+    },
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "projectname": "nuskin-myshop-user-miniprogram",
+    "libVersion": "2.24.1",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/ucenter/canvasdrawer/canvasdrawer/canvasdrawer",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/ucenter/canvasdrawer/share/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/ucenter/sharePosters/sharePosters",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "商品分析",
+                    "pathName": "pages/ucenter/commodityAnalysis/commodityAnalysis",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "组合推荐",
+                    "pathName": "packageRecommend/pages/hybridRecommend/hybridRecommend",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "我的nu币",
+                    "pathName": "packageRecommend/pages/NUcoin/myNUcoin/myNUcoin",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "顾客详情",
+                    "pathName": "pages/customerLabelingProcess/custormDetail/custormDetail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "我的推荐",
+                    "pathName": "packageRecommend/pages/myRecommend/myRecommend",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "分类选择",
+                    "pathName": "packageRecommend/pages/productClassification/productClassification",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "确认推荐",
+                    "pathName": "packageRecommend/pages/confirmRecommended/confirmRecommended",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "确认推荐",
+                    "pathName": "packageRecommend/pages/confirmRecommended/confirmRecommended",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "顾客列表",
+                    "pathName": "packageUser/pages/customerLabelingProcess/customerlist/customerlist",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "packageRecommend/pages/cancleLine/cancleLine",
+                    "query": "refresh=true",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "用户分析",
+                    "pathName": "packageUser/pages/userAnalysis/userAnalysis",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "packageRecommend/pages/offcialRecommend/offcialRecommend",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "顾客统计",
+                    "pathName": "packageRecommend/pages/customersStatistics/customersStatistics",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "店铺换肤",
+                    "pathName": "packageRecommend/pages/changeSkin/changeSkin",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "访客分析",
+                    "pathName": "packageUser/pages/userAnalysis/visitorsAnalysis/visitorsAnalysis",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "浏览统计",
+                    "pathName": "packageUser/pages/userAnalysis/browseAnalysis/browseAnalysis",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "顾客分析",
+                    "pathName": "packageRecommend/pages/customersStatistics/customersStatistics",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "未下单商品",
+                    "pathName": "packageRecommend/pages/customersStatistics/noBuyGoods/noBuyGoods",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "设置店铺信息",
+                    "pathName": "packageUser/pages/peopleConfiguration/peopleConfiguration",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "packageRecommend/pages/myRecommend/myRecommend",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

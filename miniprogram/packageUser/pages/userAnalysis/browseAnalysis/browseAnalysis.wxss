@@ -1,0 +1,288 @@
+/* pages/userAnalysis/browseAnalysis/browseAnalysis.wxss */
+page {
+  min-height: 100%;
+  background: #fafafa;
+  /* padding-bottom:108rpx; */
+}
+.browseAnalysis{
+  margin:40rpx 32rpx;
+}
+.topText{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24rpx;
+  color: #7F7F7F;
+  margin-top:32rpx;
+
+}
+.date{
+  display: flex;
+  vertical-align: bottom;
+}
+.month{
+  padding: 12rpx 20rpx;
+  background: rgba(115, 64, 179, 0.1);
+  border-radius: 8rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  text-align: center;
+
+/* identical to box height, or 150% */
+
+
+color: #7340B3;
+}
+.change{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: 300;
+font-size: 24rpx;
+line-height: 34rpx;
+/* identical to box height */
+margin-left:16rpx;
+
+text-align: right;
+
+color: #4A4A4A;
+vertical-align: bottom;
+margin-top:30rpx;
+}
+.content{
+  background:#fff;
+  margin-top:32rpx;
+  padding:32rpx;
+  border-radius: 16rpx;
+}
+.data{
+  display: flex;
+  justify-content: space-between;
+
+}
+.gray{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  /* identical to box height */
+  color: #808080;
+
+}
+.number{
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72rpx;
+  line-height: 72rpx;
+  /* identical to box height, or 100% */
+
+  text-align: center;
+
+  color: #7A4AB7;
+}
+.number text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+.title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  /* identical to box height */
+  color: #404040;
+  margin-top:48rpx;
+}
+.chart{
+  height:700rpx;
+  /* border:1px solid #ccc; */
+  margin-top:32rpx;
+}
+.tab{
+  width:100%;
+  overflow-x: scroll;
+  margin-top:64rpx;
+}
+.tabContent{
+  white-space: nowrap;
+}
+.tabItem{
+  display: inline-block;
+  margin-right:48rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #404040;
+}
+.active{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  /* identical to box height */
+
+
+  color: #404040;
+
+}
+.active .line{
+  display:block;
+
+
+}
+.line{
+  width: 40rpx;
+  height: 2px;
+  left: 92rpx;
+  background: #7340B3;
+  border-radius: 14rpx;
+  text-align:center;
+  margin-left:calc(50% - 20rpx);
+  display: none;
+}
+.visitItem{
+  margin-top:32rpx;
+  width: 630rpx;  
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding:32rpx;
+  display: flex;
+
+}
+.awata{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  background:#ff0;
+}
+.awata image{
+  width:100rpx;
+  height:100rpx;
+}
+.text{
+  margin-left:12px;
+ 
+}
+.textTop{
+  display: flex;
+
+}
+.textTop image{
+  width:30px;
+  height:30px;
+}
+.textBottom{
+  display: flex;
+}
+.nickName{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32rpx;
+  line-height: 44rpx;
+
+  color: #333333;
+}
+.visitTime{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #333333;
+}
+.visitNumber{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  float:right;
+  margin-left:36rpx;
+  color: #7F7F7F;
+}
+/* .visitList{
+  display: none;
+} */
+.goodsItem{
+  background: #fff;
+  padding:32rpx;
+  margin-top:32rpx;
+  border-radius: 16rpx;
+  display: flex;
+
+}
+.goodsPic{
+  width:200rpx;
+  height:200rpx;
+  background: #7340B3;
+  border-radius: 16rpx;
+}
+.nomore{
+  text-align: center;
+  font-size: 24rpx;
+  color:#ccc;
+  margin-top:20rpx;
+}
+.goodsPic image{
+  width:100%;
+  height:100%;
+  border-radius: 16rpx;
+
+}
+.right{
+  margin-left:24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.goodsName{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+
+
+  color: #4A4A4A;
+}
+.goodsNumber{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+
+
+  color: #808080;
+}
+.goodsNumber text{
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height, or 100% */
+
+  text-align: center;
+
+  color: #7A4AB7;
+  margin-left:8rpx;
+  vertical-align: bottom;
+}

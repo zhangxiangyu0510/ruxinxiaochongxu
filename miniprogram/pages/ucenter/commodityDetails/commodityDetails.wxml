@@ -1,0 +1,59 @@
+<!--pages/ucenter/commodityDetails/commodityDetails.wxml-->
+<view class="commodityDetails">
+  <view class="topButs flex ju-con-sb">
+    <view class="picker flex align_i_end">
+      <view class="but ">2022年1月</view>
+      <view class="cutText">切换月份</view>
+    </view>
+    <view class="allBut">
+      开店以来
+    </view>
+  </view>
+
+  <view class="shoppData">
+    <view class="shoppItem" bindtap="toDetailsPage">
+      <view class="flex">
+        <view class="picture">
+          <img src="" alt="" />
+        </view>
+        <view class="shoppname">
+          <view class="name">如新滢白三效修护霜（暂为非直销品）如新滢白三效修护霜（暂为非直销品）如新滢白三效修护霜（暂为非直销品）</view>
+          <view class="tpyeBut introduce flex">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简</view>
+        </view>
+      </view>
+      <view class="fans flex ju-con-sa">
+        <view>
+          <view class="number">500</view>
+          <view class="nameText">商品销量</view>
+        </view>
+        <view>
+          <view class="number">500</view>
+          <view class="nameText">购买用户数量</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="title">
+    购买顾客
+  </view>
+  <view class="clientData">
+    <view class="clientItem flex ju-con-sb" wx:for="{{3}}">
+      <view class="flex">
+        <view class="userPicture"></view>
+        <view class="nickname">
+          <view class="name">昵称1</view>
+          <view class="number"> 购买数量：1</view>
+        </view>
+
+      </view>
+      <view class="rightIcon flex">
+      <img src="" alt=""/>
+      <img src="" alt=""/>
+
+      </view>
+
+    </view>
+  </view>
+
+
+</view>

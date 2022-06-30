@@ -1,0 +1,11 @@
+
+<!-- 底部footer -->
+<view class="common_footer_bg">
+  <view class="common_footer">
+      <view class="common_footer_single_box" wx:for="{{tabbar}}" wx:key="index" data-index="{{index}}" bindtap="goSwitch">
+        <view class="footer_icon"></view>
+        <view class="{{index==currentIndex?'footer_active_text':'footer_normal_text'}}">{{item.name}}</view>
+      </view>
+  </view>
+</view>
+

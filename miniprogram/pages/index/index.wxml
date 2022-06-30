@@ -1,0 +1,214 @@
+<!-- headers -->
+<dialogGlobal binddialogevent="dialogevent" shopKeeperInfo="{{userInfo}}" componentType="3"/>
+<dialogGlobal binddialogevent="dialogevent" bind:openSharePosters="upgradeOpenShare" componentType="1" id="dialogProtocol"/>
+
+<commonGlobal/>
+<notificationDialog id="notificationDialog" />
+<commonService bind:openSharePosters="openSharePosters" binddialogevent="dialogevent" wx:if="{{hasUserInfo}}"></commonService>
+<!-- <commonNoticeDialog></commonNoticeDialog> -->
+<!-- 等级提升弹框 -->
+<!-- <commonUpgradeDialog wx:if="{{UpgradeDialogShow}}" bind:openSharePosters="upgradeOpenShare"></commonUpgradeDialog> -->
+  <sharePosters bind:closeSharePosters="closeSharePosters"  wx:if="{{showShare}}"
+  painting='{{painting}}' wxQrcodeData='{{wxQrcodeData}}'></sharePosters>
+  <view  style="background: url(http://{{bg}});"  bindtouchstart = "handletouchtart" >
+
+  <commonHeader titleText='如新NU店' bg="{{showBg}}"></commonHeader>
+  <view class="index" wx:if="{{showDialog}}">
+  <!-- <view class="index">  -->
+
+<!-- <view class="header_box"> -->
+<!-- </view> -->
+<!-- 更新弹窗 -->
+<!-- <indexDialog show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '否'}, {text: '是'}]}}">
+    <view class="index_dialog_title">是否不再提示本次产品模版的更新内容</view>
+</indexDialog> -->
+  <!-- swpier -->
+  <!-- <view>
+  <image src="http://usr/tmp_base64src.png"></image>
+  </view> -->
+  <view class="index_swiper_box_bg" >
+  <view class="index_swiper_box">
+    <swiper class="index_swiper_banner" indicator-dots="true"  interval="{{bannerTime}}" autoplay="{{indexTopSwiper}}" circular="true" indicator-color="{{themeColor+40}}" indicator-active-color="{{themeColor}}">
+            <swiper-item wx:for="{{banners}}" wx:key="index">
+
+                    <image src="{{item.bannerItemVo.imageUrl}}" mode="widthFix" data-banner="{{item.bannerItemVo}}" bindtap="toLink"></image>
+                    <!-- </navigator> -->
+            </swiper-item>
+        </swiper>
+  </view>
+  </view>
+  <!-- 登录 -->
+  <view wx:if="{{hasUserInfo}}">
+  <!-- item -->
+  <view class="index_items_box">
+  <view bindtap="navigationTo" data-item='{{item}}' class="single_item_bg" wx:for="{{items}}" wx:key="index">
+    <view class="single_item_icon">
+      <image  class="headIcon" src="data:image/svg+xml,{{item.icon}}"></image>
+    </view>
+    <view class="single_item_text">{{item.name}}</view>
+  </view>
+  </view>
+  <!-- 相同的margin -->
+  <view class="index_common_margin_box">
+  <!-- notice -->
+    <view class="index_notices">
+    <view class="notice_icon">
+    <image class="notice_image" src="data:image/svg+xml,{{noticeIcon}}"></image>
+    </view>
+    <view class="notice_text">
+    <!-- 如新圣诞节预售活动正式开始啦！ -->
+    <swiper vertical="true" autoplay="{{noticeScroll}}" circular="true" interval="5000" duration='1000' easing-function="easeInOutCubic" snap-to-edge="true">
+    <block wx:for='{{noticeList}}' wx:key='index'>
+      <navigator url="/packageUser/pages/noticeDetail/noticeDetail?id={{item.id}}" open-type="navigate">
+          <swiper-item>
+            <view  class="notice_swiper_item" >{{item.title}}
+              <view class="notice_right">
+              <image class="notice_right_icon" src="{{imageUrl}}/icons/right_index.svg"></image>
+            </view>
+            </view>
+
+          </swiper-item>
+        </navigator>
+    </block>
+  </swiper>
+    </view>
+
+    </view>
+    <!-- storekeeper -->
+    <view class="index_storekeeper">
+      <view class="storekeeper_title">
+        <view class="title_left">我的NU店</view>
+        <view class="title_right" bindtap="goNews">查看详情</view>
+      </view>
+      <view class="storekeeper_main_image" style="background: {{themeColor}};border-color: {{themeColor}};">
+        <view class="infos_bg"><image src="{{imageUrl}}/icons/nu_bg.svg" mode="widthFix"></image></view>
+        <view class="storekeeper_avater">
+        <view class="storekeeper_avater_img" style="border-color: {{themeColor}};">
+          <image src="{{userInfo.partnerProfile&&userInfo.partnerProfile.avatar?userInfo.partnerProfile.avatar:'data:image/svg+xml,'+deAvatar}}"></image>
+        </view>
+        </view>
+        <view class="storekeeper_infos">
+        <view class="infos_name">{{userInfo.partnerProfile&&userInfo.partnerProfile.nickname}}</view>
+        <view class="infos_phone">
+        <view class="phone_icon"><image src="{{imageUrl}}/icons/index_phone.svg"></image></view>
+        <view class="phone_number" wx:if="{{fontFamily}}" style="font-family: {{fontFamily}};">{{userInfo.partner&&userInfo.partner.mobile}}</view>
+        </view>
+        </view>
+        <view class="storekeeper_age">
+        <view class="store_age"><image src="{{imageUrl}}/icons/shopAge.svg" mode="widthFix"></image></view>
+        <view class="age_number" wx:if="{{fontFamily}}" style="font-family: {{fontFamily}};">{{userInfo.shopTime||0}}<view class="age_year"><image src="{{imageUrl}}/icons/year.svg" mode="widthFix"></image></view></view>
+        </view>
+        <view class="storekeeper_level" bindtap="handleMylevel" wx:if="{{achievementInfoList.length}}">
+        <view class="storekeeper_level_bg"></view>
+        <image src="{{achievementInfoList[0].levelImage}}"></image></view>
+      </view>
+      <view class="storekeeper_fans_box">
+      <view class="storekeeper_common_box fans" bindtap="goFansList" style="border-color: {{themeColor}};">
+        <view class="fans_bg">
+          <image src="data:image/svg+xml,{{fansBg}}"></image>
+      </view>
+      <view class="fans_name">
+      <image src="data:image/svg+xml,{{myFans}}"></image>
+      </view>
+      <view class="current_fans_box">
+      <view class="fans_text">当前粉丝数</view>
+      <view class="fans_number"  style="border-color: {{themeColor}};font-family: {{fontFamily}};color: {{themeColor}};">{{userInfo.shop&&userInfo.shop.fansCount||0}}</view>
+      </view>
+      </view>
+      <view class="storekeeper_common_box marks" bindtap="toMyBarder" style="border-color: {{themeColor}};">
+        <view class="marks_name" style="color: {{themeColor}};">
+          <image class="marks_name" src="data:image/svg+xml,{{myBadge}}"></image>
+          </view>
+        <view class="get_marks_box">
+        <view class="marks_text">最近获得<view style="color: {{themeColor}};font-weight: 500;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">{{lastLightingData.name?lastLightingData.name:''}}</view></view>
+        <view class="marks_icon">
+        <image src="{{lastLightingData.lighting?lastLightingData.imageAchieve:lastLightingData.imageNoAchieve}}"></image>
+        </view>
+        </view>
+
+        </view>
+      </view>
+
+
+    </view>
+    <!-- import customer -->
+    <view class="index_customer">
+      <view class="customer_title">重点顾客</view>
+      <view wx:if="{{importCustomers.length>0}}">
+        <view class="single_customer_box" style="height:{{item.lastOrderInfo?'378rpx':''}}" wx:for="{{importCustomers}}" wx:key="index">
+          <view class="single_customer_infos" >
+            <view class="customer_avater" data-item="{{item}}" bindtap="toCustomerDetail"><image mode="widthFix" src="{{item.avatar?item.avatar:'data:image/svg+xml,'+deAvatar}}"></image></view>
+            <!-- {{item.avatar}} -->
+            <view class="customer_name_box">
+              <!-- {{item.enPoint||0}} -->
+              <!-- {{item.toExpireEnPoint||0}} -->
+              <view class="customer_name">{{item.nickname}}</view>
+              <view class="customer_EN_text" bindtap="goEnHome">en悦家可用点数<text style="color: #333;margin:0 8rpx;">{{item.enPoint}}</text>即将失效点数<text style="margin-left:8rpx;">{{item.toExpireEnPoint}}</text></view>
+            </view>
+            <view class="customer_icon" wx:if="{{item.identityTag=='STAR_CUSTOMERS'}}">
+            <image class="icon_left" src="data:image/svg+xml,{{zuo}}"></image>
+            <view class="icon_right">
+            <image class="customer_right_bg" src="data:image/svg+xml,{{you}}"></image>
+            <view class="icon_right_text">星级顾客</view></view>
+
+            </view>
+            <view class="customer_icon" wx:if="{{item.identityTag=='RETAIL_CUSTOMERS'}}">
+            <image class="icon_left" src="data:image/svg+xml,{{zuo1}}"></image>
+            <view class="icon_right">
+            <image class="customer_right_bg" src="data:image/svg+xml,{{you1}}"></image>
+            <view class="icon_right_text">零售顾客</view></view>
+            </view>
+            <view class="customer_icon" wx:if="{{item.identityTag=='ORDINARY_CUSTOMERS'}}">
+            <image class="icon_left" src="data:image/svg+xml,{{zuo2}}"></image>
+            <view class="icon_right">
+            <image class="customer_right_bg" src="data:image/svg+xml,{{you2}}"></image>
+            <view class="icon_right_text">注册顾客</view></view>
+
+            </view>
+          </view>
+          <view class="customer_before_order">最近一次订单（仅限如新NU店订单）</view>
+          <view class="customer_before_products" bindtap="goOrderDetail" data-id="{{item.lastOrderInfo.orderNo}}" data-userId="{{item.userId}}" wx:if="{{item.lastOrderInfo}}">
+          <view class="customer_before_products_left">
+          <view class="customer_single_products" wx:for="{{item.lastOrderInfo.images}}"  wx:for-item="picItem">
+            <image mode="widthFix" src="{{picItem}}"></image>
+          </view>
+          </view>
+          <view class="customer_before_products_right">
+          <view class="products_right_price" style="color: {{themeColor}};"><text class="products_right_price_text">订单金额：</text>¥{{item.lastOrderInfo.price}}</view>
+          <view class="products_right_common_style">共{{item.lastOrderInfo.productAcount}}件</view>
+
+          <view class="products_right_common_style">下单时间：{{item.lastOrderInfo.orderTime}}</view>
+          <view class="products_right_common_style">已过<text style="color: #333;padding:0 4rpx;">{{item.lastOrderInfo.distanceOrderTime}}</text>天</view>
+          </view>
+          </view>
+          <view class="noOrderText" wx:else>
+          暂无订单信息
+          </view>
+        </view>
+        <view style="text-align:center;font-size:24rpx;color:#ccc;" wx:if="{{noMore}}">没有更多了</view>
+    </view>
+    <view style="text-align:center;font-size:24rpx;color:#ccc;" wx:if="{{isLoad}}">加载中</view>
+
+       <view wx:if="{{empty&&importCustomers.length==0}}" >
+       <view class="pic">
+       <image mode="widthFix" src="{{imageUrl}}/icons/nologin.png"></image>
+      </view>
+
+      <view class="emptyText">暂无重点顾客</view>
+
+       </view>
+  </view>
+  </view>
+  </view>
+  <!-- 未登录 -->
+  <view class="index_noauth_box" wx:if="{{!hasUserInfo}}">
+  <view class="index_noauth_icon"><image src="{{imageUrl}}/icons/nologin.png" mode="widthFix"></image></view>
+  <!-- <button  class="index_noauth_text" style="color: {{themeColor}};" wx:if="{{canIUse}}" open-type="getUserInfo" bindtap='getUserProfile'>登录</button> -->
+  <view class="index_noauth_text" style="color: {{themeColor}};" bindtap="goLogin">登录</view>
+
+  </view>
+
+
+</view>
+
+</view>

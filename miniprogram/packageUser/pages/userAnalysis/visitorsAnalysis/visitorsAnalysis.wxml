@@ -1,0 +1,74 @@
+<!--pages/userAnalysis/visitorsAnalysis/visitorsAnalysis.wxml-->
+<commonHeader titleText='访客分析'></commonHeader>
+<view class="visitorsAnalysis">
+  <view class="date">
+    <view class="month" style="color:{{themeColor}};background:{{themeColor+10}}">
+     {{date}}
+    </view>
+    <view class="change">
+      <picker start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month"> 切换月份</picker>
+
+    </view>
+
+  </view>
+  <view class="topText">该数据仅供参考，数据截止日期：{{lastDay}}</view>
+  <view class="chart1Wrap wrap">
+    <view class="top">
+      <view class="title">
+        访客分析
+      </view>
+    </view>
+    <view class="content">
+      <view class="chart">
+        <!-- <view class="text" wx:if="{{customNum}}"><view style="font-weight:500;">{{customNum}}</view><view>人</view></view> -->
+
+        <f2 class="f2-chart" onInit="{{onInitChart}}" />
+      </view>
+    </view>
+  </view>
+  <view class="tab">
+    <view class="tabContent">
+      <view wx:for="{{tabList}}" wx:key="index" 
+      bindtap="changeTobs" data-item="{{item}}"
+      data-index="{{index}}"  class="tabItem {{index==active?'active':''}}" 
+      >
+      {{item.name}}  
+      <view class="line" style="background:{{themeColor}}" ></view>
+      <!-- </view> -->
+    
+      </view>
+    </view>
+  </view>
+  <view class="visitList" wx:if="{{personList.length>0}}">
+    <view class="visitItem" wx:for="{{personList}}">
+      <view class="awata">
+        <image src="{{item.userImage}}">
+        </image>
+      </view>
+      <view class="text">
+        <view class="textTop">
+          <view class="nickName">{{item.userName}}</view>
+          <!-- <view class="customer_icon">
+            <image class="icon_left" src="data:image/svg+xml,{{zuo}}"></image>
+            <view class="icon_right">
+              <image class="customer_right_bg" src="data:image/svg+xml,{{you}}"></image>
+              <view class="icon_right_text">星级顾客</view>
+            </view>
+
+          </view> -->
+
+        </view>
+        <view class="textBottom">
+          <view class="visitTime">最近访问时间：{{item.lastViewTime}}</view>
+          <view class="visitNumber">访问次数：{{item.cntView}}</view>
+        </view>
+      </view>
+    </view>
+    <view  class="nomore" wx:if="{{noMore}}">没有更多了</view>
+  
+ 
+  </view>
+  <view  class="nomore" wx:if="{{loadding}}">加载中...</view>
+  <no-data wx:if="{{empty}}" titleText="暂无顾客"></no-data>
+
+</view>

@@ -1,0 +1,35 @@
+<!--packageRecommend/pages/changeSkin/changeSkin.wxml-->
+<view class="changeSkin">
+  <view class="tabList">
+  <view class="scroll">
+    <view class="tabItem" wx:for="{{styleList}}" data-index="{{index}}" 
+    data-item="{{item}}"bindtap="changeActive">
+      <view class="pic">
+        <image src="{{item.primaryBackgroundImage.indexOf('http')>=0?item.primaryBackgroundImage:'https://'+item.primaryBackgroundImage}}"></image>
+        <view wx:if="{{isUse==item.id}}" class="bottom">使用中</view>
+        <view class="moren" wx:if="{{index==0}}">
+          <image src="{{item.posterImage.indexOf('http')>=0?item.posterImage:'https://'+item.posterImage}}"></image>
+        </view>
+        <view class="content" wx:else style="border:1px solid {{item.primaryColor}};color:{{item.primaryColor}}" >{{item.name}}</view>
+      </view>
+      <view class="text" style="{{item.id==selectSkin.id?'font-weight:900':''}}">{{item.name}}</view>
+    </view>
+    </view>
+  </view>
+  <view class="egList">
+  <view class="egScroll" wx:if="{{egList.length>0}}" style="width:{{egList.length*428+'rpx'}}">
+    <view class="egItem" wx:for="{{egList}}">
+      <image src="{{'//'+item}}"></image>
+    </view>
+  </view>
+  <view wx:else>
+  <no-data titleText="暂无皮肤预览图片">
+  </no-data>
+  </view>
+  </view>
+  <view class="myRecommend_bottom_btn_bg">
+    <view class="myRecommend_bottom_btn" wx:if="{{showUse}}"  style="background: #7F7F7F;">使用中</view>
+    <view class="myRecommend_bottom_btn" wx:else bindtap="toRecommend" style="background: {{themeColor}};">立即使用</view>
+  </view>
+
+</view>

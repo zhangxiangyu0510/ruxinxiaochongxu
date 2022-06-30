@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "f2": "/components/wx-f2"
+    }
+}

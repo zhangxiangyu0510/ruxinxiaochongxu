@@ -1,0 +1,10 @@
+<!--packageRecommend/pages/storeAnalysisPages/numberBuyers/numberBuyers.wxml-->
+<view class="numberBuyers">
+    <view class="statement-title">该数据仅供参考，数据截止日期：{{currentDate}}</view>
+    <view wx:for="{{listData}}" class="common-list" wx:key="index">
+        <infoList infoData="{{item}}" bindtap="toDetail" data-id="{{item.userId}}"></infoList>
+    </view>
+    <view wx:if="{{isShowNotDataTitle}}" class="notData">
+        暂无数据
+    </view>
+</view>

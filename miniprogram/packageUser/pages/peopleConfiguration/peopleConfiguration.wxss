@@ -1,0 +1,111 @@
+/* miniprogram/pages/ucenter/peopleConfiguration/index.wxss */
+.my_peopleConfiguration {
+  padding: 0rpx 32rpx;
+  background: #fafafa;
+  height: 100vh;
+  color: #333333;
+  padding-bottom: 44rpx;
+
+}
+
+.my_peopleConfiguration .people_topText {
+  padding-top: 48rpx;
+  font-size: 24rpx;
+  margin-bottom: 8rpx;
+
+}
+
+.my_peopleConfiguration .textDataItem {
+  /* padding: 31rpx 0; */
+  padding-top: 32rpx;
+  padding-bottom: 31rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.textDataItem:last-child{
+  border-bottom: 1rpx solid transparent;
+}
+
+.my_peopleConfiguration .textDataItem .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my_peopleConfiguration .textDataItem .remark {
+  color: #888888;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+
+}
+.my_peopleConfiguration .config_lable {
+  font-size: 32rpx;
+  line-height: 24px;
+  height: 48rpx;
+  color: #4A4A4A;
+}
+
+.wx-switch-input{
+  width: 102rpx !important;
+  height: 62rpx !important;
+  border: 4rpx solid #E5E5E5 !important;
+  border-radius: 40rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 62rpx !important;
+  border: 4rpx solid #E5E5E5 !important;
+  border-radius: 40rpx !important;
+  background: #FFFFFF !important;
+}
+
+/*绿色样式（true的样式）*/
+.wx-switch-input::after {
+  width: 54rpx !important;
+  height: 54rpx !important;
+  background-color: #FFFFFF !important;
+  border: 1rpx solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06)
+}
+.switchCustom{
+  height: 62rpx;
+  /* transform:rotate(180deg) */
+}
+
+
+
+/* 去掉按钮边框 */
+
+.butText {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+
+}
+
+.my_peopleConfiguration .bootom_but {
+  position: fixed;
+  bottom: 92rpx;
+  /* margin-top: 416rpx;
+  margin-bottom: 92rpx; */
+  /* padding: 0 32rpx; */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.my_peopleConfiguration .bootom_but .confirm_but {
+  background-color: #FF5E00;
+  width: 328rpx;
+  margin-left: 30rpx;
+}
+
+.my_peopleConfiguration .bootom_but .cancel_but {
+  width: 328rpx;
+}
+
+
+.my_peopleConfiguration .bootom_but .confirm_but .butText {
+  color: #efefef;
+}

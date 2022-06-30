@@ -1,0 +1,98 @@
+/* components/common_noticeDialog/common_noticeDialog.wxss */
+.common_notice_mask_bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99999; 
+}
+.common_notice_mask{
+  position: relative;
+  height:100%;
+  width:100%;
+}
+.common_notice_btn{
+  height:32rpx;
+  width:32rpx;
+  position: absolute;
+  background-color: skyblue;
+  left:120rpx;
+  top:22%;
+  transform: translateY(-50%);
+  /* z-index:1000000; */
+}
+.common_notice_text{
+  height:20rpx;
+  width:80rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  position: absolute;
+  left:166rpx;
+  top:22%;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index:1000000;
+}
+.common_notice_close_btn{
+  height:32rpx;
+  width:32rpx;
+  position: absolute;
+  background-color: skyblue;
+  right:120rpx;
+  top:22%;
+  transform: translateY(-50%);
+  z-index:1000000;
+}
+
+.common_notice_mask_content_box_bg{
+  position:absolute;
+  width: 508rpx;
+  /* height: 723rpx; */
+  background: #FFF;
+  border-radius: 16rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.common_notice_mask_content_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  padding:48rpx;
+  box-sizing: border-box;
+}
+.common_notice_mask_con_logo{
+  height:400rpx;
+  width:400rpx;
+  background: skyblue;
+  margin:0 auto;
+}
+.common_notice_mask_con_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36rpx;
+  line-height: 52rpx;
+  color: #404040;
+  text-align: center;
+  margin:48rpx 0 44rpx 0;
+}
+.common_notice_mask_btn{
+  background: #FF5E00;
+  border-radius: 8rpx;
+  width:100%;
+  height:72rpx;
+  margin-top: 48rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color: #FFF;
+}

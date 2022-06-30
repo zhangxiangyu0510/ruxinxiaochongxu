@@ -1,0 +1,130 @@
+
+  <!-- 有推荐 -->
+  <!-- <commonNoticeDialog/> -->
+  <view>
+    <!-- 分享 -->
+    <commonGlobal/>
+    <notificationDialog id="notificationDialog" /> 
+    <sharePosters goodsInfo='{{goodsInfo}}' bind:closeSharePosters="closeSharePosters" wx:if="{{showShare}}" painting='{{painting}}' wxQrcodeData='{{wxQrcodeData}}'></sharePosters>
+<view wx:if="{{show}}" class="myRecommend_box {{currentTab==0?'spe_padding':''}}">
+    <!-- 提示 -->
+    <view  class="myRecommend_notice" wx:if="{{currentTab==0}}">
+      <view class="text-box" >
+        <view class="picture">
+          <image src="data:image/svg+xml,{{point}}" mode="widthFix"></image>
+        </view>
+        <view class="text">最多推荐单品上限20个</view>
+      </view>
+    </view>
+    <view class="myRecommend_have_box">
+      <!-- tab -->
+      <view class="myRecommend_tab">
+        <view class="myRecommend_item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">已推荐<view class="{{currentTab==0 ? 'border_bottom_on' : 'border_bottom_off'}}" style="background:{{currentTab==0 ?themeColor:''}} ;"></view>
+        </view>
+        <view class="myRecommend_item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已取消推荐<view class="{{currentTab==1 ? 'border_bottom_on' : 'border_bottom_off'}}" style="background:{{currentTab==1 ?themeColor:''}} ;"></view>
+        </view>
+        <!-- 右边切换图标 -->
+        <view class="myRecommend_right_tools" bindtap="toAdjust" wx:if="{{currentTab==0&&recommends.length>0&&type==1}}">
+          <view class="myRecommend_tools_icon">
+            <image src="../../images/reco_change.svg" mode="widthFix"></image>
+          </view>
+          <view class="myRecommend_tools_text">调整产品排序</view>
+          <!-- <view class="myRecommend_tools_text">退出产品排序</view> -->
+        </view>
+        <view class="myRecommend_right_tools" bindtap="toList" wx:if="{{currentTab==0&&recommends.length>0&&type==4}}">
+          <view class="myRecommend_tools_icon">
+            <image src="/packageRecommend/images/tuichu.svg" mode="widthFix"></image>
+          </view>
+          <view class="myRecommend_tools_text">退出产品排序</view>
+          <!-- <view class="myRecommend_tools_text">退出产品排序</view> -->
+        </view>
+      </view>
+      <!-- 已推荐 -->
+      <view wx:if="{{currentTab==0}}" style="margin:0 32rpx" >
+      <view wx:if="{{recommends.length>0}}" >
+        <recommendList showOperate="{{type}}" bind:openSharePosters="openSharePosters"
+         recommends="{{recommends}}" bind:getList="refreshList"></recommendList>
+      </view>
+        <view wx:else>
+          <view class="empty">
+          <image  src="{{emptyBg}}"></image>
+          <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image>
+        </view>
+        <view class="text">
+          <view>您还没有推荐产品</view>
+          <view>快来点击下方按钮开始设置您心目中的明星产品吧!</view>
+        </view>
+         </view>
+
+        <view class="myRecommend_bottom_btn_bg" wx:if="{{type==1}}">
+          <view class="myRecommend_bottom_btn" bindtap="toRecommend"  style="background: {{themeColor}};">单品推荐</view>
+        </view>
+      </view>
+
+      <!-- 已下架 -->
+      <view class="myRecommend_already_out_box" wx:if="{{currentTab==1&&outShow}}">
+      <view wx:if="{{outRecommends.length>0}}">
+        <view class="myRecommend_already_out_single" wx:for="{{outRecommends}}" wx:key="index">
+          <view class="myRecommend_already_out_time" wx:if="{{item.title}}" bindtap="goOutRecommendList">{{item.title}}</view>
+          <view style="margin:0 32rpx;">
+            <recommendList bind:openSharePosters="openSharePosters"  showOperate="2" recommends="{{item.list}}" bind:getList="refreshList"></recommendList>
+          </view>
+        </view>
+
+          <!-- <view class="myRecommend_have_single_two" style="margin:0 32rpx;" >
+      <view class="outRecommend_commodity">
+        <view class="picture">
+        </view>
+        <view class="introduce">
+          <view class="introduce-title">如新滢白三效修护霜（暂为非直销品）</view>
+          <view class="original-price">
+          <text class="retail">零售价</text>
+          <text class="retail-price">¥1200</text>
+          </view>
+          <view class="special-price">
+          <text class="discount">星级价</text>
+          <text class="discount-price">¥1100</text>
+          </view>
+        </view>
+      </view>
+      <view class="operate-box">
+        <view class="up-and-down">
+        <view class="picture"></view><text class="operate">下架产品</text>
+        </view>
+        <view class="share-sort">
+        <view class="picture"></view><text class="operate">分享产品</text>
+        </view>
+      </view>
+      </view> -->
+
+        </view>
+        <view wx:if="{{outRecommends.length==0&&show}}">
+        <view class="empty">
+          <image  src="{{emptyBg}}"></image>
+          <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image>
+        </view>
+        <view class="text">
+          <view>您还没有取消推荐产品</view>
+        </view>
+         </view>
+
+      </view>
+    </view>
+
+
+
+  </view>
+  <!-- 没有推荐 -->
+  <!-- <view class="myRecommend_none_box" wx:else>
+    <view class="myRecommend_none_icon"></view>
+    <view class="myRecommend_none_text">
+      <view>暂无推荐产品</view>
+      <view>点击下方按钮开始推荐产品吧！</view>
+    </view>
+    <view class="myRecommend_bottom_btn_bg">
+      <view class="myRecommend_bottom_btn" bindtap="toRecommend" style="background: {{themeColor}};">单品推荐</view>
+    </view>
+  </view> -->
+
+
+</view>

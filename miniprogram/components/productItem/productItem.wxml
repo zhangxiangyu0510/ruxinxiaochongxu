@@ -1,0 +1,47 @@
+<view class="productItem">
+
+  <view  data-item="{{item}}" class="productItem_item" wx:if="{{item.itemPrice && item.itemPrice.length!=0}}" wx:for="{{goodsListData}}" wx:key="index">
+<!-- style="background-color: {{themeColor}};" -->
+    <view  data-item="{{item}}" class="productItem_item_header">
+    <image src="{{item.itemImage || item.product.itemImage}}"></image>
+    </view>
+    <view class="productItem_item_body">
+
+      <view class="productItem_text1">
+        {{item.itemName || item.product.itemName}}
+      </view>
+
+      <view class="productItem_box">
+        <view wx:if="{{userLevel!=3}}" class="productItem_box_left">
+          <view class="productItem_box_left1">
+            <view  style="background-color: {{themeColor}};" class="productItem_box_left1_text3" >零售价</view>
+            <text style="color:{{themeColor}}" class="productItem_box_left1_text4" >¥{{item.retailPrice || 0}}</text>
+          </view>
+          <view class="productItem_box_left2">
+
+            <view class="productItem_box_left1_text1">星级价</view>
+            <text  class="productItem_box_left1_text2">¥{{  item.starPrice || 0}}</text>
+          </view>
+
+        </view>
+        <view wx:else class="productItem_box_left">
+          <view class="productItem_box_left1">
+
+            <view class="productItem_box_left1_text1">零售价</view>
+            <text class="productItem_box_left1_text2">¥{{item.retailPrice || 0}}</text>
+          </view>
+          <view class="productItem_box_left2">
+
+            <view style="background-color: {{themeColor}};" class="productItem_box_left1_text3">星级价</view>
+            <text style="color:{{themeColor}}" class="productItem_box_left1_text4">¥{{  item.starPrice || 0}}</text>
+          </view>
+
+        </view>
+        <image data-item="{{item}}"  class="productItem_box_right" src="data:image/svg+xml,{{shoppingTrolleyIcon}}"></image>
+
+
+
+      </view>
+    </view>
+  </view>
+</view>

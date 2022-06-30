@@ -1,0 +1,33 @@
+/* packageUser/pages/noticeDetail/noticeDetail.wxss */
+@import "../wxParse/wxParse.wxss";
+
+rich-text .rich-img {
+  width:100% ;
+  height: auto ;
+  
+  }
+  .textRich{
+    padding:32rpx;
+
+  }
+  .title{
+    
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36rpx; 
+
+  }
+  .time{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #999999;
+  width:100%;
+  /* text-align: right; */
+  margin-top:26rpx;
+  margin-bottom:20rpx;
+  }
+
+

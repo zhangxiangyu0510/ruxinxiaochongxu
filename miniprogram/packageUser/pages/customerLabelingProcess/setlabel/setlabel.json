@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-checkbox-group": "/components/checkbox-group/checkbox-group",
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "mp-checkbox": "/components/checkbox/checkbox",
+    "mp-cells": "/components/cells/cells"
+  },
+  "navigationBarTitleText": "设置笔记"
+
+}

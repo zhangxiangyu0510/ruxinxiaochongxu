@@ -1,0 +1,9 @@
+<!--pages/ucenter/myShopTransition/myShopTransition.wxml-->
+<!-- 分享过渡 -->
+<view class="my_shop_transition">
+ <view class="transition_icon">
+ <img src="" alt=""/>
+ </view>
+ <view class="transition_text">正在分享中，请您耐心等待...</view>
+
+</view>

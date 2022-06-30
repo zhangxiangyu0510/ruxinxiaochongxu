@@ -1,0 +1,116 @@
+<!--pages/ucenter/productClassification/productClassification.wxml-->
+<view class="storeRanking">
+  <!-- 顶部搜索 -->
+  <notificationDialog id="notificationDialog" /> 
+  <view class="topButs">
+    <view class="butItem changeButItem flex align_i_conter"bindtap="openModel2" style="background: {{themeColor}};">{{provinceTextValue}}<image class="icon" src="{{imageUrl}}/icons/switch_icon.svg"></image>
+    </view>
+    <view class="butItem" bindtap="getYear" style="background: {{isCheckedYear?themeColor:''}};color: {{isCheckedYear?'#ffffff':themeColor}};">{{yearTextValue}}</view>
+    <view class="butItem" style="background: {{isCheckedQuarter?themeColor:''}};color: {{isCheckedQuarter?'#ffffff':themeColor}};" bindtap="openActionSheet">{{quarterTextValue}}</view>
+    <view class="butItem" style="background: {{isCheckedMonth?themeColor:''}};color: {{isCheckedMonth?'#ffffff':themeColor}};" bindtap="openModel">{{monthTextValue}}</view>
+    
+  </view>
+  <view class="record">
+    <view class="tobs">
+      <view wx:for="{{changeTobs}}" bindtap="changeTobs" data-item="{{item.sortNo}}" class="{{tabsIndex==item.sortNo ? 'item changeItem' : 'item'}}">{{item.sortDesc}}</view>
+      <!-- <view bindtap="changeTobs" data-item="2" class="{{tabsIndex==2 ? 'item changeItem' : 'item'}}">转化率</view>
+      <view bindtap="changeTobs" data-item="3" class="{{tabsIndex==3 ? 'item changeItem' : 'item'}}">人气</view>
+      <view bindtap="changeTobs" data-item="4" class="{{tabsIndex==4 ? 'item changeItem' : 'item'}}">店铺等级</view> -->
+    </view>
+  </view>
+  <view class="record_explain">该数据仅供参考，数据截止日期：{{explainTime}}</view>
+  <view class="shopkeeperInfo">
+    <view class="shopkeeperInfoItem" wx:for="{{shopkeeperInfoData}}">
+      <view class="flex ju-con-sb">
+        <view class="flex">
+          <image class="photograph" src="{{item.avatar}}"></image>
+          <view>
+            <view class="name">{{item.realName?item.realName:''}}</view>
+              <image class="icon" src="{{imageUrl}}/icons/level_{{item.shopLevel>7?7:item.shopLevel}}.png"></image>
+          </view>
+        </view>
+        <view>
+          <view class="flex">
+            <image class="rightIcon" src="data:image/svg+xml,{{zuo}}"></image>
+            <image class="ranking" style="width: {{item.shopRanking>9?'66rpx':''}};" src="data:image/svg+xml,{{ranking_bg}}">
+                <view class="rankingNum">No.{{item.shopRanking}}</view>
+            </image>
+            <!-- <view class="ranking">
+              <img src="" alt="" />
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view class="fans">
+          <view class="nameText">{{listName[tabsIndex]}}</view>
+          <view class="number" style="font-size: {{tabsIndex==4?'48rpx':''}};color: {{themeColor}};">{{item.orderValue?item.orderValue:''}}</view>
+        <!-- <view>
+          <view class="number"> 5.0</view>
+          <view class="nameText">店铺评分</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="footerCard">
+    <!-- <view>我的排名 <text>No.1</text></view> -->
+    <view wx:if="{{myRanking%1===0}}">
+        我的排名：<text style="color: {{themeColor}};">{{myRanking?'No.'+myRanking:''}}</text>
+    </view>
+    <view wx:else="{{myRanking%1!==0}}">
+        我的排名： <text style="color: {{themeColor}};">{{myRanking?'超过  No.'+myRanking+'店主':''}}</text>
+    </view>
+  </view>
+
+  <mp-actionSheet bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{groups}}" title="">
+  </mp-actionSheet>
+  <!-- 月份控件 -->
+  <view wx:if="{{pickerModelShow}}" class="pickerModel" bindtap="cancelModel" catchtouchmove="return">
+    <view class="container" catchtap="openModel">
+      <view class="page-body">
+        <!-- <view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</view> -->
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 170px;" value="{{value}}" bindchange="bindChange">
+          <picker-view-column>
+            <view wx:for="{{years}}" wx:key="{{years}}" style="line-height: 50px; text-align: center;">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{months}}" wx:key="{{months}}" style="line-height: 50px; text-align: center;">{{item}}月</view>
+          </picker-view-column>
+          <!-- <picker-view-column>
+          <view wx:for="{{days}}" wx:key="{{days}}" style="line-height: 50px; text-align: center;">{{item}}日</view>
+        </picker-view-column> -->
+          <picker-view-column>
+            <view class="icon-container">
+              <!-- <image class="picker-icon" src="../lib/daytime.png" /> -->
+            </view>
+            <view class="icon-container">
+              <!-- <image class="picker-icon" src="../lib/night.png" /> -->
+            </view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+
+      <view class="bottons flex ">
+        <view catchtap="cancelModel" class="cancel">取消</view>
+        <view catchtap="pickerConfirm" class="confirm">完成</view>
+      </view>
+    </view>
+  </view>
+  <!-- 省份控件 -->
+  <view wx:if="{{provinceModelShow}}" class="pickerModel" bindtap="cancelModel2" catchtouchmove="return">
+    <view class="container" catchtap="openModel2">
+      <view class="page-body">
+        <!-- <view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</view> -->
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 170px;" value="{{value}}" bindchange="bindChange2">
+          <picker-view-column>
+            <view wx:for="{{provinceList}}" wx:key="{{item}}" style="line-height: 50px; text-align: center;">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+
+      <view class="bottons flex ">
+        <view catchtap="cancelModel2" class="cancel">取消</view>
+        <view catchtap="pickerConfirm2" class="confirm">完成</view>
+      </view>
+    </view>
+  </view>
+</view>

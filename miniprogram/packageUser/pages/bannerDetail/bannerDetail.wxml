@@ -1,0 +1,3 @@
+<!--/packageUser/pages/bannerDetail/bannerDetail.wxml-->
+<notificationDialog id="notificationDialog" /> 
+<web-view src="{{url}}"></web-view>

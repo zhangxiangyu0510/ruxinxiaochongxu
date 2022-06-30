@@ -1,0 +1,4 @@
+<image mode="widthFix" src="{{imageUrl}}/icons/nologin.png" class="noFansImg"></image>
+<view style="text-align: center;">
+    <text class="noFans" style="color: {{themeColor}};">{{titleText}}</text>
+</view>

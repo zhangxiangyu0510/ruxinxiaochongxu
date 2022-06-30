@@ -1,0 +1,22 @@
+{
+    "usingComponents": {
+        "commonHeader": "../../components/commonHeader/commonHeader",
+        "commonService": "../../components/commonService/commonService",
+        "commonNoticeDialog": "../../components/commonNoticeDialog/commonNoticeDialog",
+        "sharePosters": "../../components/canvasdrawer/canvasdrawer",
+        "commonGlobal": "../../components/commonGlobal/commonGlobal",
+        "indexDialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+        "commonUpgradeDialog": "../../components/commonUpgradeDialog/commonUpgradeDialog"
+        
+    },
+    "navigationBarTitleText": "",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "navigateToMiniProgramAppIdList": [
+        "wxad1040bcdfcb9bda",
+        "wx417689a96ccc65d6",
+        "wx8a63e3382df92d5b",
+        "wxc179d89468d1a487",
+        "wx57f21fcac8dac900"
+    ]
+}

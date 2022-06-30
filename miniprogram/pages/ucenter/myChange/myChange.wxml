@@ -1,0 +1,90 @@
+<!--pages/ucenter/myChange/myChange.wxml-->
+<view class="myChange">
+  <mp-tabs tabs="{{tabs}}" activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+  </mp-tabs>
+  <!-- 全部兑换 -->
+  <view wx:if="{{activeId==0}}">
+    <view class="allBut">
+      <view class="allgoods">全部产品</view>
+    <image class="iconBox" src="{{imageUrl}}/icons/arrows_below.svg" alt=""></image>
+
+    </view>
+    <view class="NUgoodsbox">
+
+      <view class="NUGoodsItem" wx:for="{{3}}" wx:key="index">
+        <view class="changeTime">
+          <view>兑换时间：2022-01-01</view>
+          <view>数量：1</view>
+        </view>
+        <view class="NUGoodsItemContent">
+          <view class="leftImg"></view>
+          <view class="rightGoodsInfo">
+            <view class="name">星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券</view>
+          </view>
+        </view>
+        <view class="operation">
+          <view class="numbreBox">
+            未使用
+          </view>
+          <view class="viewDetails">查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 百货 -->
+  <view wx:if="{{activeId==1}}">
+    <view class="allButItem">
+      <view bindtap="departmentStoreChange" data-type="{{item.type}}" wx:for="{{departmentStoreData}}" wx:key="index" class="allgoods {{item.type==typeIndex ? 'changeItem':''}}">{{item.name}}</view>
+    </view>
+    <view class="NUgoodsbox">
+
+      <view class="NUGoodsItem" wx:for="{{3}}" wx:key="index">
+        <view class="changeTime">
+          <view>兑换时间：2022-01-01</view>
+          <view>数量：1</view>
+        </view>
+        <view class="NUGoodsItemContent">
+          <view class="leftImg"></view>
+          <view class="rightGoodsInfo">
+            <view class="name">星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券</view>
+          </view>
+        </view>
+        <view class="operation">
+          <view class="numbreBox">
+            配送中
+          </view>
+          <view class="viewDetails">查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 卡券 -->
+  <view wx:if="{{activeId==2}}">
+    <view class="allButItem">
+      <view bindtap="couponChange" data-type="{{item.type}}" wx:for="{{couponData}}" wx:key="index" class="allgoods {{item.type==couponTypeIndex ? 'changeItem':''}}">{{item.name}}</view>
+    </view>
+    <view class="NUgoodsbox">
+      <view class="NUGoodsItem" wx:for="{{3}}" wx:key="index">
+        <view class="changeTime">
+          <view>兑换时间：2022-01-01</view>
+          <view>数量：1</view>
+        </view>
+        <view class="NUGoodsItemContent">
+          <view class="leftImg"></view>
+          <view class="rightGoodsInfo">
+            <view class="name">星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券星巴克中杯饮品电子券</view>
+          </view>
+        </view>
+        <view class="operation">
+          <view class="numbreBox">
+            未使用
+          </view>
+          <view class="viewDetails">查看详情</view>
+          <!-- <view class="viewDetailsTwo">已使用</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

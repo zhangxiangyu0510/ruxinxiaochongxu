@@ -1,0 +1,36 @@
+<!--components/recommendList/recommendList.wxml-->
+<view class="recommend_components_bg">
+<view class="recommend_components_box" wx:for="{{recommends}}" wx:key="index">
+<!-- <view class="recommend_out_time">2022年01月</view> -->
+  <view class="recommend_commodity">
+        <view class="picture">
+        </view>
+        <view class="introduce">
+          <view class="introduce-title">{{item.name}}</view>
+          <view class="original-price">
+          <text class="retail">零售价</text> 
+          <text class="retail-price">¥1200</text>
+          </view>
+          <view class="special-price">
+          <text class="discount">星级价</text> 
+          <text class="discount-price">¥1100</text>
+          </view>
+        </view>
+  </view>
+      <view class="operate-box" wx:if="{{showOperate}}">
+        <view class="up-and-down" bindtap="outProduct" data-item="{{item}}">
+        <view class="picture"></view><text class="operate">下架产品</text>
+        </view>
+        <view class="share-sort">
+        <view class="picture"></view><text class="operate">分享产品</text>
+        </view>
+      </view>
+</view>
+
+</view>
+<!-- 下架产品 -->
+<dialog show="{{pointShow}}" maskClosable="{{false}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '否',extClass:'noBtn'}, {text: '是',extClass:'yesBtn'}]}}">
+    <view class="index_dialog_title">是否下架“{{outProductName}}“</view>
+</dialog>
+
+

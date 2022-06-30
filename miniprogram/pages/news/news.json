@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "noData":"../../components/noData/index",
+    "commonHeader":"../../components/commonHeader/commonHeader",
+    "conversationItem":"../../components/chatConversation/conversation-item/index"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh":false
+}

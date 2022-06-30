@@ -1,0 +1,17 @@
+<view class="fanslist">
+    <notificationDialog id="notificationDialog" />
+    <view wx:if="{{dataArray.length!=0}}">
+        <view class="flist_item" wx:for="{{dataArray}}" wx:key="index">
+        
+            <image wx:if="{{item.profilePhoto}}" src="{{item.profilePhoto}}" class="flist_item_img"></image>
+            <image wx:else="{{!item.profilePhoto}}" src="{{'data:image/svg+xml,'+my_header_avater}}" class="flist_item_img"></image>
+            <view class="flist_item_text" >
+                <text class="flist_item_text1">{{item.fansName}}</text>
+                <text class="flist_item_text2">关注时间：{{item.followTime}}</text>
+            </view>
+        </view>
+    </view>
+    <view wx:else="{{dataArray.length==0}}">
+        <noData titleText='暂无粉丝'></noData>
+    </view>
+</view>

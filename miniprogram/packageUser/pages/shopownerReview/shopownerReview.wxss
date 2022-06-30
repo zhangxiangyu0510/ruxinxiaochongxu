@@ -1,0 +1,28 @@
+/* pages/ucenter/shopownerReview/shopownerReview.wxss */
+.weui-dialog {
+    width: 496rpx;
+    height: 716rpx;
+    border-radius: 16rpx;
+    overflow: unset;
+  }
+  
+  .weui-dialog__title {
+  
+  
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36rpx;
+    line-height: 52rpx;
+  
+    /* identical to box height, or 144% */
+    text-align: center;
+  
+    /* 标题文字 */
+    color: #404040;
+  }
+  
+  .weui-dialog__hd {
+    padding: 48rpx;
+    display: none;
+  }

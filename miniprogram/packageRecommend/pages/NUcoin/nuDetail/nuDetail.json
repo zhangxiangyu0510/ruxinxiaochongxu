@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-tabs": "/components/tabs/index",
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText": "NU币明细"
+}

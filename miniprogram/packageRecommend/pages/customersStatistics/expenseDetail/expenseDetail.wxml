@@ -1,0 +1,98 @@
+<!--pages/customersStatistics/expenseDetail/expenseDetail.wxml-->
+<commonHeader titleText='顾客消费详情'></commonHeader>
+<view class="expenseDetail">
+  <view class="date">
+    <view class="month" style="background: {{themeColor+10}};color:{{themeColor}}">
+      {{date}}
+    </view>
+    <view class="change">
+      <picker start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month"> 切换月份</picker>
+    </view>
+  </view>
+  <view class="topText">该数据仅供参考，数据截止日期：{{lastDay}}</view>
+
+  <view class="person">
+    <view class="awata">
+      <image src="{{image}}"></image>
+    </view>
+    <view class="center">
+     <view class="name">{{name}}</view>
+     <view class="expense">月消费：¥{{monthPay}}</view>
+    </view>
+    <view class="right">
+      <view class="detial">顾客详情</view>
+    </view>
+  </view>
+  <view class="wrap">
+    <view class="title" >消费偏好</view>
+    <view class="chart1">
+      <f2 class="f2-chart" id="container" onInit="{{onInitChart}}" />
+    </view>
+  </view>
+  <view class="wrap">
+    <view class="title" >消费明细 <text>仅限NU店，业绩查询请至星享城</text>
+    </view>
+    <view class="content">
+      <view class="data">
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{item.numOrder}}</view>
+          <view class="text">月订单数</view>
+        </view>
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">¥{{item.amtSales}}</view>
+          <view class="text">月订单金额</view>
+        </view>
+      </view>
+      <view class="chart">
+        <view class="text" wx:if="{{item.amtSalesLastHalfYear}}}">
+        <view style="font-weight:500; color:{{themeColor}}" class="pri"><text>¥</text>{{item.amtSalesLastHalfYear}}</view>
+        <view class="gray">最近半年订单金额</view>
+        </view>
+        <f2 class="chart" id="container" onInit="{{onInitChart1}}" />
+      </view>
+      <view class="data">
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{item.numOrderLastHalfYear}}</view>
+          <view class="text">最近半年订单数</view>
+        </view>
+        <view class="dataItem">
+          <view class="number"  style="color:{{themeColor}}">{{item.lastOrderTime}}</view>
+          <view class="text">最近消费时间</view>
+        </view>
+      </view>
+    
+    </view>
+
+  </view>
+  <view class="tabConten">
+    <view class="tabWrap">
+      <view class="tabItem active" >消费商品
+        <view class="line" style="background: {{themeColor}};"></view>
+      </view>
+    </view>
+    <view class="goodsList" >
+      <view class="goodsItem" wx:for="{{goodsList}}">
+        <view class="top">
+          <view class="pic">
+            <image src="{{item.itemImage}}"></image>
+          </view>
+          <view class="name">{{item.itemName}}</view>
+        </view>
+        <view class="bottom">
+          <view class="data">
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">{{item.numItemSales}}</view>
+          <view class="text">购买数量</view>
+        </view>
+        <view class="dataItem">
+          <view class="number" style="color:{{themeColor}}">¥{{item.amtItemSales}}</view>
+          <view class="text">消费金额</view>
+        </view>
+      </view>
+        </view>
+      </view>
+    
+  
+    </view>
+  </view>
+</view>

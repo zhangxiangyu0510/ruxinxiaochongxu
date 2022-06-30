@@ -1,0 +1,574 @@
+page {
+  min-height: 100%;
+}
+
+.myNUcoin {
+  background-color: #fafafa;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: 44rpx;
+
+}
+
+.myNUcoin_h_bg{
+    position: absolute;
+    top: -22rpx;
+    left: -144rpx;
+}
+
+.myNUcoin_header {
+  width: 100%;
+  height: 312rpx;
+  background-color: #7340B3;
+  padding: 48rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.coll_icon{
+    width: 14rpx;
+    height: 24rpx;
+    margin-left: 8rpx;
+}
+.myNUcoin_h_icon {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 36rpx;
+}
+
+.myNUcoin_h_num {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 96rpx;
+  line-height: 96rpx;
+  margin-top: 20rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+  color: #FFFFFF;
+}
+.become_effective{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+.myNUcoin_h_coin {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34rpx;
+  line-height: 48rpx;
+
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+
+  mix-blend-mode: normal;
+}
+
+.myNUcoin_header1 {
+  width: calc(100% - 64rpx);
+  margin: 48rpx auto 0;
+  height: 160rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 32rpx;
+
+  box-sizing: border-box;
+}
+
+.myNUcoin_header1_left {
+  float: left;
+}
+
+.myNUcoin_header1_title {
+  height: 44rpx;
+  line-height: 44rpx;
+}
+
+.myNUcoin_header1_title_text1 {
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32rpx;
+
+  /* 标题文字 */
+  color: #404040;
+
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.myNUcoin_header1_title_text12 {
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32rpx;
+  margin-left: 16rpx;
+  color: #7340B3;
+  mix-blend-mode: normal;
+}
+
+.myNUcoin_header1_title1 {
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  margin-top: 16rpx;
+
+  color: #7F7F7F;
+
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.myNUcoin_header1_right {
+  float: right;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-top: 28rpx;
+
+  color: #4A4A4A;
+}
+
+.myNUcoin_header2 {
+
+  height: 132rpx;
+
+  /* 主题紫色（浅） */
+  border: 4rpx solid #7340B3;
+
+
+  width: calc(100% - 64rpx);
+  margin: 48rpx auto 0;
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 32rpx;
+
+  box-sizing: border-box;
+}
+
+.myNUcoin_header2_content {
+  width: 100%;
+  height: 100%;
+}
+
+.myNUcoin_header2_content_icon {
+  width: 72rpx;
+  height: 72rpx;
+  /* background-color: #7340B3; */
+  float: left;
+}
+
+.myNUcoin_header2_content_box {
+  float: left;
+  margin-left: 22rpx;
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+
+  /* identical to box height */
+
+  /* 内容文字 */
+  color: #4A4A4A;
+
+
+}
+
+.myNUcoin_header2_content_item2 {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 28rpx;
+
+  /* identical to box height */
+
+  /* 内容文字 */
+  color: #4A4A4A;
+
+  opacity: 0.8;
+}
+
+.myNUcoin_header2_content_btn {
+  float: right;
+}
+
+.myNUcoin_header2_content_btnBox {
+  width: 144rpx !important;
+  height: 64rpx;
+  /* 主题紫色（浅） */
+  background: #7340B3;
+  border-radius: 8rpx;
+  color: white;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 64rpx;
+
+  padding: 0 !important;
+  color: #FFFFFF;
+}
+
+
+.myNUcoin_header3 {
+  height: 56rpx;
+  line-height: 56rpx;
+  width: calc(100% - 64rpx);
+  box-sizing: border-box;
+  margin: 64rpx auto 0;
+}
+
+.myNUcoin_header3_title {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40rpx;
+
+  /* identical to box height */
+
+  /* 标题文字 */
+  color: #404040;
+
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.myNUcoin_header3_title1 {
+
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  float: right;
+  /* identical to box height */
+
+  color: #4A4A4A;
+
+
+}
+
+.tabs {
+  width: calc(100% - 64rpx);
+  margin: 32rpx auto;
+}
+
+.myNUcoin .weui-tabs-bar__wrp {
+  background: unset !important;
+}
+
+.myNUcoin .tab-item {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #4A4A4A;
+}
+
+.myNUcoin .tab-item:last-child {
+  margin-left: 80rpx;
+}
+
+.myNUcoin .weui-tabs-bar__item {
+  background-color: #fcfcfc !important;
+}
+
+.myNUcoin .weui-tabs-bar__content {
+
+  background-color: #fcfcfc;
+
+}
+
+.myNUcoin .weui-tabs {
+  margin-left: -80rpx;
+
+}
+
+.myNUcoin .weui-tabs-swiper {
+  display: none;
+}
+
+.myNUcoin .tab-bar-title__selected {
+  border: unset !important;
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+
+  /* identical to box height */
+
+  /* 标题文字 */
+  color: #404040;
+}
+
+.weui-tabs-line{
+    width: 56rpx;
+    height: 4rpx;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.myNUcoin_header4 {
+  position: relative;
+  width: 100%;
+  height: 64rpx;
+  /* margin: 0 auto; */
+  background-color: #EBEBEB;
+  line-height: 64rpx;
+
+}
+
+.myNUcoin_header4_title {
+  width: 100%;
+  height: 64rpx;
+  margin-left: 36rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+
+  color: #333333;
+}
+
+.myNUcoin_header5 {
+  width: calc(100% - 64rpx);
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.myNUcoin_header5_item {
+  margin-top: 48rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myNUcoin_header5_item_left {
+  float: left;
+}
+
+.myNUcoin_header5_item_left_txt1 {
+  font-family: PingFang SC;
+  display: block;
+  width: 538rpx;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32rpx;
+  line-height: 44rpx;
+
+  /* 标题文字 */
+  color: #404040;
+
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.myNUcoin_header5_item_left_txt2 {
+  font-family: PingFang SC;
+  margin-top: 16rpx;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+
+  /* identical to box height */
+
+  /* 内容文字 */
+  color: #4A4A4A;
+}
+
+.myNUcoin_header5_item_right {
+  float: right;
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48rpx;
+  line-height: 48rpx;
+
+  /* identical to box height, or 100% */
+
+  color: #7340B3;
+}
+
+.myNUcoin_btn {
+  width: 174rpx !important;
+  height: 64rpx;
+  margin-top: 48rpx;
+
+  /* 主题紫色-10% */
+  background: #F1ECF7;
+  border-radius: 8rpx;
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 64rpx;
+  padding: 0;
+  /* identical to box height */
+
+  color: #7340B3;
+
+}
+
+.myNUcoin_header6{
+    margin-top: 118rpx;
+    text-align: center;
+}
+
+.myNUcoin_header5_txt {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+
+  /* identical to box height */
+  text-align: center;
+
+  /* 内容文字 */
+  color: #4A4A4A;
+}
+
+.weui-dialog {
+  width: 496rpx;
+  height: 716rpx;
+  border-radius: 16rpx;
+  overflow: unset;
+}
+
+.weui-dialog__title {
+
+
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36rpx;
+  line-height: 52rpx;
+
+  /* identical to box height, or 144% */
+  text-align: center;
+
+  /* 标题文字 */
+  color: #404040;
+}
+
+.weui-dialog__hd {
+  padding: 48rpx;
+  display: none;
+}
+
+.weui-dialog__bd {
+  overflow: unset;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+
+  /* 内容文字 */
+  color: #4A4A4A;
+
+  text-align: left;
+
+}
+
+.closeIcon {
+  width: 44rpx;
+  height: 44rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 2rpx solid #ffffff;
+  position: fixed;
+  color: white;
+  font-size: 40rpx;
+  right: 0;
+  z-index: 1000000000;
+  top: -58rpx;
+}
+.dialogBox{
+
+  position: relative;
+}
+.title{
+  padding: 48rpx;
+  
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36rpx;
+  line-height: 52rpx;
+
+  /* identical to box height, or 144% */
+  text-align: center;
+
+  /* 标题文字 */
+  color: #404040;
+}
+.dialogContent{
+  width: 496rpx;
+  box-sizing: border-box;
+  height: 520rpx;
+  overflow-y: auto;
+  padding: 0 48rpx;
+  margin-left: -48rpx;
+}
+.nu_detail_coll_icon{
+    position:absolute;
+    height:34rpx;
+    width:76rpx;
+    /* background: red; */
+    top:50%;
+    transform: translateY(-50%);
+    right:32rpx;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  .coll_icon_text{
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24rpx;
+    text-align: right;
+    color: #7F7F7F;
+    position: relative;
+    top:-16rpx;
+  }

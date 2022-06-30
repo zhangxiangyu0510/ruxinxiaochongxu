@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-cell": "/components/cell/cell",
+    "mp-checkbox-group": "/components/checkbox-group/checkbox-group"
+  }
+}

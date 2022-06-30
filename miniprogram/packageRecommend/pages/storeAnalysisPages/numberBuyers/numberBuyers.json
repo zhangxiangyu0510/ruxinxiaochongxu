@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "infoList":"/components/commonInfoList/commonInfoList"
+  },
+  "navigationBarTitleText": "月购买人数"
+}

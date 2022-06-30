@@ -1,0 +1,156 @@
+<view class="myNUcoin">
+    <notificationDialog id="notificationDialog" /> 
+  <view class="myNUcoin_header" style="background-color: {{themeColor}};">
+    <image class="myNUcoin_h_icon" bindtap="openConfirm" src="/packageRecommend/images/NUcoin_rule_fff.svg" alt=""></image>
+    <image class="myNUcoin_h_bg" src="/packageRecommend/images/nu_bg.svg"></image>
+    <view class="myNUcoin_h_coin">当前可用NU币</view>
+    <view class="myNUcoin_h_num">{{nuCoinDetail.availableTotalNuCoin}}</view>
+    <view class="become_effective">
+        <view style="display: inline-block;" bindtap="goExpirePage" data-num="{{nuCoinDetail.waitEffectiveTotalNuCoin}}" data-type="0">
+            待生效NU币：{{nuCoinDetail.waitEffectiveTotalNuCoin}}
+            <image class="coll_icon" src="/packageRecommend/images/right_arrows_white.svg"></image>
+        </view>
+    </view>
+  </view>
+  <view class="myNUcoin_header1">
+    <view class="myNUcoin_header1_left" data-num="{{nuCoinDetail.expireMonthTotalNuCoin}}" data-type="1" bindtap="goExpirePage">
+      <view class="myNUcoin_header1_title">
+        <text class="myNUcoin_header1_title_text1">即将过期NU币</text>
+        <text class="myNUcoin_header1_title_text12" style="color: {{themeColor}};">{{nuCoinDetail.expireMonthTotalNuCoin}}</text>
+      </view>
+      <view class="myNUcoin_header1_title1">
+        最近过期时间：{{expireDateTime}}</view>
+    </view>
+    <view class="myNUcoin_header1_right">
+      <view bindtap="goNuLogin" data-num="1">
+        历史兑换记录<image class="coll_icon" src="/packageRecommend/images/right_arrows.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="myNUcoin_header2" style="border-color: {{themeColor}};">
+
+    <view class="myNUcoin_header2_content">
+        <image  class="myNUcoin_header2_content_icon" src="/packageRecommend/images/myNUcoin_currency.svg" alt=""></image>
+      <view class="myNUcoin_header2_content_box">
+        <view class="myNUcoin_header2_content_item1">NU币商城</view>
+        <view class="myNUcoin_header2_content_item2">超多好物任你兑换</view>
+      </view>
+      <view class="myNUcoin_header2_content_btn">
+        <button bindtap="goNuLogin" data-num="2" style="background-color: {{themeColor}};" class="myNUcoin_header2_content_btnBox">点击进入</button>
+      </view>
+    </view>
+  </view>
+  <view class="myNUcoin_header3">
+    <text class="myNUcoin_header3_title">NU币明细</text>
+    <text class="myNUcoin_header3_title1" bindtap="goDetail">查看详情</text>
+  </view>
+  <view class="tabs">
+
+    <mp-tabs class="tabsItem" tabs="{{tabs}}" activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+    </mp-tabs>
+  </view>
+  <view wx:if="{{current == 0}}">
+    <view wx:if="{{currentData.list}}">
+        <view>
+            <view class="myNUcoin_header4">
+            <view class="myNUcoin_header4_title">
+                {{currentData.date?currentData.date:nowMonth}}
+            </view>
+            </view>
+            <view class="myNUcoin_header5">
+                <view class="myNUcoin_header5_item" wx:for="{{currentData.list}}" wx:key="index1" wx:for-item="item1" wx:for-key="index1">
+
+                    <view class="myNUcoin_header5_item_left">
+                        <text class="myNUcoin_header5_item_left_txt1">{{item1.cause}}</text>
+                        <view class="myNUcoin_header5_item_left_txt2">{{item1.date}}</view>
+                    </view>
+                    <view class="myNUcoin_header5_item_right" style="color: {{themeColor}};">
+                        +{{item1.num}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="myNUcoin_btn" style="color: {{themeColor}};" bindtap="goDetail">查看详情</button>
+    </view>
+    <view wx:else="{{!currentData.date}}">
+        <view class="myNUcoin_header4">
+            <view class="myNUcoin_header4_title">
+                {{nowMonth}}
+            </view>
+        </view>
+        <view class="myNUcoin_header6">
+            <text class="myNUcoin_header5_txt">最近一个月暂无NU币获取记录</text>
+        </view>
+    </view>
+  </view>
+
+  <view wx:if="{{current == 1}}">
+    <view wx:if="{{currentData2.date}}">
+        <view>
+            <view class="myNUcoin_header4">
+                <view class="myNUcoin_header4_title">
+                    {{currentData2.date}}
+                </view>
+            </view>
+            <view class="myNUcoin_header5">
+                <view class="myNUcoin_header5_item" wx:for="{{currentData2.list}}" wx:key="index1" wx:for-item="item1" wx:for-key="index1">
+
+                    <view class="myNUcoin_header5_item_left">
+                        <text class="myNUcoin_header5_item_left_txt1">{{item1.cause}}</text>
+                        <view class="myNUcoin_header5_item_left_txt2">{{item1.date}}</view>
+                    </view>
+                    <view class="myNUcoin_header5_item_right" style="color: {{themeColor}};">
+                        {{item1.num}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="myNUcoin_btn" bindtap="goDetail" style="color: {{themeColor}};">查看详情</button>
+    </view>
+    <view wx:else="{{!currentData2.date}}">
+        <view class="myNUcoin_header4">
+            <view class="myNUcoin_header4_title">
+                {{nowMonth}}
+            </view>
+        </view>
+        <view class="myNUcoin_header6">
+            <text class="myNUcoin_header5_txt">最近一个月暂无NU币扣减记录</text>
+        </view>
+    </view>
+
+  </view>
+  <mp-dialog title="" show="{{dialogShow}}">
+    <view class="dialogBox">
+      <view class="title">NU币规则</view>
+      <view class="dialogContent">
+            <view>NU币是如新NU店小程序的虚拟资产，可用于在NU币商城兑换多种权益。</view>
+            <view>一、NU币获得：</view>
+            <view>1、店主获得：在所属NU店中，由店主直接服务的顾客所产生的订单营业额按1:1的比例获得NU币（订单营业额1元=1 NU币）；</view>
+            <view>2、除如新（中国）辅销品及标注不参加发放NU币的产品、运费以外，购买其他任意品类均可按以上规则获取相应NU币；</view>
+            <view>3、店铺托管期间，将不产生NU币。</view>
+            <view>二、NU币使用：</view>
+            <view>1、NU币的使用对象仅限于NU店店主；</view>
+            <view>2、NU币仅可在如新NU店小程序中使用，若店主注销或终止NU店或如新账号，则如新公司将取消该店主帐号内NU币相关使用权益，无法恢复；</view>
+            <view>3、NU币在有效期内，店主可直接在如新NU店小程序内的NU币商城中兑换使用；</view>
+            <view>4、NU币查询：店主可以在NU店小程序“我的NU币”中查询到账户中NU币详细情况。</view>
+            <view>三、NU币生效期及有效期说明：</view>
+            <view>1、每笔订单对应产生的NU币，在订单生成次日发放至店主账户，并显示待生效，待该笔订单送达并签收后，NU币立即生效。自生效之日起，有效期12个月，逾期自动清零；</view>
+            <view>2、通过特定营销活动获得的NU币，有效期以具体活动规则为准；</view>
+            <view>四、NU币的调整：</view>
+            <view>1、如在NU店中产生的订单发生30天无理由退货或质量问题退货，公司将回收退货部分所产生的相应NU币。如账户中剩余的NU币不足扣除时，差额部分将计入该账户中，在之后产生的NU币中自动扣除。若退货订单产生的NU币未使用且已过期，则差额部分无需计入该账户中；</view>
+            <view>2、产品换货：不论是否产生差价，均不涉及NU币变更或退还NU币。</view>
+            <view>五、NU币使用：</view>
+            <view>1、NU币可以在NU店NU币商城中使用，用以兑换不同种类的产品或权益，如：NU币商城中产品、权益、公司业务活动资格等；</view>
+            <view>2、在NU币商城兑换产品时，不同有效期的NU币可以合并使用，使用时将优先扣除店主账户中即将过期的NU币；</view>
+            <view>3、通过NU币兑换的实物，若非质量问题，一律不退不换；</view>
+            <view>4、通过NU币兑换的权益（电子卡券、会员资格等），一律不退不换。</view>
+            <view>六、其它：</view>
+            <view>1、若有任何违反如新约法及其他相关规章制度，如新公司保留追回NU币权益的权利；</view>
+            <view>2. 如发现存在以欺诈、作弊以及其他不正当手段获取或使用NU币的，如新公司有权停发、取消该店主的NU币，已获得的NU币可能被扣除、限制、停止使用；</view>
+            <view>3. 如新中国保留对本说明修改的权利。</view>
+      </view>
+      <view class="closeIcon"  bindtap="closeConfirm">x</view>
+    </view>
+
+  </mp-dialog>
+</view>

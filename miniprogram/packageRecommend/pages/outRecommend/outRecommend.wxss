@@ -1,0 +1,86 @@
+/* pages/recommend/outRecommend/outRecommend.wxss */
+page {
+  /* min-height: 100%; */
+  background: #fafafa;
+  padding-bottom:44rpx;
+}
+.outRecommend_box{
+  margin:48rpx 32rpx 32rpx 32rpx;
+
+}
+.outRecommend_commodity {
+  display: flex;
+  background: #fff;
+  padding: 32rpx;
+  margin: 32rpx;
+  border-radius: 16rpx;
+}
+.outRecommend_commodity .picture {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 16rpx;
+  background: #FF5E00;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+.outRecommend_commodity .introduce-title {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.outRecommend_commodity .original-price {
+  margin-top: 48rpx;
+  display: flex;
+}
+.outRecommend_commodity .original-price .retail {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  background: #888888;
+  border-radius: 4rpx;
+  color: #fff;
+  padding: 0 6rpx;
+  height:32rpx;
+}
+.outRecommend_commodity .original-price .retail-price {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #888888;
+  margin-left: 16rpx;
+  height:28rpx;
+  margin-top: 4rpx;
+
+}
+.outRecommend_commodity .special-price {
+  margin-top: 8rpx;
+  display: flex;
+}
+.outRecommend_commodity .special-price .discount {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  color: #FFFFFF;
+  padding: 0 6rpx;
+  background: #FF5E00;
+  border-radius: 4rpx;
+  height:32rpx;
+}
+.outRecommend_commodity .special-price .discount-price {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  height:32rpx;
+  color: #FF5E00;
+  margin-left: 16rpx;
+}

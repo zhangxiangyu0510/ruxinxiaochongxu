@@ -1,0 +1,5 @@
+<!--packageRecommend/components/ColumnChart/ColumnChart.wxml-->
+<!-- <canvas type="2d" class="myCanvas" style="height: {{300}}px;" ></canvas> -->
+<view class="chart">
+<f2 class="f2-chart" onInit="{{onInitChart}}" />
+</view>

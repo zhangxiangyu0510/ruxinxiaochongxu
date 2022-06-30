@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "组合推荐",
+   "usingComponents": {
+    "xx-toast": "../../../components/commontToast/commontToast",
+    "noData" :"../../../components/noData/index"
+  }
+
+
+}

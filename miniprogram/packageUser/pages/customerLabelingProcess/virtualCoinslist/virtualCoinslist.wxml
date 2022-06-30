@@ -1,0 +1,31 @@
+<view class="customerorderlist">
+  <!-- <view class="colist_header">
+       
+   </view> -->
+   <notificationDialog id="notificationDialog" />
+   <view wx:if="{{boxData.length!=0}}">
+        <view class="concernedCustorm" wx:for="{{boxData}}" wx:key="index">
+            <view class="clist_center">
+                <view class="clist_ccTextBox">
+                    <text class="clist_ccText1">{{item.month}}</text>
+                    <text class="clist_ccText2">统计:{{item.expireMonthVirtualCoinTotal}}点</text>
+                </view>
+            </view>
+            <view class='clist_center1' style="border-bottom: {{index==boxData.length-1?'none':''}};">
+                <view class="colist_header_content">
+                    <view class="cdetail_center_center" wx:for="{{item.virtualCoinEos}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+                        <view class="cdetail_center_ctop">
+                            <view class="cdetail_center_ctoptext1">失效点数 {{item1.availableQty}}</view>
+                            <view class="cdetail_center_ctoptext2" style="font-size: 28rpx;">有效期截止:{{item1.expireDate}}</view>
+                        </view>
+                        <view></view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+   </view>
+  <view wx:else="{{boxData.length==0}}">
+        <noData titleText='暂无即将失效点数'></noData>
+  </view>
+</view>

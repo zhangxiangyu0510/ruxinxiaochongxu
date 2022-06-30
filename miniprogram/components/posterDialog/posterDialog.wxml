@@ -1,0 +1,105 @@
+<!--components/posterDialog/posterDialog.wxml-->
+<view class="posterDialog">
+  <!-- 店铺海报 -->
+  <view wx:if="{{type==2}}" style="background-color: {{themeColor+10}};" class="posterDialogBg">
+    <image class="bgImg" src="{{shopImages.bg}}"></image>
+    <image class="logImg" src="https://nuskin-1257745828.cos.ap-shanghai.myqcloud.com/20220415/f4845ec7-924c-4479-8ac7-cb79d7f01a91.png"></image>
+    <view style="border: 8rpx solid {{themeColor}};" class="avatarBox">
+      <image class="avatarImg" src="{{shopImages.avatar}}"></image>
+    </view>
+    <view class="levelBox">
+      <image class="levelImg" src="{{shopImages.level}}"></image>
+    </view>
+    <!-- 用户昵称与手机号 -->
+    <view class="userInfo">
+      <view class="userName">{{userInfo.partnerProfile.nickname}}</view>
+      <view class="mobileBox">
+        <image src="https://nuskin-1257745828.cos.ap-shanghai.myqcloud.com/20220415/30f867db-56fe-474c-bc1b-efa643333c43.png" class="mobileImg"></image>
+        <view class="mobileText">{{userInfo.partner.mobile}}</view>
+      </view>
+    </view>
+    <!-- 小程序码区域 -->
+    <view class="codeBox">
+      <view style="border: 2rpx solid {{themeColor}};" class="codeBoxContent">
+        <view class="flexBetween ">
+          <view class="leftText">
+            <view class="flexEnd">
+              <view class="name">{{userInfo.partnerProfile.nickname}}</view>
+              <view class="text">的如新NU店</view>
+            </view>
+            <view class="hint">
+              识别二维码，进入店铺了解更多信息。
+            </view>
+
+
+          </view>
+          <view class="wxQrcodeBox">
+            <image class="wxQrcodeImg" src="data:image/jpg;base64,{{wxQrcode}}"> </image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+
+  </view>
+  <!-- 店铺升级弹框 -->
+  <view wx:if="{{type==1}}">
+    <view class="levelModel">
+      <image class="levelImg" src="{{shopImages.level}}"></image>
+      <view class="congratulation">恭喜您的如新NU店</view>
+      <view class="congratulation">等级已提升至 <text style="color: {{themeColor}};" class="leveNumber">V.{{userInfo.shop.level}}</text> </view>
+      <view class="userInfo flexCenter">
+        <view class="avatarBox">
+          <image class="avatar" src="{{shopImages.avatar}}"></image>
+        </view>
+        <view class="userName">{{userInfo.partnerProfile.nickname}}</view>
+      </view>
+      <view class="shopInfo flexEnd flexBetween">
+      <view>
+        <view class="recommend">向你推荐</view>
+        <view class="shopName">如新NU店小程序</view>
+        <image class="addBgIcon" src="data:image/svg+xml,{{addBgIcon}}" mode="widthFix"></image>
+      </view>
+      <view class="wxQrcodeBox">
+            <image class="wxQrcodeImg" src="data:image/jpg;base64,{{wxQrcode}}"> </image>
+          </view>
+      
+      </view>
+    </view>
+ 
+
+  </view>
+  <!-- 商品海报 -->
+  <view wx:if="{{type!=1 && type !=2}}">
+    <view style="background-color: {{themeColor+10}};" class="shopDialog">
+      <image class="shopImg" src="{{goodsInfo.itemImage || goodsInfo.image || h5GoodsInfo.h5GoodsImg}}"></image>
+      <view class="userInfo flexCenter">
+        <view class="avatarBox">
+          <image class="avatar" src="{{shopImages.avatar}}"></image>
+        </view>
+        <view class="userName">{{userInfo.partnerProfile.nickname}}</view>
+      </view>
+      <view class="shopInfo">
+        <view class="recommend">向你推荐</view>
+        <view class="shopName">{{goodsInfo.itemName || goodsInfo.title || h5GoodsInfo.title}}</view>
+      </view>
+      <view class="priceBox ">
+        <view>
+          <view class="general flexCenter">
+            <view class="bg">零售价</view>
+            <view class="number">￥{{goodsInfo.retailPrice || h5GoodsInfo.retailPrice}}</view>
+          </view>
+          <view class="discounts flexCenter">
+            <view style="background-color: {{themeColor}};" class="bg">星级价</view>
+            <view style="color: {{themeColor}};" class="number">￥{{goodsInfo.starPrice || h5GoodsInfo.starPrice}}</view>
+          </view>
+        </view>
+        <view>
+          <image class="wxQrcodeImg" src="data:image/jpg;base64,{{wxQrcode}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

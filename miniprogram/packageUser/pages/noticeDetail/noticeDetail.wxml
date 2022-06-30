@@ -1,0 +1,16 @@
+<!--/packageUser/pages/noticeDetail/noticeDetail.wxml-->
+
+<import src="../wxParse/wxParse.wxml"/>
+<notificationDialog id="notificationDialog" /> 
+<view class="noticeDetail">
+<view class="textRich"  wx:if="{{noticeDetail.type==1}}">
+  <view class="title">{{noticeDetail.title}}</view>
+  <view class="time">{{noticeDetail.createTime}}</view>
+  <view class="ql-editor">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+   
+  </view>
+</view>
+
+  <web-view  wx:if="{{noticeDetail.type==2}}" src="{{ noticeDetail.noticeLink }}"></web-view>
+</view>

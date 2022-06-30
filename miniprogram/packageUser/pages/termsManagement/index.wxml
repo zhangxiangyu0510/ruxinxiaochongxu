@@ -1,0 +1,22 @@
+<!--packageUser/pages/termsManagement/index.wxml-->
+<view class="termsManagementContainer">
+    <scroll-view scroll-y='true' enhanced="true"  bounces="false" style="height:{{height}}rpx;" bindscrolltolower='lower'>
+<view class="terms_management">
+    <view class="terms_management_content">
+    <view wx:for="{{dataList}}"  bindtap="jumpDetails" data-code="{{item.termsId}}"  wx:key="id" style="border-bottom:{{index!=dataList.length-1&& '1rpx solid rgba(0, 0, 0, 0.05)'}}"  class="terms_management_item">
+    <view class="terms_management_left">
+<view class="terms_management_title">{{item.termsTitle}}</view>
+<view class="terms_management_text">版本号：{{item.version}}</view>
+<view class="terms_management_text">生效时间：{{item.validTime}}</view>
+<view class="terms_management_text">同意时间：{{item.agreeTime}}</view>
+</view>
+<image src="/packageUser/images/userCenterIcon/extra.svg">
+</image>
+
+</view>
+
+</view>
+
+</view>
+</scroll-view>
+</view>

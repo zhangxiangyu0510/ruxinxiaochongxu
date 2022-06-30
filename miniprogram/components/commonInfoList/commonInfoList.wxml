@@ -1,0 +1,18 @@
+<!--components/commonInfoList/commonInfoList.wxml-->
+<view class="info-list">
+    <view class="info-img">
+        <image src="{{infoData.avatar}}"></image>
+    </view>
+    <view class="info-detail">
+        <view class="name-icon">
+            <view class="info-name">{{infoData.nickName}}</view>
+            <view class="info-icon">
+            <!-- <image src="{{true?'/packageRecommend/images/stars-icon.svg':'/packageRecommend/images/retail-icon.svg'}}"></image> -->
+            </view>
+        </view>
+        <view class="info-time">
+            <text>{{infoText}}</text>
+            <text>{{infoData.subscribeTime}}</text>
+        </view>
+    </view>    
+</view>

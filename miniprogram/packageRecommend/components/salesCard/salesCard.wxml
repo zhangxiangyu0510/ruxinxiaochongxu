@@ -1,0 +1,23 @@
+<!--packageRecommend/components/salesCard/salesCard.wxml-->
+<view class="salesCard">
+    <view class="salesCard-heard">
+        <view class="salesCard-img">
+            <image src="{{infoData.itemImage}}"></image>
+        </view>
+        <view class="salesCard-content">
+            <view class="salesCard-title">{{infoData.itemName}}</view>
+            <view class="salesCard-Introduction" wx:if="{{true}}">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简</view>
+            <view class="button-top" wx:if="{{false}}"><text>置顶商品</text></view>
+        </view>
+    </view>
+    <view class="sales-number-totle">
+        <view class="totle-left">
+            <view class="number" style="color: {{themeColor}};">{{infoData.numItemSale}}</view>
+            <view class="salesCard-number-text">商品销量</view>
+        </view>
+        <view class="totle-right">
+            <view class="number" style="color: {{themeColor}};">{{infoData.numItemSaleUsers}}</view>
+            <view class="salesCard-number-text">购买用户数量</view>
+        </view>
+    </view>
+</view>

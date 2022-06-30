@@ -1,0 +1,30 @@
+<!--pages/ucenter/myBadge/myBadge.wxml-->
+<!-- <commonHeader titleText='我的'></commonHeader> -->
+<commonGlobal/>
+<notificationDialog id="notificationDialog" /> 
+<view class="badge">
+    <view class="badge_header">
+    <image class="badge_header_avater" wx:if="{{userInfo.partnerProfile.avatar}}" src="{{userInfo.partnerProfile.avatar}}"></image>
+    <image class="badge_header_avater" wx:else="{{!userInfo.partnerProfile.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image>
+    <view class="badge_header_infos">
+    <view class="badge_infos_name">{{userInfo.partnerProfile.nickname}}</view>
+    <view class="badge_infos_fans">
+        和如新的<text class="badge_infos_day" style="color: {{themeColor}};">{{infoTime}}</text>天
+        </view>
+    </view>
+    </view>
+    <view class="badge_single_box" wx:for="{{badgeData}}" wx:for-item="item" wx:key="index" data-item="{{item}}">
+        <view class="badge_single_box_title">{{item.name}}</view>
+        <view class="badge_single_box_items">
+            <view style="display: inline-block;" class="{{item.badges.length>=5?'badge_single_item_have_margin':'badge_single_item_no_margin'}}" wx:for="{{item.badges}}" wx:for-item="item1" wx:key="index1" bindtap="goBadgeDetail" data-item="{{item1}}">
+                <!-- <view class="{{item.badges.length>=5?'badge_single_item_have_margin':'badge_single_item_no_margin'}}"> -->
+                    <view class="badge_item_icon">
+                        <image src="{{item1.lighting?item1.imageAchieve:item1.imageNoAchieve}}"></image>
+                    </view>
+                    <view class="badge_item_text">{{item1.name}}</view>
+                <!-- </view> -->
+            </view>
+        </view>
+    </view>
+  <badgePopup/>
+</view>

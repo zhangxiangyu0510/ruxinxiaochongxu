@@ -1,0 +1,68 @@
+/* packageRecommend/pages/storeAnalysisPages/newFans/newFans.wxss */
+.newFans{
+    width: 100%;
+    background-color: #fafafa;
+    /* padding: 48rpx 36rpx; */
+}
+.statement-title{
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #7F7F7F;
+    padding-top: 32rpx;
+    margin-left: 36rpx;
+}
+.content{
+    padding: 0 36rpx;
+}
+.common-list{
+    margin-bottom: 24rpx;
+}
+.nar-bar{
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+}
+.nar-bar-content{
+    display: flex;
+    padding: 48rpx 0 36rpx 36rpx;
+}
+.nar-bar-title{
+    /* min-width: 176rpx; */
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40rpx;
+    line-height: 56rpx;
+    color: #404040;
+    margin-right: 48rpx;
+}
+.active{
+    position: relative;
+    font-weight: 600;
+}
+.active .line{
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -6rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40rpx;
+    height: 4rpx;
+    background: #7340B3;
+    border-radius: 14rpx;
+}
+.nar-bar::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  .notData{
+    width: 100%;
+    text-align: center;
+    color: #999999;
+    padding-bottom: 48rpx;
+}

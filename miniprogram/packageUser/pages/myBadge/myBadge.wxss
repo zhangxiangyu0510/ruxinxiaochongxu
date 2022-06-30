@@ -1,0 +1,125 @@
+/* pages/ucenter/myBadge/myBadge.wxss */
+page {
+  min-height: 100%;
+  background: #fafafa;
+}
+.badge{
+
+}
+.badge_header{
+  width:100%;
+  height: 164rpx;
+  background: #FFF;
+  padding:32rpx;
+  box-sizing: border-box;
+  display: flex;
+  position:relative;
+  border-top:1rpx solid rgba(0, 0, 0, 0.1);
+}
+.badge_header_avater{
+  height:100rpx;
+  width:100rpx;
+  border-radius: 8rpx;
+}
+.badge_header_infos{
+  width:calc(100% - 104rpx);
+  height:120rpx;
+  margin-left:24rpx;
+  overflow: hidden;
+}
+.badge_infos_name{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.badge_infos_fans{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #7F7F7F;
+  margin-top:16rpx;
+}
+.badge_infos_day{
+  display: inline-block;
+  margin:0 8rpx;
+  font-family: DIN Alternate;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36rpx;
+  line-height: 42rpx;  
+  color: #FF5E00;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.badge_single_box{
+  margin:64rpx 32rpx 0 32rpx;
+}
+.speMargin{
+  margin-top:64rpx !important;
+}
+.badge_single_box_title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #404040;
+  margin:32rpx 0;
+  }
+  .badge_single_box_items{
+    width:100%;
+    background: #fff;
+    border-radius: 16rpx;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding:32rpx;
+
+  }
+  .badge_single_item{
+    width:130rpx;
+    height:132rpx;
+    position: relative;
+
+  }
+.badge_single_item_have_margin{
+  width: 25%;
+  height:132rpx;
+  margin-bottom:48rpx;
+}
+.badge_single_item_no_margin{
+  width:130rpx;
+  height:132rpx;
+}
+  .badge_item_icon{
+      margin-left: 12rpx;
+    height:88rpx;
+    width:88rpx;
+  }
+  .badge_item_icon image{
+    width: 100%;
+    height: 100%;
+    border-radius: 16rpx;
+  }
+  .badge_item_text{
+    width:116rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #333333;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }

@@ -1,0 +1,201 @@
+<view class="custormDetail">
+    <notificationDialog id="notificationDialog" /> 
+  <view class="cdetail_header">
+    <image class="cdetail_header_img" wx:if="{{fromData.avatar}}" src="{{fromData.avatar}}"></image>
+    <image class="cdetail_header_img" wx:else="{{!fromData.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image> 
+    <view class="cdetail_header_rightbox">
+      <view class="cdetail_header_rightbox_top">
+        <text class="cdetail_header_text" bindlongpress="copy" data-copy="{{fromData.nickname}}">{{fromData.nickname}}</text>
+        <!-- 星级顾客 -->
+        <view class="customer_icon" wx:if="{{fromData.identityTag=='STAR_CUSTOMERS'}}">
+          <image class="icon_left" src="data:image/svg+xml,{{zuo}}"></image>
+          <view class="icon_right">
+            <image class="customer_right_bg" src="data:image/svg+xml,{{you}}"></image>
+            <view class="icon_right_text">{{identityTagObj[fromData.identityTag]}}</view>
+          </view>
+        </view>
+        <!-- 注册顾客 -->
+        <view class="customer_icon" wx:if="{{fromData.identityTag=='ORDINARY_CUSTOMERS'}}">
+          <image class="icon_left" src="data:image/svg+xml,{{zuo2}}"></image>
+          <view class="icon_right">
+            <image class="customer_right_bg" src="data:image/svg+xml,{{you2}}"></image>
+            <view class="icon_right_text">{{identityTagObj[fromData.identityTag]}}</view>
+          </view>
+        </view>
+        <!-- 零售顾客 -->
+        <image wx:if="{{fromData.identityTag=='RETAIL_CUSTOMERS'}}" class="cdetail_header_img1" src="../../../images/icons/retailCustorm.svg" alt=""></image>
+      </view>
+      <view class="cdetail_header_rightbox_bottom">
+        <text class="cdetail_header_text1" wx:if="{{fromData.cnCardNo}}">{{fromData.identityTag!='ORDINARY_CUSTOMERS'?fromData.cnCardNo:identityTagObj[fromData.identityTag]}}</text>
+        <text class="cdetail_header_text1" wx:else="{{!fromData.cnCardNo}}">暂无</text>
+      </view>
+      <view style="margin-bottom: 32rpx;display: flex;">
+        <view>
+            <text class="cdetail_header_text2">en悦家可用点数</text>
+            <text class="cdetail_header_text4" wx:if="{{fromData.enPoint}}" style="color: {{themeColor}};">{{fromData.enPoint}}</text>
+            <text class="cdetail_header_text4" wx:else="{{!fromData.enPoint}}" style="color: {{themeColor}};">0</text>
+        </view>
+        <view bindtap="goVirtualCoins">
+            <text class="cdetail_header_text3" wx:if="{{fromData.toExpireEnPoint}}">即将失效 {{fromData.toExpireEnPoint}}</text>
+            <text class="cdetail_header_text3" wx:else="{{!fromData.toExpireEnPoint}}">即将失效 0</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="tips">笔记仅做顾客信息等级参考需保障顾客个人信息安全</view>
+  <view class="cdetail_header1">
+
+    <view class="cdetail_header1_top">
+      <view wx:for="{{userTagValueDtos}}" wx:key="index" wx:if="{{!item.isDel}}">
+        <view class="cdetail_header1_top_text" style="border-color:{{themeColor}};background-color: {{themeColor+10}};color: {{themeColor}};" wx:if="{{!isDelTags}}">
+            {{item.label}}
+        </view>
+        <view class="cdetail_header1_top_text" style="border-color:{{themeColor}};background-color: {{themeColor+10}};color: {{themeColor}};" wx:else="{{isDelTags}}" data-id="{{item.id}}" bindtap="deleteTag">
+            {{item.label}}
+            <image style="width: 20rpx;height: 20rpx;margin-left: 20rpx;" src="../../../images/icons/del_tag.svg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="cdetail_header1_operate">
+      <view class="cdetail_header1_obox">
+        <view wx:if="{{!isDelTags}}" bindtap="goCustormLabelList">
+          <image class="cdetail_header1_obox_img" style="margin-top: 6rpx;" src="../../../images/icons/add.svg" alt=""></image>
+          <text class="cdetail_header1_obox_text">添加笔记</text>
+        </view>
+        <view wx:else="{{isDelTags}}" bindtap="delSave">
+          <image class="cdetail_header1_obox_img" style="margin-top: 6rpx;" src="../../../images/icons/del_save.svg" alt=""></image>
+          <text class="cdetail_header1_obox_text">保存笔记修改</text>
+        </view>
+      </view>
+      <view class="cdetail_header1_obox" bindtap="delTags">
+        <image class="cdetail_header1_obox_img" src="../../../images/icons/subtract.svg" alt=""></image>
+        <text class="cdetail_header1_obox_text" wx:if="{{!isDelTags}}">删除笔记</text>
+        <text class="cdetail_header1_obox_text" wx:else="{{isDelTags}}">取消笔记修改</text>
+      </view>
+
+    </view>
+
+  <view class="shopowenr_center1_center">
+    <view class="shopowenr_center1BoxAll">
+      <view class="shopowenr_center1Box1">
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">姓名</text>
+          <text class="shopowenr_center1_text2">{{fromData.userName?fromData.userName:'-'}}</text>
+        </view>
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">生日</text>
+          <text class="shopowenr_center1_text2">{{birthdayTime}}</text>
+        </view>
+        <!-- <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">星座</text>
+          <text class="shopowenr_center1_text2">天蝎座</text>
+        </view> -->
+      </view>
+      <view class="shopowenr_center1Box1">
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">性别</text>
+          <text class="shopowenr_center1_text2">{{fromData.gender=='1'?'男':fromData.gender=='2'?'女':'未知'}}</text>
+        </view>
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">星座</text>
+          <text class="shopowenr_center1_text2">{{fromData.constellation}}</text>
+        </view>
+      </view>
+      <view class="shopowenr_center1Box1">
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3" style="width: 100rpx;">所在地</text>
+          <text class="shopowenr_center1_text2">{{fromData.provinceName}}{{fromData.cityName}}{{fromData.regionName}}</text>
+        </view>
+        <view class="shopowenr_center1_item">
+          <text class="shopowenr_center1_text3">年龄</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>0&&ageNum<18}}">18岁以下</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>=18&&ageNum<=24}}">18岁-24岁</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>24&&ageNum<=34}}">25-34岁</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>34&&ageNum<=44}}">35-44岁</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>44&&ageNum<=54}}">45-54岁</text>
+          <text class="shopowenr_center1_text2" wx:if="{{ageNum>54}}">55岁以上</text>
+          <text class="shopowenr_center1_text2" wx:if="{{!ageNum}}"></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="shopowenr_center1_bottom">
+      <view class="shopowenr_center1_bottom_img"></view>
+      <text>中国上海市</text>
+    </view> -->
+  </view>
+  <view class="cdetail_center">
+
+    <view class="cdetail_center_top">
+      <text class="cdetail_header1_top_text1">最近一次订单</text>
+      <text class="cdetail_header1_top_text2">仅限如新NU店订单</text>
+      <text class="cdetail_header1_top_text3" bindtap="goOrderList" wx:if="{{fromData.lastOrderInfo.orderTime}}">查看全部NU店订单</text>
+    </view>
+    <view class="cdetail_center_center" wx:if="{{fromData.lastOrderInfo.orderTime}}">
+      <view class="cdetail_center_ctop">
+        <text class="cdetail_center_ctoptext1">下单时间：{{fromData.lastOrderInfo.orderTime}}</text>
+        <text class="cdetail_center_ctoptext2">共{{fromData.lastOrderInfo.productAcount}}件</text>
+        <text class="cdetail_center_ctoptext3" style="color: {{themeColor}};">{{fromData.lastOrderInfo.price?'¥'+fromData.lastOrderInfo.price:''}}</text>
+
+      </view>
+      <view class="cdetail_center_cbody" data-id="{{fromData.lastOrderInfo.orderNo}}" bindtap="goOrderDetail">
+        <image wx:for="{{fromData.lastOrderInfo.images}}" wx:key="index" src="{{item}}" class="cdetail_center_cbodybox1"></image>
+      </view>
+    </view>
+    <view class="noInfo" wx:else="{{!fromData.lastOrderInfo.orderTime}}">暂无订单信息</view>
+
+  </view>
+
+  <view class="cdetail_center" style="margin-bottom: 156rpx;">
+
+    <view class="cdetail_center_top">
+      <text class="cdetail_header1_top_text1">订单统计</text>
+      <text class="cdetail_header1_top_text2">仅限如新NU店订单</text>
+    </view>
+
+    <view class="chartbox">
+      <!-- <ff_canvas id="mycanvas" canvas-id="column" class="canvasStyle" opts="{{ opts3 }}"></ff_canvas> -->
+      <f2 class="f2-chart" wx:if="{{showChart}}" onInit="{{onInitChart}}"/>
+    </view>
+  </view>
+  <view class="cdetail_center" style="margin-bottom: 156rpx;">
+    <view class="cdetail_center_top">
+      <text class="cdetail_header1_top_text1">加购未下单商品</text>
+    </view>
+    <view wx:if="{{goodsList.length!=0}}">
+        <view class="recommend_commodity" wx:for="{{goodsList}}" wx:key="index">
+        <!-- <view class="picture">
+        </view> -->
+        <image class="picture" src="{{item.itemImage}}"></image>
+        <view class="introduce">
+            <view class="introduce-title">{{item.itemName}}</view>
+            <view class="introduce-body">
+            <view class="introduce_left">
+                <view class="original-price">
+                <text class="retail">零售价</text> 
+                <text class="retail-price">¥{{item.itemRetailPrice}}</text>
+                </view>
+                <view class="special-price">
+                <text class="discount" style="background: {{themeColor}};">星级价</text> 
+                <text class="discount-price" style="color:{{themeColor}};">¥{{item.itemStarPrice}}</text>
+                </view>
+            </view>
+            <view class="introduce_right">
+                <view class="num-price">
+                <text class="num">加购数量</text> 
+                <text class="num-value" style="color:{{themeColor}};">{{item.numAddCartItems}}</text> 
+                </view>
+            </view>
+            </view>
+        </view>
+        </view>
+    </view>
+    <view class="noInfo" wx:else="{{goodsList.length==0}}">暂无加购商品信息</view>
+  </view> 
+  <view class="btnBox">
+
+    <button class="cdetail_bottom_btn" data-uid="{{fromData.uid}}" bindtap="goChat" style="background-color: {{themeColor}};">联系顾客</button>
+  </view>
+</view>

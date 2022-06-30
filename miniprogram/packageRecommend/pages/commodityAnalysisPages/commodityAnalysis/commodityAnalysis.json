@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "salesCard":"../../../components/salesCard/salesCard",
+    "f2": "/components/wx-f2"
+  },
+  "navigationBarTitleText": "商品分析"
+}

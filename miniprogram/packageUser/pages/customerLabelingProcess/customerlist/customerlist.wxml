@@ -1,0 +1,202 @@
+    <notificationDialog id="notificationDialog" /> 
+<view class="customerlist" style="{{showOpenArrow ? 'overflow: hidden;height:95vh;' :''}}">
+  <view class="clist_header_all">
+    <view class="clist_header">
+      <view class="clist_header_input">
+        <image class="clist_hIcon" src="../../../images/icons/search.svg" alt=""></image>
+        <input bindblur="goodsSearch" class="clist_hInput weui-search-bar__input" value='{{inputValue}}' type="text" placeholder="搜索" placeholder-class="clist_hPl" />
+      </view>
+      <view class="clist_header_center" bindtap="goCustormLabelList">
+        <view class="clist_cLeft" style="background: {{themeColor}};">
+          <image style="width: 48rpx;height: 48rpx;margin-top: 16rpx;" src="../../../images/icons/tag_new.svg" alt=""></image>
+        </view>
+        <text class="clist_cText">我的笔记</text>
+        <view class="tips">笔记仅做顾客信息等级参考需保障顾客个人信息安全</view>
+          <image class="clist_cArrow" src="../../../images/icons/right_arrows.svg" alt=""></image>
+      </view>
+      <view class="clist_header_bottom">
+        <view class="clist_bLabel" style="width: 174rpx;background: {{isClickAll?themeColor:themeColor+10}};color: {{isClickAll?'#FFFFFF':themeColor}};" bindtap="openLabels">全部笔记
+          <!-- <text wx:if="{{!showOpenArrow}}" class="clist_bArrow" decode="true">
+          </text> -->
+            <image wx:if="{{!showOpenArrow}}" style="color: {{isClickAll?'#FFFFFF':themeColor}};width: 20rpx;" class="clist_bArrow" src="{{'data:image/svg+xml,'+zuo}}"></image>
+            <image wx:else="{{showOpenArrow}}" style="color: {{isClickAll?'#FFFFFF':themeColor}};" class="clist_bArrow" src="../../../images/icons/down_arrows_w.svg" alt=""></image>
+          <!-- <text wx:else="{{showOpenArrow}}" class="clist_bArrow" decode="true">
+          </text> -->
+        </view>
+        <view wx:if="{{!isClickConsume}}" bindtap="getConsume" class="clist_bLabel" style="background-color: {{themeColor+10}};color: {{themeColor}};">最近消费</view>
+        <view wx:else="{{isClickConsume}}" bindtap="getConsume" class="clist_bLabel" style="width:88px;background-color: {{themeColor}};color:#FFFFFF;text-align: center;">最近消费
+          <image class="clist_bArrow_del" src="../../../images/icons/del.svg" alt=""></image>
+        </view>
+        <view wx:if="{{!isCommunicate}}" bindtap="getCommunicate" class="clist_bLabel" style="background-color: {{themeColor+10}};color: {{themeColor}};">最近沟通</view>
+        <view wx:else="{{isCommunicate}}" bindtap="getCommunicate" class="clist_bLabel" style="width:88px;background-color: {{themeColor}};color:#FFFFFF;text-align: center;">最近沟通
+          <image class="clist_bArrow_del" src="../../../images/icons/del.svg" alt=""></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+<view wx:if="{{!isShowSearch}}">
+  <view class="concernedCustorm">
+    <view class="clist_center">
+      <text class="clist_ccText">{{listTitle}}</text>
+      <view class="clist_ccArrow" bindtap="openOrClose">
+        <image wx:if="{{!ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsis}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text style="color: #7F7F7F;">{{ellipsis?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsis?'clist_center2':'clist_center1'}}">
+      <view class="clist_center1_item" wx:for="{{ListData}}" wx:key="index">
+        <view class="clist_center1_item_left" data-id="{{item.id}}" data-nkMemberId="{{item.nkMemberId}}" bindtap="goCustormDetail">
+          <image class="clist_center1_iImg" wx:if="{{!item.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image>
+          <image class="clist_center1_iImg" wx:else="{{item.avatar}}" src="{{item.avatar}}"></image>
+          <view class="clist_center1_iText">
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:if="{{item.identityTag=='ORDINARY_CUSTOMERS'}}">{{item.nickname}}</view>
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:else="{{item.identityTag!='ORDINARY_CUSTOMERS'}}">{{
+item.userName?item.nickname+'('+item.userName+')':item.nickname}}</view>
+            <view class="clist_center1_iText1">
+              <text class="clist_center1_iText2" wx:if="{{item.cityName}}">{{item.provinceName}}{{item.cityName}}{{item.regionName}}</text>
+              <text class="clist_center1_iText2" wx:else="{{!item.cityName}}">暂无</text>
+              <text class="clist_center1_iText2" style="margin-right: 8rpx;">{{item.identityTag=='ORDINARY_CUSTOMERS'?identityTagObj[item.identityTag]:item.cnCardNo}}</text>
+              <!-- 身份标签里面只有普通顾客是没有cn号的，如果不是普通顾客，cn号是一定有的 -->
+              <text class="clist_center1_iText2 {{item.identityTag=='ORDINARY_CUSTOMERS'?'clist_center1_iText2_max_width':'clist_center1_iText2_max_width1'}}">{{item.enPoint}} en悦家点数可用</text>
+              <!-- origin为cn卡则悦家点数最大宽度88，顾客身份则115 -->
+            </view>
+
+          </view>
+        </view>
+        <image bindtap="goChat" data-uid="{{item.uid}}" class="clist_center1_iImg1" src="../../../images/icons/dialogue.svg" alt=""></image>
+      </view>
+    </view>
+  </view>
+  <view class="notconcernedCustorm">
+    <view class="clist_center">
+
+      <text class="clist_ccText">{{listTitle1}}</text>
+      <view class="clist_ccArrow" bindtap="openOrClose1">
+        <image wx:if="{{!ellipsis1}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsis1}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text style="color: #7F7F7F;">{{ellipsis1?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsis1?'clist_center4':'clist_center3'}}">
+      <view class="clist_center1_item" wx:for="{{ListData1}}" wx:key="index">
+        <view class="clist_center1_item_left" data-id="{{item.id}}" data-nkMemberId="{{item.nkMemberId}}" bindtap="goCustormDetail">
+          <image class="clist_center1_iImg" wx:if="{{!item.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image>
+          <image class="clist_center1_iImg" wx:else="{{item.avatar}}" src="{{item.avatar}}"></image>
+          <view class="clist_center1_iText">
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:if="{{item.identityTag=='ORDINARY_CUSTOMERS'}}">{{item.nickname}}</view>
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:else="{{item.identityTag!='ORDINARY_CUSTOMERS'}}">{{
+item.userName?item.nickname+'('+item.userName+')':item.nickname}}</view>
+            <view class="clist_center1_iText1">
+              <text class="clist_center1_iText2" wx:if="{{item.cityName}}">{{item.provinceName}}{{item.cityName}}{{item.regionName}}</text>
+              <text class="clist_center1_iText2" wx:else="{{!item.cityName}}">暂无</text>
+              <text class="clist_center1_iText2" style="margin-right: 8rpx;">{{item.identityTag=='ORDINARY_CUSTOMERS'?identityTagObj[item.identityTag]:item.cnCardNo}}</text>
+              <text class="clist_center1_iText2 {{item.identityTag=='ORDINARY_CUSTOMERS'?'clist_center1_iText2_max_width':'clist_center1_iText2_max_width1'}}">{{item.enPoint}} en悦家点数可用</text>
+            </view>
+
+          </view>
+        </view>
+        <image bindtap="goChat" data-uid="{{item.uid}}" class="clist_center1_iImg1" src="../../../images/icons/dialogue.svg" alt=""></image>
+      </view>
+    </view>
+  </view>
+  <view class="notconcernedCustorm" wx:if="{{isShowListData2}}">
+    <view class="clist_center">
+      <text class="clist_ccText">{{listTitle2}}</text>
+      <view class="clist_ccArrow" bindtap="openOrClose2">
+        <image wx:if="{{!ellipsis2}}" class="clist_ccArrow1" src="../../../images/icons/up_arrows.svg"></image>
+        <image wx:else="{{ellipsis2}}" class="clist_ccArrow1" src="../../../images/icons/down_arrows.svg"></image>
+        <text style="color: #7F7F7F;">{{ellipsis2?'展开':'收起'}}</text>
+      </view>
+    </view>
+    <view class="{{ellipsis2?'clist_center4':'clist_center3'}}">
+      <view class="clist_center1_item" wx:for="{{ListData2}}" wx:key="index">
+        <view class="clist_center1_item_left" data-id="{{item.id}}" data-nkMemberId="{{item.nkMemberId}}" bindtap="goCustormDetail">
+          <image class="clist_center1_iImg" wx:if="{{!item.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image>
+          <image class="clist_center1_iImg" wx:else="{{item.avatar}}" src="{{item.avatar}}"></image>
+          <view class="clist_center1_iText">
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:if="{{item.identityTag=='ORDINARY_CUSTOMERS'}}">{{item.nickname}}</view>
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:else="{{item.identityTag!='ORDINARY_CUSTOMERS'}}">{{
+item.userName?item.nickname+'('+item.userName+')':item.nickname}}</view>
+            <view class="clist_center1_iText1">
+              <text class="clist_center1_iText2" wx:if="{{item.cityName}}">{{item.provinceName}}{{item.cityName}}{{item.regionName}}</text>
+              <text class="clist_center1_iText2" wx:else="{{!item.cityName}}">暂无</text>
+              <text class="clist_center1_iText2" style="margin-right: 8rpx;">{{item.identityTag=='ORDINARY_CUSTOMERS'?identityTagObj[item.identityTag]:item.cnCardNo}}</text>
+              <text class="clist_center1_iText2 {{item.identityTag=='ORDINARY_CUSTOMERS'?'clist_center1_iText2_max_width':'clist_center1_iText2_max_width1'}}">{{item.enPoint}} en悦家点数可用</text>
+            </view>
+
+          </view>
+        </view>
+        <image bindtap="goChat" data-uid="{{item.uid}}" class="clist_center1_iImg1" src="../../../images/icons/dialogue.svg" alt=""></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else="{{isShowSearch}}" style="overflow-y: scroll;height: {{maxHeight}}px;">
+    <view wx:if="{{searchDataList.length!=0}}" class="{{ellipsis?'clist_center2':'clist_center1'}}">
+      <view class="clist_center1_item" wx:for="{{searchDataList}}" wx:key="index">
+        <view class="clist_center1_item_left" data-id="{{item.id}}" data-nkMemberId="{{item.nkMemberId}}" bindtap="goCustormDetail">
+          <image class="clist_center1_iImg" wx:if="{{!item.avatar}}" src="{{'data:image/svg+xml,'+my_header_avater}}"></image>
+          <image class="clist_center1_iImg" wx:else="{{item.avatar}}" src="{{item.avatar}}"></image>
+          <view class="clist_center1_iText">
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:if="{{item.identityTag=='ORDINARY_CUSTOMERS'}}">{{item.nickname}}</view>
+            <view class="clist_center1_iText1" style="height: 40rpx;" wx:else="{{item.identityTag!='ORDINARY_CUSTOMERS'}}">{{
+item.userName?item.nickname+'('+item.userName+')':item.nickname}}</view>
+            <view class="clist_center1_iText1">
+              <text class="clist_center1_iText2" wx:if="{{item.cityName}}">{{item.provinceName}}{{item.cityName}}{{item.regionName}}</text>
+              <text class="clist_center1_iText2" wx:else="{{!item.cityName}}">暂无</text>
+              <text class="clist_center1_iText2" style="margin-right: 8rpx;">{{item.identityTag=='ORDINARY_CUSTOMERS'?identityTagObj[item.identityTag]:item.cnCardNo}}</text>
+              <!-- 身份标签里面只有普通顾客是没有cn号的，如果不是普通顾客，cn号是一定有的 -->
+              <text class="clist_center1_iText2 {{item.identityTag=='ORDINARY_CUSTOMERS'?'clist_center1_iText2_max_width':'clist_center1_iText2_max_width1'}}">{{item.enPoint}} en悦家点数可用</text>
+              <!-- origin为cn卡则悦家点数最大宽度88，顾客身份则115 -->
+            </view>
+
+          </view>
+        </view>
+        <image bindtap="goChat" data-uid="{{item.uid}}" class="clist_center1_iImg1" src="../../../images/icons/dialogue.svg" alt=""></image>
+      </view>
+    </view>
+    <view wx:else="{{searchDataList.length==0}}" class="noInfo">
+        暂无查询数据
+    </view>
+</view>
+  <!-- 全部标签弹框 -->
+  <view wx:if="{{showOpenArrow}}" data-show="0" bindtap="controlShowFloat"  class="pop_up_box">
+    <view class="pop_content" data-show="1" catchtap="controlShowFloat">
+        <!-- <scroll-view scroll-y class="xx_tabs"> -->
+        <view>
+            <!-- 左边tabs -->
+            <view class="left_tabs xx_tabs">
+                <view class="xx_tabs">
+                    <mp-tabs tabs="{{tabs}}" activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+                    </mp-tabs>
+
+                </view>
+            </view>
+        </view>
+        <!-- </scroll-view> -->
+        <scroll-view scroll-y style="height: 560rpx;">
+            <!-- 右边内容 -->
+            <view class="right_clist_cText">
+                <view class="" wx:for="{{rightListData}}" wx:for-item="item" wx:for-index="index">
+                    <view class="clist_cText_title">
+                        <view style="background-color: {{themeColor}};" class="title_left_border"></view>
+                        <view class="title_text">{{item.name}}</view>
+                    </view>
+                    <view class="clist_cText_box">
+                        <view wx:for="{{item.tagValues}}" wx:for-item="item1" wx:for-index="index1" style="background-color: {{item1.checked ? themeColor : themeColor+10}};color: {{item1.checked?'#FFFFFF':themeColor}};" data-forData="{{rightListData}}" data-id="{{item1.id}}" bindtap="diseaseSwitch" class="clist_cText_item">{{item1.label}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="footButton" data-show="1" catchtap="controlShowFloat">
+      <button bindtap="reset" class="reset" style="margin-right: 20rpx;margin-top: 24rpx;border-color:{{themeColor}};background-color: {{themeColor+10}};color: {{themeColor}};width: 224rpx;">重 置</button>
+      <button bindtap="save" class="save" style="margin-right: 32rpx;margin-top: 24rpx;background-color: {{themeColor}};color: #FFFFFF;width: 224rpx;">确 定</button>
+    </view>
+  </view>
+ 
+</view>

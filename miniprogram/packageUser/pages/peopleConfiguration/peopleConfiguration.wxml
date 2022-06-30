@@ -1,0 +1,28 @@
+<commonGlobal/>
+<view class="my_peopleConfiguration">
+  <!-- header -->
+  <view class="people_topText">向顾客展示</view>
+  <view class="peple-for" wx:if="{{show}}">
+    <view wx:for="{{textData}}" wx:key="index" class="textDataItem">
+      <view class="title">
+        <view class="config_lable">{{item.text}}</view>
+        <view class="body-view">
+          <!-- <switch size='mini' checked="{{item.status}}" color='{{themeColor}}' bindchange="switchChange" /> -->
+          <view class="switchCustom">
+            <switchCustom bind:doSwitch="doSwitch" data-index="{{index}}" conf='{{item.switchConf}}' />
+          </view>
+          
+        </view>
+      </view>
+      <view class="remark">
+        {{item.remark}}
+      </view>
+    </view>
+    
+  </view>
+<!-- 底部按钮 -->
+<view class="bootom_but">
+      <button class="cancel_but"   width='328'  type="default"> <text class="butText">取消</text></button>
+      <button class="confirm_but" bindtap="setConfig" style="background-color: {{themeColor}};" type="default"> <text class="butText">保存</text></button>
+    </view>
+</view>

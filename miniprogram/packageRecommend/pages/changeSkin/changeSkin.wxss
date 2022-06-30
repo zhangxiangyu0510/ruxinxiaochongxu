@@ -1,0 +1,150 @@
+/* packageRecommend/pages/changeSkin/changeSkin.wxss */
+.changeSkin{
+  padding:32rpx;
+  padding-bottom:200rpx;
+}
+.tabList{
+  width:100%;
+  overflow-x: scroll;
+
+}
+.scroll{
+  width:1200rpx;
+  height:400rpx;
+}
+.noFansImg{
+  margin-top:0rpx;
+}
+.tabItem{
+  float:left;
+  margin-right:24rpx;
+  border-radius: 8rpx;
+}
+.bottom{
+  width:100%;
+  height:56rpx;
+  background:rgba(0,0,0,0.5);
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:9;
+  border-radius: 0 0 8rpx 8rpx;
+  text-align:center;
+  color:#fff;
+  line-height:56rpx;
+  font-size: 24rpx;
+}
+.pic{
+  width:208rpx;
+  height:280rpx;
+  margin-bottom:24rpx;
+  position: relative;
+  border-radius: 8rpx;
+  
+}
+.pic image{
+  width:100%;
+  height:100%;
+  border-radius: 8rpx;
+}
+.text{
+font-family: 'PingFang SC';
+font-style: normal;
+font-weight: 400;
+font-size: 32rpx;
+text-align: center;
+color: #404040;
+}
+.egList{
+  width:100%;
+  overflow-x: scroll;
+  
+}
+.egScroll{
+  min-width:900rpx;
+  height:800rpx;
+}
+.egItem{
+  float:left;
+  width:380rpx;
+  height:800rpx;
+  margin-right:48rpx;
+  border-radius: 16rpx;
+}
+.egItem image{
+  width:100%;
+  height:100%;
+  border-radius: 16rpx;
+
+}
+.content{
+  width:72rpx;
+  height:180rpx;
+  position: absolute;
+  top:44rpx;
+  left:64rpx;
+  -webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+  font-family: 'PingFang SC';
+font-style: normal;
+font-weight: 600;
+font-size: 32rpx;
+letter-spacing:12rpx;
+line-height: 72rpx;
+padding-top:12rpx;
+border-radius: 4rpx;
+overflow: hidden;
+}
+.moren{
+  top:64rpx;
+  left:72rpx;
+  position:absolute;
+  width:64rpx;
+  height:140rpx;
+
+}
+.moren image{
+  width:100%;
+  height:100%;
+}
+.myRecommend_bottom_btn_bg{
+  height:152rpx;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  background: #fafafa;
+
+}
+.myRecommend_bottom_btn{
+  height: 84rpx;
+  margin:0 32rpx;
+  /* background: #FF5E00; */
+  border-radius: 4px;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+  line-height: 84rpx;
+  text-align: center;
+  color: #FFF;
+}
+/* 已下架 */
+.myRecommend_already_out_box{
+  margin-top:32rpx;
+}
+.myRecommend_already_out_single{
+  margin-bottom:48rpx;
+}
+.myRecommend_already_out_time{
+  background: #EEEEEE;
+  height:64rpx;
+  width:100%;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  color: #4A4A4A;
+  padding-left: 34rpx;
+}

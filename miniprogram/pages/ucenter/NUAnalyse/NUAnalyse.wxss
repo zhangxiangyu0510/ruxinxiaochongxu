@@ -1,0 +1,247 @@
+/* pages/ucenter/NUAnalyse/NUAnalyse.wxss */
+.NUAnalyse {
+  padding: 48rpx 24rpx;
+  background-color: #fcfcfc;
+}
+
+.NUAnalyse .topbut {
+  display: flex;
+  align-items: flex-end;
+
+
+}
+
+.NUAnalyse .topbut .but {
+  width: 156rpx;
+  height: 60rpx;
+  color: #7340B3;
+  background: rgba(115, 64, 179, 0.1);
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+}
+
+.NUAnalyse .topbut .text {
+  color: #4A4A4A;
+  font-size: 24rpx;
+  margin-left: 16rpx;
+
+}
+
+.NUAnalyse .title {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #404040;
+  margin-top: 48rpx;
+}
+
+.NUAnalyse .card {
+  background-color: #fff;
+  padding: 32rpx;
+
+}
+
+.NUAnalyse .card .cardTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NUAnalyse .card .cardTop .left .Text {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #808080;
+
+}
+
+.NUAnalyse .card .cardTop .left .number {
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #7A4AB7;
+}
+
+.NUAnalyse .card .right {
+  text-align: right;
+}
+
+.NUAnalyse .card .right .consume {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.NUAnalyse .card .right .pastDue {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  margin: 8rpx 0;
+}
+
+.NUAnalyse .card .right .time {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #979797;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+
+}
+
+.NUAnalyse .card .center {
+  min-width: 100rpx;
+  background-color: #7A4AB7;
+  height: 52rpx;
+  display: inline-block;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 48rpx;
+  line-height: 52rpx;
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+
+}
+
+.NUAnalyse .card .progress {}
+
+.NUAnalyse .card .progressBar {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 32rpx;
+}
+
+.NUAnalyse .card .progressBar .time {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #979797;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  margin-bottom: 16rpx;
+
+
+}
+
+.NUAnalyse .record {
+  margin-top: 64rpx;
+
+}
+
+.NUAnalyse .record .tobs {
+  display: flex;
+  align-items: center;
+
+}
+
+.NUAnalyse .record .tobs .item {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40rpx;
+  color: #404040;
+  margin-right: 48rpx;
+}
+
+.NUAnalyse .record .tobs .changeItem {
+  font-weight: 600;
+  position: relative;
+}
+.NUAnalyse .record   .index{
+  width: 40rpx;
+  height: 4rpx;
+  margin: 0 auto;
+}
+
+.NUAnalyse .record .tobs .changeItem::before {
+  content: "";
+  width: 40rpx;
+  height: 4rpx;
+  position: absolute;
+  top: 65rpx;
+  left: 60rpx;
+  background: #7340B3;
+}
+
+.NUAnalyse .recorditemBox {}
+
+.NUAnalyse .recorditemBox .recorditem {}
+
+.NUAnalyse .recorditemBox .recorditem .title {
+  width: 750rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #EBEBEB;
+  padding: 8rpx 32rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #333333;
+  position: relative;
+  left: -32rpx;
+}
+
+.NUAnalyse .recorditemBox .recorditem .title .number {
+  margin-left: 24rpx;
+}
+
+.NUAnalyse .recorditemBox .recorditem .shopkeeperInfo {
+  padding-top: 48rpx;
+  padding-bottom: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+.NUAnalyse .recorditemBox .recorditem .shopkeeperInfo .left{
+  flex: 1;
+
+}
+
+.NUAnalyse .recorditemBox .recorditem .shopkeeperInfo .grade {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32rpx;
+  color: #404040;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+
+.NUAnalyse .recorditemBox .recorditem .shopkeeperInfo .time {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #4A4A4A;
+  margin-top: 16rpx;
+}
+
+.NUAnalyse .recorditemBox .recorditem .shopkeeperInfo .right {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #7340B3;
+  width: 120rpx;
+  text-align: right;
+}

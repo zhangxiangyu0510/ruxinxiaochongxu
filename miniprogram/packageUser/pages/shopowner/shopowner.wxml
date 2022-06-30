@@ -1,0 +1,10 @@
+<view>
+  <commonGlobal/>
+   <commonOwenrSet ifShow="{{thisShow}}" nextLevelData="{{nextLevelData}}" bind:goEdit="goEdit" bind:goReview="goReview" bind:goConfig="goConfig">
+    <view class="slot-canvas">
+      <canvas type="2d" id="myCanvas" class="canvas" canvas-id="myCanvas" width="84" height="45"></canvas>
+      <view class="next-text">{{nextAchievementTips?nextAchievementTips:'恭喜您达成8级店主，要记得越努力越幸运哦！'}}</view>
+    </view>
+
+  </commonOwenrSet>
+</view>

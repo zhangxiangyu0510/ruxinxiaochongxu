@@ -1,0 +1,157 @@
+.login_box{
+  padding-bottom:40rpx;
+}
+.phoneDialog_bg{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; 
+    background: rgba(0,0,0,.6);
+}
+.phone_dialog{
+  /* width: 320px; */
+  margin: 0 auto;
+  position: fixed;
+  /* height:300rpx; */
+    z-index: 5000;
+    top: 50%;
+    left: 16px;
+    right: 16px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    max-height: 90%;
+}
+.dialog_text{
+  font-size: 34rpx;
+  line-height: 1.4;
+  padding: 32px 24px 16px;
+}
+.dialog_btns{
+  display: flex;
+  margin-top:32rpx;
+  border-top:2rpx solid #f1f1f1;
+  justify-content: space-between;
+}
+.dialog_btns button{
+  background: #fff;
+  height:100rpx;
+  line-height:60rpx;
+}
+.single_btn{
+  width:48%;
+}
+.single_btn button{
+    width:100% !important;
+}
+/* .speBtn{
+  border-right:2rpx solid #f1f1f1;
+} */
+.weui-dialog__title{
+    outline: none !important;
+}
+
+.login_img{
+  height:970rpx;
+  width:100%;
+  position: relative;
+  /* background: skyblue; */
+}
+.login_img image{
+  width:100%;
+}
+/* login_img 内容 */
+.login_img .login_content  {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 80rpx;
+    width: 100%;
+/* padding: 0px 52rpx; */
+}
+ .login_img .login_content .left_logos{
+    width: 540rpx;
+    height: 144rpx !important;
+    margin-left: 106rpx;
+}
+/* .login_img .login_content .left_logos{
+    width: 200rpx;
+    height: 144rpx;
+    margin-left: 106rpx;
+}
+
+.login_img .login_content  .center_Rectangle946{
+    margin-top: 38rpx;
+    width: 8rpx;
+    height: 72rpx;
+}
+
+.login_img .login_content .right_Group{
+    width: 122rpx;
+    height: 140rpx;
+    margin-right: 104rpx;
+} */
+
+.controls_box{
+  height:60rpx;
+  /* background: red; */
+  margin: 0 auto;
+  margin-top:72rpx;
+  text-align: center;
+}
+.controls_box radio .wx-radio-input{
+  height:32rpx;
+  width:32rpx;
+}
+.controls_title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  color: #7F7F7F;
+  text-align: center;
+  margin-left:8rpx;
+  display: inline-block;
+}
+.text_spe_control{
+  color: #53ACD6;
+  display: inline-block;
+  z-index:99999;
+}
+.controls_btns button{
+  width: 576rpx !important;
+  height:96rpx;
+  line-height:60rpx;
+  border-radius: 76rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28rpx;
+}
+.wechat_btn{
+  width:350rpx !important;
+  margin-top:30rpx;
+  background: #07C160;
+  color:#fff;
+}
+.other_btn{
+  margin-top:40rpx;
+  background: transparent;
+  color: #888 !important;
+  border: 2rpx solid #888888 !important;
+  box-sizing: border-box;
+
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "notificationDialog":"/components/notificationDialog/notificationDialog",
+    "f2":  "/components/wx-f2"
+  },
+  "navigationBarTitleText": "顾客详情"
+
+}

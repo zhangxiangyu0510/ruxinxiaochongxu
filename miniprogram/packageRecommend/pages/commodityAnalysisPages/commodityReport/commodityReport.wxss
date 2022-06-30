@@ -1,0 +1,76 @@
+/* packageRecommend/pages/commodityAnalysisPages/commodityReport/commodityReport.wxss */
+.commodityReport{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    padding: 49rpx 32rpx 0;
+    background-color: #fafafa;
+}
+.commodity-header{
+    display: flex;
+    justify-content: space-between;
+   margin-bottom: 32rpx;
+}
+.commodity-header .header-left{
+    display: flex;
+    align-items: flex-end;
+}
+.commodity-header .header-left .change-date{
+    width: 156rpx;
+    height: 60rpx;
+    background: rgba(122, 74, 183, 0.1);
+    border-radius: 8rpx;
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 60rpx;
+    color: #7340B3;
+    text-align: center;
+    margin-right: 16rpx;
+
+}
+.commodity-header .header-left .date-text{
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    text-align: right;
+    color: #4A4A4A;
+
+}
+.header-right{
+    width: 136rpx;
+    height: 60rpx;
+
+    background: #7A4AB7;
+    border-radius: 8rpx;
+    text-align: center;
+   
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 60rpx;
+    color: #FFFFFF;
+}
+.sales-card{
+    margin-bottom: 64rpx;
+}
+.custorm-list .list-title{
+    font-weight: 600;
+    font-size: 40rpx;
+    line-height: 56rpx;
+    color: #404040;
+    margin-bottom: 32rpx;
+}
+.list{
+    margin-bottom: 24rpx;
+}
+.statement-title{
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #7F7F7F;
+    margin-bottom: 48rpx;
+  }
+.notData{
+    width: 100%;
+    text-align: center;
+    color: #999999;
+    margin-bottom: 80rpx;
+}

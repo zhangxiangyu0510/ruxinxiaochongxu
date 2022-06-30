@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "recommendList": "../../../components/recommendList/recommendList"
+    },
+    "navigationBarTitleText": "已下架",
+    "enablePullDownRefresh": false
+}

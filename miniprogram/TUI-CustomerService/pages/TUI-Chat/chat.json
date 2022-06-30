@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "TUI-message-list": "../../components/tui-chat/message-list/index",
+    "TUI-message-input": "../../components/tui-chat/message-input/index",
+    "TUI-calling": "../../components/TUICalling/TUICalling"
+  },
+  "navigationStyle": "custom"
+}

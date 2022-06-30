@@ -1,0 +1,36 @@
+<!--packageRecommend/pages/commodityAnalysisPages/commodityReport/commodityReport.wxml-->
+<view class="commodityReport">
+    <view class="commodity-header">
+        <view >
+            <picker class="pickerDate" start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month">
+                <view class="header-left">
+                    <view class="change-date" style="color: {{themeColor}};">
+                        <text>{{changeYear}}年{{changeMonth}}月</text>
+                    </view>
+                    <view class="date-text">
+                        切换月份
+                    </view>
+                </view>
+            </picker>
+            
+        </view>
+        <view class="header-right" bindtap="handleGetAllData" style="background-color: {{themeColor}};">
+            <text>开店以来</text>
+        </view>
+    </view>
+    <view class="statement-title">该数据仅供参考，数据截止日期：{{currentDate}}</view>
+    <view class="sales-card">
+        <salesCard infoData="{{infoData}}"/>
+    </view>
+    <view class="custorm-list">
+        <view class="list-title">
+            购买顾客
+        </view>
+        <view class="list" wx:for="{{productBuyersList}}" wx:key="index">
+            <infoList infoText='购买数量：' infoData="{{item}}" bindtap="toDetail" data-id="{{item.userId}}"/>
+        </view>
+    </view>
+    <view wx:if="{{isShowNotDataTitle}}" class="notData">
+        暂无数据
+    </view>
+</view>

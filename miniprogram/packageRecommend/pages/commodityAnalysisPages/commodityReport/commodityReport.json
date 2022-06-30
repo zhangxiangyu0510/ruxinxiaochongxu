@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "salesCard":"../../../components/salesCard/salesCard",
+    "infoList":"/components/commonInfoList/commonInfoList"
+  },
+  "navigationBarTitleText": "商品分析"
+}

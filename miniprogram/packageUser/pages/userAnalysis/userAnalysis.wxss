@@ -1,0 +1,157 @@
+/* pages/userAnalysis/userAnalysis.wxss */
+page {
+  min-height: 100%;
+  background: #fafafa;
+  /* padding-bottom:108rpx; */
+}
+.userAnalysis{
+  margin:40rpx 32rpx;
+}
+.date{
+  display: flex;
+  vertical-align: bottom;
+}
+.chart{
+  position: relative;
+}
+.chart .text{
+  position: absolute;
+  top:47%;
+  left:47%;
+  line-height:30rpx;
+}
+.month{
+  padding: 12rpx 20rpx;
+  /* background: rgba(115, 64, 179, 0.1); */
+  border-radius: 8rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  text-align: center;
+
+/* identical to box height, or 150% */
+
+
+/* color: #7340B3; */
+}
+.topText{
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24rpx;
+  color: #7F7F7F;
+  margin-top:32rpx;
+}
+.change{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: 300;
+font-size: 24rpx;
+line-height: 34rpx;
+/* identical to box height */
+margin-left:16rpx;
+
+text-align: right;
+
+color: #4A4A4A;
+vertical-align: bottom;
+margin-top:30rpx;
+}
+.wrap{
+  margin-top:48rpx
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  vertical-align: bottom;
+}
+.title{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  /* identical to box height */
+  color: #404040;
+}
+.more{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 24rpx;
+line-height: 34rpx;
+color: #4A4A4A;
+margin-top:20rpx;
+}
+.content{
+  margin-top:30rpx;
+  background:#fff;
+  padding:40rpx;
+  border-radius: 16rpx;
+}
+.desc{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 24rpx;
+line-height: 24rpx;
+/* identical to box height */
+
+
+color: #4A4A4A;
+}
+.chart{
+  width:610rpx;
+  height:420rpx;
+  /* border:1px solid #ccc; */
+  margin-top:32rpx;
+
+}
+.title text{
+  font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 24rpx;
+line-height: 34rpx;
+color: #4A4A4A;
+}
+.flexContent{
+  display: flex;
+  justify-content: space-between;
+
+}
+.gray{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  /* identical to box height */
+  color: #808080;
+
+}
+.number{
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72rpx;
+  line-height: 72rpx;
+  /* identical to box height, or 100% */
+
+  text-align: center;
+
+  color: #7A4AB7;
+}
+.number text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}

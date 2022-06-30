@@ -1,0 +1,7 @@
+/* packageRecommend/components/ColumnChart/ColumnChart.wxss */
+
+.chart{
+    width: 646rpx;
+    height: 600rpx;
+    /* margin: 48rpx auto 0; */
+  }

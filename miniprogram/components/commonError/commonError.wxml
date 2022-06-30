@@ -1,0 +1,7 @@
+<view class="toast_content_box">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+       {{innerText}}
+    </view>  
+  </view>  
+</view> 

@@ -1,0 +1,157 @@
+/* components/notificationDialog/notificationDialog.wxss */
+.notification-container {
+    position: fixed;
+    z-index: 100000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notification-content {
+    position: absolute;
+    width: 466rpx;
+    height: 728rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+    /* display: flex; */
+    flex-direction: column;
+    padding: 40rpx 30rpx;
+}
+
+.badgeStyle  {
+    position: absolute;
+    width: 416rpx;
+    height: 728rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+    display: flex;
+    flex-direction: column;
+    padding: 40rpx;
+
+}
+
+.notification-content .close {
+    position: absolute;
+    margin-top: -90rpx;
+    margin-left: 460rpx;
+    color: #ffffff;
+}
+.notTip{
+    position: absolute;
+    margin-top: -90rpx;
+    /* margin-left: 460rpx; */
+    color: #ffffff;
+    font-weight: 400;
+font-size: 28rpx;
+/* identical to box height */
+
+
+color: #FFFFFF;
+left:0
+
+}
+ .notTip image {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+
+.notification-content .close image {
+    width: 36rpx;
+    height: 36rpx;
+    /* border: 1px solid #FFFFFF;
+    border-radius: 30rpx; */
+}
+
+.notification-content .row-1 {
+   width:466rpx;
+   height:466rpx;
+   
+}
+
+
+.notification-content .row-1 image {
+    width: 100%;
+    height:100%;
+    
+    
+}
+
+.notification-content .row-2 {
+    font-size: 36rpx;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:44rpx;
+    margin-bottom:48rpx;
+}
+
+.notification-content .row-3 {
+    height: 84rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7340B3;
+    color: #ffffff;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+}
+.badgeStyle .row-1{
+    flex: 1;
+}
+.badgeStyle .row-2{
+    font-size: 36rpx;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:44rpx;
+    margin-bottom:48rpx;
+}
+.badgeStyle .row-3{
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7340B3;
+    color: #ffffff;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+  
+}
+
+.notification-content .row-3 button {
+    width: 100%;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.margin-top {
+    margin-top: 20rpx;
+}
+
+.badge_title{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    margin-top: 32rpx;
+    text-align: center;
+    color: #888888;
+}
+
+.badge_title_top{
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48rpx;
+    margin-top: 32rpx;
+    line-height: 68rpx;
+    color: #404040;
+}

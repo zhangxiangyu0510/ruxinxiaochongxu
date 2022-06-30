@@ -1,0 +1,45 @@
+<!--pages/customersStatistics/shopGoods/shopGoods.wxml-->
+<commonHeader titleText='加购商品'></commonHeader>
+<view class="topText">该数据仅供参考，数据截止日期：{{lastDay}}</view>
+<view class="shopGoods">
+
+  <view class="goodsItem1">
+    <view class="goodsLeft">
+      <image src="{{item.itemImage}}"></image>
+    </view>
+    <view class="goodsRight">
+      <view class="goodsName">{{item.itemName}}</view>
+      <view class="priceNumber">
+        <view class="goodsPrice">
+          <view>
+            <view class="price1">零售价</view><text class="text1">¥{{item.itemRetailPrice}}</text>
+          </view>
+          <view>
+            <view class="price2" style="background:{{themeColor}}">星级价</view><text class="text2" style="color:{{themeColor}}">¥{{item.itemStarPrice}}</text>
+          </view>
+        </view>
+        <view class="goodsNumber">加购数量 <text style="color:{{themeColor}}">{{item.numAddCartUsers}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap">
+    <view class="title">加购用户</view>
+    <view class="person" wx:for="{{userList}}">
+      <view class="awata">
+        <image src="{{item.userImage}}"></image>
+      </view>
+      <view class="center">
+      <view class="name">{{item.userName}}</view>
+      <view class="expense">加购时间：{{item.lastAddCartTime}}</view>
+      </view>
+      <view class="right">
+        
+        <view class="detial">数量：{{item.numAddCartItem}}</view>
+
+      </view>
+    </view>
+    <view  class="nomore" wx:if="{{noMore}}">没有更多了</view>
+</view>
+<view  class="nomore" wx:if="{{loadding}}">加载中...</view>
+<no-data wx:if="{{empty}}" titleText="暂无顾客"></no-data>
+</view>

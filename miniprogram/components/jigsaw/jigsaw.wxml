@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="sharePostersBox" style="width: 0rpx; height: 0px; overflow: hidden;">
+    <view class="sharePosters" style="width:{{width}}px;height:{{height+90}}px;">
+        <view class="closeIconBox">
+            <mp-icon bindtap="closeShare" icon="close" color="#FFFFFF" size="{{18}}"></mp-icon>
+        </view>
+        <image src="{{shareImage}}" style="width:{{width}}px;height:{{height}}px;" class="share-image"></image>
+        <!-- <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage" /> -->
+        <canvas canvas-id="canvasdrawer" style="width:{{width}}px;height:{{height}}px;" class="board" wx:if="{{showCanvas}}"></canvas>
+
+        <!-- 按钮 -->
+        <view class="sharebut">
+            <view bindtap="goToClientSide" class="butItem">
+                <!-- <button open-type='share'> -->
+                    <image class="img_box" src="{{imageUrl}}/icons/weixin.svg"></image>
+                    <view class="but_text">分享给好友</view>
+                <!-- </button> -->
+            </view>
+            <view class="longString"></view>
+            <view bindtap="eventSave" class="butItem">
+                <image class="img_box" src="{{imageUrl}}/icons/canvasDownload.svg" alt=""></image>
+                <view class="but_text">保存到相册</view>
+            </view>
+
+        </view>
+        <!-- <view class="btn-wrap">
+            <button class="btn" bindtap="eventSave">保存到本地</button>
+        </view> -->
+
+    </view>
+
+
+
+
+</view>

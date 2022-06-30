@@ -1,0 +1,84 @@
+/* packageRecommend/components/salesCard/salesCard.wxss */
+.salesCard{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 32rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+}
+.salesCard .salesCard-heard{
+    display: flex;
+    margin-bottom: 48rpx;
+}
+.salesCard .salesCard-heard .salesCard-img{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 16rpx;
+    min-width: 200rpx;
+    background: #7A4AB7;
+    overflow: hidden;
+    margin-right: 24rpx;
+}
+.salesCard .salesCard-heard .salesCard-img image{
+    width: 100%;
+    height: 100%;
+}
+.salesCard .salesCard-heard .salesCard-content .salesCard-title{
+    font-weight: 500;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #4A4A4A;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.salesCard .salesCard-heard .salesCard-content .salesCard-Introduction{
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #808080;
+    margin-top: 8rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.salesCard .salesCard-heard .salesCard-content .button-top{
+    margin-top: 20rpx;
+    width: 136rpx;
+    height: 60rpx;
+    background: #7340B310;
+    border: 2rpx solid #7340B310;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 60rpx;
+    color: #7340B3;
+    text-align: center;
+}
+.sales-number-totle{
+    display: flex;
+    justify-content: space-around;
+}
+.totle-left .number,.totle-right .number{
+    font-weight: 700;
+    font-size: 72rpx;
+    line-height: 86rpx;
+    text-align: center;
+    color: #7A4AB7;
+    margin-bottom: 8rpx;
+}
+.salesCard-number-text{
+    font-weight: 400;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #4A4A4A;
+
+}

@@ -1,0 +1,93 @@
+<!--pages/my/my.wxml-->
+<!-- headers -->
+<notificationDialog id="notificationDialog" />
+<dialogGlobal componentType="1"  id="dialogProtocol"/>
+<dialogGlobal binddialogevent="dialogevent" shopKeeperInfo="{{userInfo}}" componentType="3"/>
+<view  style="background: url(http://{{bg}});min-height:100vh"  bindtouchstart = "handletouchtart" >
+<commonHeader titleText='我的' bg="{{showBg}}"></commonHeader>
+<commonGlobal/>
+<view class="my">
+<!-- header -->
+  <view class="my_top_header">
+    <view class="my_header" style="background-color: {{bg?'transparent':'#fff'}};">
+      <view class="my_header_avater" bindtap="goOwner">
+        <image mode="aspectFit" src="{{hasUserInfo&&shopInfo.avatar?shopInfo.avatar:'data:image/svg+xml,'+my_header_avater}}"></image>
+      </view>
+      <view class="my_header_infos" wx:if="{{hasUserInfo}}" bindtap="goOwner">
+        <view class="my_infos_name">{{shopInfo.nickname||shopInfo.mobile}}</view>
+        <view class="my_infos_fans">
+          <text style="width:196rpx;display: inline-block;"><text style="color:#4a4a4a;margin-right:8rpx;">{{shopInfo.fansCount||0}}</text>粉丝数</text>
+          <text><text style="color:#4a4a4a;margin-right:8rpx;">{{shopInfo.shopTime||0}}</text>年店主</text>
+        </view>
+      </view>
+      <view class="log-now" wx:else="{{!hasUserInfo}}" bindtap="goOwner">立即登录</view>
+      <view class="my_header_edit" bindtap="goEditInfo">
+        <view class="my_edit_icon">
+          <image src="{{imageUrl}}/userCenterIcon/edit.svg"></image>
+        </view>
+        <view class="my_edit_text">编辑信息</view>
+      </view>
+      
+      <view class="my_header_level_box" style="background-color: {{themeColor}};">
+        <view class="my_level_customer" style="padding-right:14rpx;" bindtap="goShopkeeperLevel">
+          <view class="level_icon">
+            <image src="{{imageUrl}}/userCenterIcon/grade.svg"></image>
+          </view>
+          <view class="level_text spe_margin40">店铺等级</view>
+          <view class="level_text_bottom spe_margin40">升级获取店主权益</view>
+        </view>
+        <!-- <view class="my_spe_customer" bindtap="goMyNucoin">
+          <view class="level_icon" style="left:22rpx;">
+            <image src="{{imageUrl}}/userCenterIcon/icon-NU.svg"></image>
+          </view>
+          <view class="level_text spe_margin30">NU币</view>
+          <view class="level_text_bottom spe_margin30">兑换超值好物</view>
+        </view> -->
+        <view class="my_level_customer" style="padding-left:32rpx;  border-left: 2rpx solid rgba(255,255,255,.3);" bindtap="goBadge">
+          <view class="level_icon" style="left:22rpx;">
+            <image src="{{imageUrl}}/userCenterIcon/badge.svg"></image></view>
+          <view class="level_text spe_margin30">徽章馆</view>
+          <view class="level_text_bottom spe_margin30">海量徽章待领取</view>
+        </view>
+        </view>
+    </view>
+  </view>
+  <!-- self buy -->
+  <view class="myself_buy_box">
+  <view class="EN_number" bindtap="goEnHome">
+    <view>
+      <image src="{{imageUrl}}/userCenterIcon/yuejia.png"></image>
+      <text>我的en悦家点数</text>
+    </view>
+    <view class="right-number">
+      <text>{{enNumber}}</text>
+      <image  src="{{imageUrl}}/userCenterIcon/write-right.svg"></image>
+    </view>
+  </view>
+  <view class="myself_title">自购通道</view>
+  <view class="myself_box" style="border-color: {{themeColor}};">
+    <view class="myself_box_logo">
+      <image src="{{imageUrl}}/userCenterIcon/logo-icon.png"></image></view>
+    <view class="myself_box_text">
+      <view class="myself_text_top">自购专区</view>
+      <view class="myself_text_bottom">如新官方商城</view>
+    </view>
+    <view bindtap="jumpCustormDetail" 
+    style="background-color: {{themeColor}};" class="myself_btn">点击进入</view>
+  </view>
+    <view class="myself_order_box">
+      <view class="myself_order_title">我的订单<view class="myself_order_all" bindtap="myOrder" data-orderIndex="4">查看全部</view></view>
+      <view class="myself_status_box">
+        <view class="myself_status_single" wx:for="{{status}}" wx:key="index" bindtap="myOrder" data-orderIndex="{{index}}">
+          <view class="myself_status_single_icon">
+            <view class="infoSum" wx:if="{{item.orderCount!=0}}">{{item.orderCount>999?'999+':item.orderCount}}</view>
+            <image src="{{item.urlIcon}}"></image>
+          </view>
+          <view class="myself_status_single_text">{{item.name}}</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>
+</view>

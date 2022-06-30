@@ -1,0 +1,5 @@
+<!--packageUser/pages/protocolDetails/index.wxml 协议详情-->
+<view class="protocol_details">
+    <rich-text nodes="{{content}}"></rich-text>
+</view>
+

@@ -1,0 +1,38 @@
+<!--pages/ucenter/badgeDetail/badgeDetail.wxml-->
+<commonGlobal/>
+<notificationDialog id="notificationDialog" /> 
+<view class="badgeDetail">
+  <view class="badgeDetail_top">
+    <view class="badgeDetail_top_logo">
+        <!-- <image src="{{badgeDetailData.lighting?badgeDetailData.imageAchieve:badgeDetailData.imageNoAchieve}}"></image> -->
+        <image src="{{badgeDetailImg}}"></image>
+    </view>
+    <view class="badgeDetail_top_main_text">{{badgeDetailName}}</view>
+    <view class="badgeDetail_top_second_text" wx:if="{{badgeDetailTip}}"><text style="color: {{themeColor}};">{{badgeDetailTip}}</text></view>
+  </view>
+  <view class="badgeDetail_process_box">
+    <view class="linear"></view>
+    <view class="process_box">
+      <view class="process-line {{item<badgeDetailData.level?'on':''}}"  wx:for="{{badgeDetailData.badgeGrades}}" wx:key="index">
+        <view class="badge-line">
+          <view class="on-line" style="background-color: {{themeColor}};width:{{item.lighting?'100%':''}}"></view>
+        </view>
+        <view class="badge-spot" style="background-color: {{item.lighting?themeColor:''}};">
+          <view class="spot-shadw" style="background-color: {{item.lighting?themeColor:''}}"></view>
+        </view>
+        <view class="badge-text" style="background-color: {{item.lighting?themeColor:''}};border: 4rpx solid {{item.lighting?themeColor:'#EEEEEE'}}; color: {{item.lighting?'#fff':'#A6A6A6'}};border-radius: 8rpx;" bindtap="handleLevel" data-level="{{item.level}}">
+          <text>V</text>
+          <text>{{item.level}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="process_level" style="background-color: {{themeColor}};">Lv.1</view> -->
+  </view>
+  <!-- <view class="badgeDetail_process_text">
+    勋章福利
+  </view>
+  <view class="badgeDetail_process_reward">
+    奖励100个NU币。
+  </view> -->
+
+</view>

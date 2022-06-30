@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dialog":"/miniprogram_npm/weui-miniprogram/dialog/dialog"
+  },
+  "styleIsolation":"shared"
+}

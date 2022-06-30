@@ -1,0 +1,161 @@
+<!--pages/ucenter/replaceProduct/replaceProduct.wxml-->
+<!-- 组合推荐更换产品流程 -->
+<view class="replace_product">
+  <view wx:if="{{HybridRecommendListData.length}}">
+    <view class="tio_text">顾客浏览效果</view>
+    <view class="top_slideshow">
+      <swiper next-margin='80rpx' previous-margin='80rpx' snap-to-edge='{{true}}' circular='{{true}}' circular="true" bindchange="swiperChange" autoplay="{{autoplay}}">
+        <block wx:for="{{HybridRecommendListData}}" wx:key="{{index}}">
+          <swiper-item bindtap="changeGoodsItem" data-item="{{item}}" >
+
+            <view style=" border-color:{{themeColor}}" class="swiper-item-content {{swiperIndex==index ? '' : 'active'}}">
+              <view style="background-color: {{themeColor+10}};" class="backgColor">
+              </view>
+              <view style="background-color: {{themeColor+15}};" class="backgColorTwo"></view>
+              <view wx:if="{{item.shopProductItemList.length}}" style="background-color: {{themeColor}}" class="gears">栏位{{index+1}}</view>
+              <view wx:if="{{item.shopProductItemList.length}}" class="content_item">
+                <view>
+                  <view class="shop_synopsis">
+                    {{item.title || '暂无名称'}}
+                  </view>
+                  <view class="retailPrice_item">
+                    <text class="retailPrice">零售价</text> <text class="number"><text>￥{{item.retailPrice || 0}}</text></text>
+                  </view>
+                  <view class="preferentialPrice_item">
+                    <text style="background-color: {{themeColor}};" class="preferentialPrice">星级价</text> <text style="color:{{themeColor}}" class="number"><text>￥{{item.starPrice || 0}}</text></text>
+                  </view>
+                </view>
+                <view class="imgBox">
+                  <image src="{{item.image}}" alt="" />
+                </view>
+              </view>
+              <view wx:else class="noItem">
+                当前栏位暂无产品，您可以自由添加产品至组合推荐栏位
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+
+      <!-- 组合推荐 -->
+      <view class="recommend">
+        <view class="top_title">
+          <view class="title_img">
+            <image src="data:image/svg+xml,{{textTitleIcon}}" mode="widthFix"></image>
+
+            <!-- <image src="/images/icons/hybridRecommend_textTitle.svg" alt=""></image> -->
+          </view>
+          <view bindtap="amendGoodsSort" wx:if="{{!isSort}}" class="title_right">
+            <image class="icon_img" src="data:image/svg+xml,{{FrameIcon}}" mode="widthFix"></image>
+            <!-- <image class="icon_img" src="/images/icons/hybridRecommend_Frame.svg" alt=""></image> -->
+            <view class="exit">调整产品排序
+            </view>
+          </view>
+          <view bindtap="edtAmendGoodsSort" wx:if="{{isSort}}" class="title_right">
+            <image class="icon_img" src="data:image/svg+xml,{{quitIcon}}" mode="widthFix"></image>
+            <!-- <image class="icon_img" src="/images/icons/hybridRecommend_quit.svg" alt=""></image> -->
+            <view class="exit">退出产品排序
+            </view>
+          </view>
+
+        </view>
+        <!-- 产品 -->
+        <view class="goods_box">
+          <view wx:for="{{HybridRecommendListData}}" wx:key="{{index}}">
+            <view bindtap="changeGoodsItem" data-item="{{item}}" wx:if="{{item.shopProductItemList.length}}" class="goods_item">
+              <view class="gears" style="background-color: {{themeColor}}">栏位{{index+1}}</view>
+              <view class="goods_item_content">
+                <view class="left_img_box">
+                  <image src="{{item.image}}" alt="" />
+                </view>
+                <view class="right_box">
+                  <view class="goods_synopsis">{{item.title || '暂无名称'}}</view>
+                  <view class="retailPrice_item">
+                    <text class="retailPrice">零售价</text> <text class="number"><text>￥{{item.retailPrice || 0}}</text></text>
+                  </view>
+                  <view class="preferentialPrice_item_box">
+                    <view class="preferentialPrice_item">
+                      <text class="preferentialPrice" style="background-color: {{themeColor}};">星级价</text> <text class="number"><text style="color:{{themeColor}}">￥{{item.starPrice || 0}}</text></text>
+                    </view>
+                    <view wx:if="{{!isSort }}" catchtap="goToAddGoods" data-type="replace" data-item="{{item}}" class="replaceProduct">
+                      <view class="icon">
+                        <image class="icon_img" src="data:image/svg+xml,{{replaceIcon}}" mode="widthFix"></image>
+                        <!-- <image src="/images/icons/hybridRecommend_replace.svg" alt=""></image> -->
+                      </view>
+                      <text style="color:{{themeColor}}">更换产品</text>
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+            <!-- footer -->
+            <view wx:if="{{!isSort && item.shopProductItemList.length==0}}" class="footer_box">
+              <!-- <view class="gears" style="background-color: {{themeColor}}">栏位{{index+1}}</view> -->
+              <view bindtap="goToAddGoods" data-item="{{item}}" class="footer_content">
+                <view class="text">当前栏位暂无产品，您可以自由添加产品至如新优选栏位</view>
+                <view   class="add_goods">
+                  <view class="icon">
+                    <!-- <image src="/images/icons/hybridRecommend_add.svg" alt=""></image> -->
+                    <image src="data:image/svg+xml,{{addIcon}}" mode="widthFix"></image>
+                  </view>
+                  <view style="color:{{themeColor}}" class="add_goods_text">添加产品</view>
+                </view>
+                <image class="addBgIcon" src="data:image/svg+xml,{{addBgIcon}}" mode="widthFix"></image>
+
+              </view>
+            </view>
+            <!-- 产品底部排序 -->
+            <view wx:if="{{isSort && item.shopProductItemList.length}}"  style="background-color: {{themeColor+10}};" class="goods_sort_tools">
+              <view bindtap="changeListSort" data-index="{{index}}" data-type="up" data-item="{{item}}" class="flex-conter">
+                <image src="{{index==0 ? '../../images/hybridRecommend_moveUp.svg'  :  'data:image/svg+xml,'+moveUpIcon}}" mode="widthFix"></image>
+                <!-- <image src="/images/icons/hybridRecommend_moveUp.svg" alt=""></image> -->
+                <view style="color:{{index==0 ? '#7F7F7F' : themeColor}}" class="moveUp">排序上移</view>
+              </view>
+              <view class="longString"></view>
+              <view bindtap="changeListSort" data-index="{{index}}" data-type="down" data-item="{{item}}" class="flex-conter">
+                <image src="{{index==hybridRecommendNumber ? '../../images/hybridRecommend_moveDown.svg'  :  'data:image/svg+xml,'+moveDownIcon}}"  mode="widthFix"></image>
+                <!-- <image src="/images/icons/hybridRecommend_moveDown.svg" alt=""></image> -->
+                <view style="color:{{index==hybridRecommendNumber ? '#7F7F7F' : themeColor}}"  class="moveUp">排序下移</view>
+              </view>
+            </view>
+
+          </view>
+
+        </view>
+
+      </view>
+
+      <!-- <xx-toast  hintText='推荐成功' ></xx-toast> -->
+      <!-- <view id="toast" >
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast">
+        <text class="weui-icon-success-no-circle weui-icon_toast"></text>
+        <view class="weui-toast__content">推荐成功</view>
+    </view> 
+ </view> -->
+
+
+    </view>
+    <view wx:if="{{isSort}}" class="footerbut">
+      <view  bindtap="amendGoodsSort" style="background-color: {{themeColor}};" class="but bgColor">保存调整</view>
+    </view>
+  </view>
+  <!-- 没有数据 -->
+  <!--  -->
+  <view wx:if="{{!isLoading && HybridRecommendListData.length==0 }}">
+    <view  class="noData">
+    <!-- <image src="../../../images/icons/undraw_happy.png"></image> -->
+    <view class="empty">
+          <image  src="{{emptyBg}}"></image>
+          <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image>
+        </view>
+    <!-- <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image> -->
+    <view class="text">官方暂无组合推荐产品</view>
+    请等待后续更新
+    <view bindtap="backPage" style="background-color: {{themeColor}};" class="backBut">返回</view>
+    </view>
+  </view>
+</view>

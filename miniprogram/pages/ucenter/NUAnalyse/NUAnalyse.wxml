@@ -1,0 +1,83 @@
+<!--pages/ucenter/NUAnalyse/NUAnalyse.wxml-->
+<view class="NUAnalyse">
+  <view class="topbut">
+    <view style="color: {{themeColor}};background: {{themeColor+10}};" class="but">{{dateTime}}</view>
+    <!-- <view class="text"> 切换月份</view> -->
+    <picker class="text" start="1970-01-01" end="2080-01-01" bindchange="mounthChange" mode="date" fields="month"> 切换月份</picker>
+  </view>
+  <view class="title">
+    NU币概况
+  </view>
+  <view class="card">
+    <view class="cardTop">
+      <view class="left">
+        <view class="Text">当前NU币</view>
+        <view  style="color: {{themeColor}};" class="number">{{sisIncomeRealtimeData.shopOwnerDistId || 0}}</view>
+      </view>
+      <view class="right">
+        <view class="consume">本月已消耗NU币 {{sisIncomeRealtimeData.numCurrentMonthUsedNuCoin || 0}}</view>
+        <view class="pastDue">即将过期NU币 {{sisIncomeRealtimeData.numWillExpireNuCoin || 0}}</view>
+        <view class="time">最近过期时间：{{sisIncomeRealtimeData.expireTime}}</view>
+      </view>
+    </view>
+    <view class="progress">
+      <view class="progressBar">
+        <view class="time">第一周</view>
+        <view style="width:{{(sisIncomeRealtimeData.numFirstWeekIncomeNuCoin/sisIncomeRealtimeData.numCurrentMonthIncomeNuCoin)*100+'%'}};background: {{themeColor}};" class="center">{{sisIncomeRealtimeData.numFirstWeekIncomeNuCoin || 0}}</view>
+      </view>
+      <view class="progressBar">
+        <view class="time">第二周</view>
+        <view style="width:{{(sisIncomeRealtimeData.numSecondWeekIncomeNuCoin/sisIncomeRealtimeData.numCurrentMonthIncomeNuCoin)*100+'%'}};background: {{themeColor}};" class="center">{{sisIncomeRealtimeData.numSecondWeekIncomeNuCoin || 0}}</view>
+      </view>
+      <view class="progressBar">
+        <view class="time">第三周</view>
+        <view style="width:{{(sisIncomeRealtimeData.numThirdWeekIncomeNuCoin/sisIncomeRealtimeData.numCurrentMonthIncomeNuCoin)*100+'%'}};background: {{themeColor}};" class="center">{{sisIncomeRealtimeData.numThirdWeekIncomeNuCoin || 0}}</view>
+      </view>
+      <view class="progressBar">
+        <view class="time">第四周</view>
+        <view style="width:{{(sisIncomeRealtimeData.numFourWeekIncomeNuCoin/sisIncomeRealtimeData.numCurrentMonthIncomeNuCoin)*100+'%'}};background: {{themeColor}};" class="center">{{sisIncomeRealtimeData.numFourWeekIncomeNuCoin || 0}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 获取记录、消耗记录 -->
+  <view class="record">
+    <view class="tobs">
+      <view bindtap="changeTobs" data-item="1" class="{{tabsIndex==1 ? 'item ' : 'item'}}">
+      获取记录 
+      <view wx:if="{{tabsIndex==1}}" style="background: {{themeColor}};" class="index"></view>
+      </view>
+      <view bindtap="changeTobs" data-item="2" class="{{tabsIndex==2 ? 'item ' : 'item'}}">
+      消耗记录
+      <view  wx:if="{{tabsIndex==2}}" style="background: {{themeColor}};" class="index"></view>
+      </view>
+    </view>
+    <view class="recorditemBox">
+      <view class="recorditem">
+        <view class="title">2022年1月 <text class="number">合计NU币：1,000</text></view>
+
+        <view wx:if="{{tabsIndex==1}}">
+          <view wx:for="{{salesUserRealtimeData}}" wx:key="{{index}}" class="shopkeeperInfo">
+            <view class="left">
+              <view class="grade">{{item.incomeNuCoinType}}</view>
+              <view class="time">{{item.time}} </view>
+            </view>
+            <view style="color: {{themeColor}};" class="right">+{{item.numIncomeNuCoin}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{tabsIndex==2}}">
+          <view wx:for="{{sisUsedRealtimeData}}" wx:key="{{index}}"  class="shopkeeperInfo">
+            <view class="left">
+              <view class="grade">NU币消费：{{item.usedNuCoinType}}</view>
+              <view class="time">{{item.time}} </view>
+            </view>
+            <view style="color: {{themeColor}};" class="right">-{{item.numUsedNuCoin}}</view>
+          </view>
+        </view>
+  
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,16 @@
+<!--components/common_noticeNoticeDialog/common_noticeNoticeDialog.wxml-->
+<cover-view class="common_notice_mask_bg">
+  <cover-view class="common_notice_mask">
+    <cover-view class="common_notice_btn"></cover-view>
+    <cover-view class="common_notice_text">不再提示</cover-view>
+    <cover-view class="common_notice_close_btn"></cover-view>
+    <cover-view class="common_notice_mask_content_box_bg">
+      <cover-view class="common_notice_mask_content_box">
+      <cover-view class="common_notice_mask_con_logo">
+      </cover-view>
+      <cover-view class="common_notice_mask_con_text">官方新产品推荐通知</cover-view>
+      <cover-view class="common_notice_mask_btn">查看详情</cover-view>
+      </cover-view>
+  </cover-view>
+  </cover-view>
+</cover-view>

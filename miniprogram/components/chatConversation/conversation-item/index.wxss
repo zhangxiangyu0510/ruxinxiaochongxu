@@ -1,0 +1,154 @@
+.t-conversation-item-container {
+    width: 100vw;
+    height: 164rpx;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    
+  }
+  .t-conversation-item {
+    height: 164rpx;
+    display: flex;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .t-conversation-pinneditem{
+    height: 164rpx;
+    display: flex;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    position:relative;
+  }
+  .avatar-box{
+    position: relative;
+    display: inline-flex;
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 24rpx;
+    margin-left:20rpx;
+    border-radius: 12rpx;
+  }
+  .t-conversation-item-avatar{
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 8rpx;
+  
+  }
+  .t-conversation-item-content {
+    flex: 1;
+  }
+  .t-conversation-item-info {
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: #999999;
+    margin-right: 30rpx;
+    position: absolute;
+    top:50%;
+    right:12rpx;
+    transform: translateY(-50%);
+  }
+  
+  .t-error {
+    background-color: #fb5250;
+    color: #fff;
+  }
+  
+  .t-conversation-delete {
+    width: 144rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E85454;
+    color: #FFFFFF;
+    line-height: 44rpx;
+    font-size: 32rpx;
+  }
+  .t-conversation-item-mutenotifications{
+    margin-right: 40rpx;
+  }
+  .t-conversation-mutenotifications-img{
+    height: 34rpx;
+    width: 28rpx;
+    float: right;
+  }
+  .t-conversation-pinconversation{
+      width: 144rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #006EFF;
+      color: #FFFFFF;
+      line-height: 44rpx;
+      font-size: 32rpx;
+  }
+  .t-conversation-mutenotifications{
+      width: 180rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: orange;
+      color: #FFFFFF;
+      line-height: 44rpx;
+      font-size: 32rpx;
+  }
+  .tui-conversation-item-name {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    color: #333333;
+    margin-bottom: 16rpx;
+  }
+  
+  .tui-conversation-lastMessage {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #7F7F7F;
+  }
+  .unread {
+    top: -10rpx;
+    right: -6rpx;
+    position: absolute;
+    height: 30rpx;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: red;
+    width: 30rpx;
+    line-height: 24rpx;
+    text-align: center;
+  }
+  .unread-mute{
+     top: -10rpx;
+      right: 0rpx;
+      position: absolute;
+      padding: 0px 14rpx;
+      height: 15px;
+      border-radius: 50%;
+      color: #ffffff;
+      background-color: red;
+  }
+  .read-text {
+    line-height: 15px;
+    font-size: 10px;
+  }
+  .tui-conversation-box{
+    display: flex;
+  }
+  .tui-conversation-lastName{
+    line-height: 40rpx;
+    font-size: 28rpx;
+    font-family: 'PingFangSC-Regular';
+    color: #999999;
+  }
+  .t-conversation-box{
+    height: 150rpx;
+    display: flex
+  }
+  

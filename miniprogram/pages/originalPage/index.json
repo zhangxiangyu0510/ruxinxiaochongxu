@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showPhoneDialog":"../../components/dialogGlobal/dialogGlobal",
+    "sharePosters":"../../components/canvasdrawer/canvasdrawer"
+
+  }
+}

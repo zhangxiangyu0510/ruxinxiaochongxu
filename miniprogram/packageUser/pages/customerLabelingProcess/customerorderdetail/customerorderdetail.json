@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "notificationDialog":"/components/notificationDialog/notificationDialog",
+  "navigationBarTitleText": "订单详情"
+
+}

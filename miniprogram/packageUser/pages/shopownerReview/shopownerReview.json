@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "commonOwenrSet":"../../../components/commonOwenrSet/commonOwenrSet"
+  },
+  "navigationBarTitleText": "预览店铺信息"
+
+}

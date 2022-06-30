@@ -1,0 +1,59 @@
+<view class="mylevel">
+    <notificationDialog id="notificationDialog" /> 
+  <view class="mylevel_content">
+    <image class="img_bg_l" src="/packageUser/images/icons/level_bg_l.svg"></image>
+    <image class="img_bg_r" src="/packageUser/images/icons/level_bg_r.svg"></image>
+    <view class="mylevel_content_img">
+      <image style="height: 100%;width: 100%;" src="{{nowLevelImg}}"></image>
+    </view>
+    <view class="mylevel_content_text">
+      <text class="mylevel_content_text1">店铺等级:</text>
+      <text class="mylevel_content_text2" style="color: {{themeColor}};">V.{{nowLevel?nowLevel:'1'}}</text>
+    </view>
+
+    <view class="mylevel_content_progress">
+
+      <view class="mylevel_content_progressl">
+        <view wx:for="{{levelData}}" wx:key="index" class="mylevel_content_progressnum">
+          <view class="mylevel_content_progressimg" wx:if="{{item.level == nowLevel}}"></view>
+          <text style="background-color: {{item.level==nowLevel?themeColor:''}};" class="{{item.level==nowLevel?'mylevel_content_progresstext_active':'mylevel_content_progresstext'}}"> {{item.level}}</text>
+        </view>
+      </view>
+      <progress class="mylevel_content_progressstatic" activeColor="{{themeColor}}" percent="{{nowLevel/8*100}}" stroke-width="8" />
+    </view>
+    <view class="mylevel_content_text1">{{nextAchievementTips?nextAchievementTips:'恭喜您达成8级店主，要记得越努力越幸运哦！'}}</view>
+  </view>
+
+  <view class="mylevel_content1">
+
+    <text class="mylevel_content1_text">当前等级权益</text>
+    <view class="mylevel_content1_box">
+      <view class="mylevel_content1_box_item" wx:if="{{rightsAndInterests.shopEdit}}">
+        <view class="mylevel_content1_box_item_circle"></view>
+        <text class="mylevel_content1_text1">基本功能</text>
+      </view>
+      <view class="mylevel_content1_box_item" wx:if="{{rightsAndInterests.skin}}">
+        <view class="mylevel_content1_box_item_circle"></view>
+        <text class="mylevel_content1_text1">店铺换肤</text>
+      </view>
+      <view class="mylevel_content1_box_item" wx:if="{{rightsAndInterests.nuCoin}}">
+        <view class="mylevel_content1_box_item_circle"></view>
+        <text class="mylevel_content1_text1">NU币奖励：{{rightsAndInterests.nuCoin}}个</text>
+      </view>
+      <view class="mylevel_content1_box_item" wx:if="{{rightsAndInterests.brandActivityQualification}}">
+        <view class="mylevel_content1_box_item_circle"></view>
+        <text class="mylevel_content1_text1">品牌活动⼊围资格</text>
+      </view><view class="mylevel_content1_box_item" wx:if="{{!rightsAndInterests.shopEdit&&!rightsAndInterests.skin&&!rightsAndInterests.nuCoin&&!rightsAndInterests.brandActivityQualification}}">
+        <view class="mylevel_content1_box_item_circle"></view>
+        <text class="mylevel_content1_text1">无</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="mylevel_content2" bindtap="goHierarchicalequity">
+     <text class="mylevel_content2_text">了解更多等级权益</text>
+     <image class="mylevel_content2_arrow" src="../../images/icons/right_arrows.svg"></image>
+     <!-- <text class="mylevel_content2_arrow" bindtap="goHierarchicalequity" decode="true">&gt;</text> -->
+  </view>
+</view>

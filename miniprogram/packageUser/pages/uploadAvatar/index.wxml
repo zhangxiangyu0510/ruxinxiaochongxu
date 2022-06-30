@@ -1,0 +1,27 @@
+<template name="we-cropper">
+  <canvas
+    class="cropper"
+    disable-scroll="true"
+    bindtouchstart="touchStart"
+    bindtouchmove="touchMove"
+    bindtouchend="touchEnd"
+    style="width:{{width}}px;height:90%;background-color: rgba(0, 0, 0, 0.8)"
+    canvas-id="{{id}}">
+  </canvas>
+</template>
+<view class="cropper-wrapper">
+  <template is="we-cropper" data="{{...cropperOpt}}"/>
+  <view class="cropper-buttons" style="color: {{themeColor}}">
+    <view
+      class="upload btn"
+      bindtap="uploadTap">
+      上传图片
+    </view>
+    <view
+      class="getCropperImage btn"
+      style="background-color: {{themeColor}};"
+      bindtap="getCropperImage">
+      生成图片
+    </view>
+  </view>
+</view>

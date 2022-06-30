@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "indexDialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "commonToast":"../../../components/commonError/commonError"
+  }
+}

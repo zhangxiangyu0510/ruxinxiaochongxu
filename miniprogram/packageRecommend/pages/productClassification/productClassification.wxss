@@ -1,0 +1,579 @@
+/* pages/ucenter/productClassification/productClassification.wxss */
+.product_classification {
+  background-color: #fcfcfc;
+}
+
+.product_classification .topSearch {
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.product_classification .weui-tabs .weui-tabs-swiper {
+  display: none;
+}
+
+.product_classification .topSearch .search_form {
+  background: #F1F1F1;
+  border-radius: 30px;
+  width: 578rpx !important;
+  height: 72rpx;
+  padding-left: 24rpx;
+}
+
+.product_classification .topSearch .search_left_icon {
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  color: #888888;
+
+}
+
+.product_classification .topSearch .novice_guide {
+  text-align: center;
+  margin-left: 24rpx;
+}
+
+.product_classification .topSearch .novice_guide .icon {
+  width: 32rpx;
+  height: 32rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  top: 4rpx;
+}
+
+.product_classification .topSearch .novice_guide_text {
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #4A4A4A;
+}
+
+
+
+.product_classification .tab-item {
+  /* padding: 15rpx; */
+  /* width: 112rpx; */
+  margin: 0 20rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #404040;
+  padding-top: 28rpx;
+  padding-bottom: 22rpx;
+  min-width: 112rpx;
+}
+
+.product_classification .tab-bar-title__selected {
+  /* border-bottom: 4rpx solid #FF5E00; */
+  /* border-bottom-color: transparent !important; */
+  /* border-width:15rpx; */
+  /* border-style:solid; */
+}
+
+.product_classification .tab-bar-title__selected::after {
+  content: '';
+  width: 56rpx;
+  height: 4rpx;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 4rpx solid;
+  position: relative;
+  top: 10rpx;
+}
+
+.xx_tabs {
+  /* padding-left: 64rpx; */
+  margin-top: 24rpx;
+  /* background-color: #fff; */
+  /* height: 104rpx; */
+
+}
+
+.product_classification .xx_tabs .topTabs:nth-child(1) {
+  margin-left: 12rpx;
+
+}
+
+.product_classification .xx_tabs .topTabs {
+  display: flex;
+  overflow: auto;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-size: 28rpx;
+  color: #404040;
+  margin-left: 26rpx;
+  background-color: #fff;
+
+
+}
+
+.product_classification .xx_tabs .topTabs .tabsItem {
+  display: flex;
+  /* flex-wrap: nowrap; */
+  align-items: center;
+  flex-direction: column;
+  min-width: 124rpx;
+  margin: 24rpx;
+  flex-shrink: 0;
+
+}
+
+.product_classification .xx_tabs .topTabs .tabsItem .itemName {
+  margin-bottom: 8rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-align: center;
+}
+
+.product_classification .xx_tabs .topTabs .tabsItem .changeColor {
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+
+}
+
+
+.product_classification .xx_tabs .topTabs scroll-view {
+  padding-left: 32rpx;
+
+}
+
+
+
+.product_classification .xx_tabs .classification .left {
+  width: 184rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 500rpx);
+  flex-shrink: 0;
+}
+
+.product_classification .xx_tabs .classification {
+  display: flex;
+}
+
+.product_classification .xx_tabs .classification .right {
+  flex: 1;
+  padding: 24rpx;
+  padding-bottom: 200rpx;
+  flex-direction: initial;
+}
+
+.doodsScrollView {
+  max-height: calc(100vh - 500rpx);
+  /* width: 550rpx; */
+  /* padding-left: 0; */
+}
+
+.doodsScrollViewSearch {
+  min-height: calc(100vh - 350rpx);
+  /* width: 550rpx; */
+  /* padding-left: 0; */
+}
+
+.doodsScrollView .goodsItemBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+}
+
+ .goodsItemBox .goodsItem {
+  width: 330rpx;
+  /* margin-right: 26rpx; */
+  margin-bottom: 24rpx;
+  /* height: 396rpx; */
+  background-color: #fff;
+  border-radius: 8rpx;
+  /* padding-bottom: 20rpx; */
+}
+
+
+.searchDataBox .goodsItemBox .goodsItem .imgBox {
+  width: 330rpx;
+  height: 330rpx;
+  background-color: #ccc;
+  border-radius: 8rpx 8rpx 0 0;
+
+}
+
+.searchDataBox .goodsItemBox .goodsItem .imgBox image {
+  width: 330rpx;
+  height: 330rpx;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.product_classification .xx_tabs .classification .right .goodsItem {
+  width: 246rpx;
+  /* margin-right: 22rpx; */
+  margin-bottom: 24rpx;
+  height: 396rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  /* padding-bottom: 20rpx; */
+}
+
+.goodsItem .imgBox {
+  width: 246rpx;
+  height: 246rpx;
+  border-radius: 8rpx 8rpx 0 0;
+
+
+}
+
+.goodsItem .imgBox image {
+  width: 246rpx;
+  height: 246rpx;
+  border-radius: 8rpx 8rpx 0 0;
+
+
+}
+
+.goodsItem .goodsName {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #333333;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 16rpx 20rpx;
+  min-height: 72rpx;
+  margin-bottom: 0;
+}
+
+.goodsItem .footerBut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4rpx;
+  padding: 0 20rpx;
+
+
+}
+
+.searchDataBox {
+  /* margin-top: 100rpx; */
+}
+
+.searchDataBox .doodsScrollView {
+  width: 696rpx;
+  padding: 32rpx;
+}
+
+.goodsItem .footerBut .butIcon {
+  width: 32rpx;
+  height: 32rpx;
+  padding: 14rpx 24rpx;
+}
+
+.goodsItem .footerBut .FullReduction {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #FFFFFF;
+  padding: 6rpx;
+  border-radius: 4rpx;
+}
+
+.product_classification .xx_tabs .classification .leftClassificationBox {}
+
+.product_classification .xx_tabs .classification .leftClassificationBox .item {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28rpx;
+  /* or 143% */
+  text-align: center;
+  color: #404040;
+  padding: 32rpx 0;
+  padding-left: 20rpx;
+  padding-right: 24rpx;
+  word-wrap: break-word;
+  word-break: normal;
+  width: 140rpx;
+}
+
+
+
+.product_classification .xx_tabs .classification .weui-tabs-bar__content {
+  width: 184rpx;
+  /* height: 80vh; */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.product_classification .xx_tabs .classification .weui-tabs-bar__content .tab-bar-title__selected::after {
+  border-color: transparent;
+  height: 0;
+  border-bottom: 0rpx;
+}
+
+.product_classification .xx_tabs .classification .tab-bar-title__selected {
+  color: red;
+}
+
+.product_classification .xx_tabs .classification .leftChange {}
+
+.product_classification .footerModel {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  background-color: #fff;
+  height: 224rpx;
+  border-radius: 48rpx 48rpx 0px 0px;
+  padding: 0 32rpx;
+  padding-top: 48rpx;
+  box-sizing: border-box;
+
+
+}
+
+.product_classification .footerModel .rightBit {
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  width: 328rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  background-color: #7340B3 ;
+}
+
+.product_classification .footerModel .number {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #4A4A4A;
+}
+
+.product_classification .noviceGuideBox {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  z-index: 100;
+}
+
+.product_classification .noviceGuideBox .imageBox {
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  background-color: #7e7e7e;
+}
+
+.product_classification .noviceGuideBox image {
+  width: 750rpx;
+  height: 100vh;
+}
+
+.product_classification .noviceGuideBox .button1 {
+  width: 300rpx;
+  height: 100rpx;
+  position: absolute;
+  z-index: 1000;
+  left: 270rpx;
+  top: 938rpx;
+}
+
+.product_classification .noviceGuideBox .button2 {
+  width: 299rpx;
+  height: 100rpx;
+  position: absolute;
+  z-index: 1000;
+  left: 400rpx;
+  top: 1160rpx;
+
+
+}
+
+.product_classification .noviceGuideBox .button3 {
+  width: 299rpx;
+  height: 100rpx;
+  position: absolute;
+  z-index: 1000;
+  left: 230rpx;
+  top: 1170rpx;
+}
+
+.product_classification .footerModel .number {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #4A4A4A;
+}
+
+.product_classification .footerModel .maxNumber {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #7F7F7F;
+}
+
+.noGoodsData {
+  text-align: center;
+  margin-top: 100rpx;
+  color: #ccc;
+}
+
+.flex {
+  display: flex;
+}
+
+.align_i_conter {
+  align-items: center;
+
+}
+
+.ju-con-sb {
+  justify-content: space-between;
+}
+
+.ju-con-sa {
+  justify-content: space-around;
+}
+
+.align_i_end {
+  align-items: flex-end;
+
+
+}
+
+.resetBack {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-size: 32rpx;
+  text-align: center;
+  margin-left: 38rpx;
+  margin-right: 6rpx;
+}
+
+.beginnerGuidance {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+.beginnerGuidance .firstStep {
+  position: absolute;
+  left: 373rpx;
+  top: 580rpx;
+
+}
+
+.beginnerGuidance .partesSecunda {
+  position: absolute;
+  right: -120rpx;
+  bottom: 200rpx;
+
+}
+
+.beginnerGuidance .firstStep .addIconBox {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+
+}
+
+.beginnerGuidance .firstStep .addIconBox image {
+  width: 32rpx;
+  margin-top: 12rpx;
+
+}
+
+.beginnerGuidance .firstStep .contentBox {
+  margin-top: 12rpx;
+
+
+}
+
+.beginnerGuidance .firstStep .contentBox .triangle {
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+  margin-left: 5rpx;
+}
+
+.triangleDown {
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-top: 20rpx solid #fff;
+  margin-left: 5rpx;
+
+}
+
+.beginnerGuidance .dialogBox {
+  width: 336rpx;
+  height: 204rpx;
+  background-color: #fff;
+  position: relative;
+  left: -146rpx;
+  border-top: 4rpx;
+}
+
+.beginnerGuidance .dialogBox .text {
+  ont-family: 'PingFang SC';
+  font-style: normal;
+  font-size: 28rpx;
+  text-align: center;
+  color: #404040;
+  padding-top: 24rpx;
+  line-height: 42rpx;
+}
+
+.beginnerGuidance .dialogBox .butNext {
+  margin: 0 auto;
+  width: 128rpx;
+  height: 48rpx;
+  /* 主题色75% */
+  text-align: center;
+  line-height: 48rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  font-weight: 400;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+
+.doodsScrollViewSearch .goodsItemBox {
+  width: auto;
+  /* min-height: 80vh; */
+}

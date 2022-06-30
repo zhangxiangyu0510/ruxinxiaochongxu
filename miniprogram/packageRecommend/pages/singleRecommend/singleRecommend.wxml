@@ -1,0 +1,182 @@
+<!--packageRecommend/pages/singleRecommend/singleRecommend.wxml-->
+<notificationDialog id="notificationDialog" /> 
+<view class="product_classification">
+  <!-- 顶部搜索 -->
+  <view class="topSearch">
+    <form class="weui-search-bar__form search_form">
+      <div class="weui-search-bar__box">
+        <i class="weui-icon-search"></i>
+        <input bindblur="goodsSearch" type="search" class="weui-search-bar__input search_left_icon" id="search_input" placeholder="搜索你想要的宝贝" data-word="{{searchValue}}" value="{{searchValue}}" />
+        <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+      </div>
+    </form>
+    <view bindtap="stepProcess" wx:if="{{showClassify}}" data-number="1" class="novice_guide">
+      <view class="icon">
+        <image class="icon" src="/packageRecommend/images/guide.svg" mode="widthFix"></image>
+      </view>
+      <text class="novice_guide_text">新手引导</text>
+    </view>
+    <view bindtap="reset" wx:else class="reset">
+      重置
+    </view>
+
+
+  </view>
+  <!-- tabs -->
+
+  <view wx:if="{{showClassify}}" class="xx_tabs">
+    <view class="topTabs ">
+      <!-- <mp-tabs tabs="{{tabs}}" tabUnderlineColor='{{themeColor}}' activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+      </mp-tabs> -->
+      <view bindtap="changeTopTabs" data-item="{{item}}" data-index="{{index}}" class="tabsItem" wx:for="{{shopkeeperClassifyData}}" wx:key="{{index}}">
+        <view class="itemName">{{item.name}}</view>
+        <view wx:if="{{tabsIndex==index}}" style="background-color:{{themeColor}}" class="changeColor"></view>
+      </view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="classification">
+      <view class="left">
+        <!-- <mp-tabs tabs="{{leftClassification}}" activeTab="{{activeId}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" tab-class="tab-item" activeClass="tab-bar-title__selected">
+        </mp-tabs> -->
+        <view class="leftClassificationBox" wx:for="{{leftClassification}}" wx:key="{{index}}">
+          <view bindtap="changeLeftClassification" data-item="{{item}}" data-index="{{index}}" style="{{index==leftIndex ? 'color:'+themeColor : ''}}" class="{{ index==leftIndex ?  'leftChange item' :'item'}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view class="right">
+        <scroll-view scroll-y='{{true}}' bindscrolltolower='reachBottom' class="doodsScrollView">
+          <view class="goodsItemBox"  wx:if="{{goodsData.length>0}}">
+            <view wx:for="{{goodsData}}" data-item="{{item}}" bindtap="goH5Detail"  wx:key="{{index}}" class="goodsItem" wx:if="{{item.itemPrice.length>0}}">
+              <view class="imgBox">
+                <image src="{{item.queryItemVo.itemImage || item.itemImage}}"></image>
+              </view>
+              <view class="goodsName">
+                {{item.queryItemVo.itemName || item.itemName}}
+              </view>
+              <view class="footerBut" wx:if="{{item.isRecommend}}">
+              <view>
+              </view>
+                <view style="background-color:{{themeColor}}" class="footText">已推荐 </view>
+              </view>
+              <view class="footerBut" wx:else>
+                <view style="color:{{themeColor}};background-color:{{themeColor+10}}" class="FullReduction"> </view>
+                <view wx:if="{{!item.isAddGoods}}" class="opratorCon" 
+                data-item="{{item}}" data-type="add" data-index="{{index}}" catchtap="changeGoods">
+               
+                  <image class="butIcon" src="data:image/svg+xml,{{addIcon}}" mode="widthFix"></image>
+                </view>
+                <view  wx:else class='footFlex'>
+                  <view style="background-color:{{themeColor}}" class="footText1">已选择 </view>
+                <view class="opratorCon" catchtap="changeGoods"  data-item="{{item}}" data-index="{{index}}" >
+                 
+                  <image class="butIcon" src="/packageRecommend/images/subtract.svg" mode="widthFix"></image>
+                </view>
+              </view>
+
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{empty}}"  class="noGoodsData">
+            <view class="emptyimage" >
+              <no-data titleText="暂无数据"></no-data>
+
+            </view>
+          </view>
+
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <view wx:if="{{!showClassify}}" class="searchDataBox" >
+    <scroll-view scroll-y='{{true}}' bindscrolltolower='searchReachBottom' class="doodsScrollView">
+      <view class="goodsItemBox" wx:if="{{searchGoodsData.length>0}}">
+        <view wx:for="{{searchGoodsData}}" wx:key="{{index}}" data-item="{{item}}" bindtap="goH5Detail" class="goodsItem" wx:if="{{item.itemPrice.length>0}}">
+          <view class="imgBox">
+            <image src="{{item.itemImage}}"></image>
+          </view>
+          <view class="goodsName">
+            {{item.itemName}}
+          </view>
+          <view class="footerBut" wx:if="{{item.isRecommend}}">
+            <view style="color:#fff;background-color:{{themeColor}}" class="footText">已推荐 </view>
+          </view>
+          <view class="footerBut" wx:else>
+            <view style="color:{{themeColor}};background-color:{{themeColor+10}}" class="FullReduction"> </view>
+            <view class="opratorCon" wx:if="{{!item.isAddGoods}}" catchtap="changeGoods"  data-search='search'  data-item="{{item}}" data-index="{{index}}" data-type="add" >
+                  <image  class="butIcon" src="data:image/svg+xml,{{addIcon}}" mode="widthFix"></image>
+                </view>
+                <view  wx:else class='footFlex'>
+                  <view style="background-color:{{themeColor}}" class="footText1">已选择 </view>
+                <view class="opratorCon"  data-search='search'  catchtap="changeGoods"  data-item="{{item}}" data-index="{{index}}" >
+                 
+                  <image class="butIcon" src="/packageRecommend/images/subtract.svg" mode="widthFix"></image>
+                </view>
+              </view>
+
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{ empty}}" class="noGoodsData">
+        <view class="emptyimage" >
+          <no-data titleText='没有搜索结果，换个词试试吧'></no-data>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="footerModel">
+    <view class="flex align_i_conter ju-con-sb">
+      <view class="leftText">
+        <view class="number">已选择 {{selectNumber}} 种产品</view>
+        <view class="maxNumber">*还可以推荐{{20-recommentList.length-selectNumber}}种产品</view>
+      </view>
+      <view bindtap="goToAddGoods" style="background-color: {{themeColor}};" class="rightBit">
+        去推荐
+      </view>
+
+    </view>
+  </view>
+  <view wx:if="{{stepProcessNumber}}" class="beginnerGuidance">
+    <view wx:if="{{stepProcessNumber==1}}" class="firstStep">
+      <view class="addIconBox">
+        <image class="butIcon" src="data:image/svg+xml,{{addIcon}}" mode="widthFix"></image>
+      </view>
+      <view class="contentBox">
+        <view class="triangle"></view>
+        <view class="dialogBox">
+          <view class="text">
+            <view>
+              第一步点击这里
+            </view>
+            添加产品
+          </view>
+          <view bindtap="stepProcess" data-number="2" style="background-color: {{themeColor}};" class="butNext">
+            下一步
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+    <!-- 第二部 -->
+    <view wx:if="{{stepProcessNumber==2}}" class="partesSecunda">
+      <view class="contentBox">
+        <view class="dialogBox">
+          <view class="text">
+            <view>
+              第二步点击这里
+            </view>
+            去推荐
+          </view>
+          <view bindtap="stepProcess" data-number="3" style="background-color: {{themeColor}};" class="butNext">
+            下一步
+          </view>
+        </view>
+        <view class="triangleDown"></view>
+
+      </view>
+    </view>
+  </view>
+</view>

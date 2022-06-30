@@ -1,0 +1,211 @@
+/* pages/ucenter/commodityAnalysis/commodityAnalysis.wxss */
+.commodityAnalysis {
+  padding: 48rpx 32rpx;
+  background-color: #fcfcfc;
+}
+
+.commodityAnalysis .topButs .picker .but {
+  background: #7340B3;
+  border-radius: 4px;
+  padding: 12rpx 20rpx;
+  color: #FFFFFF;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+
+}
+
+.commodityAnalysis .topButs .picker .cutText {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 24rpx;
+  text-align: right;
+  color: #4A4A4A;
+  margin-left: 16rpx;
+}
+
+.commodityAnalysis .topButs .allBut {
+  background: rgba(122, 74, 183, 0.1);
+  border-radius: 8rpx;
+  padding: 12rpx 20rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #7340B3;
+}
+
+.commodityAnalysis .title {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  color: #404040;
+  margin-top: 48rpx;
+  margin-bottom: 32rpx;
+
+}
+
+.commodityAnalysis .echartsBox {
+  height: 564rpx;
+  /* background-color: #ccc; */
+  border-radius: 16rpx;
+}
+
+.commodityAnalysis .record .tobs {
+  display: flex;
+  align-items: center;
+
+}
+
+.commodityAnalysis .record .tobs .item {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40rpx;
+  color: #404040;
+  margin-right: 48rpx;
+}
+
+.commodityAnalysis .record {
+  margin-top: 64rpx;
+  margin-bottom: 48rpx;
+}
+.commodityAnalysis .canvasText{
+  position: relative;
+  height: 0;
+  top: 230rpx;
+  left: 270rpx;
+  font-size: 45rpx;
+  font-weight: 600;
+  z-index: 10000;
+  width: 150rpx;
+  text-align: center;
+
+}
+.canvasText .text{
+  font-size: 40rpx;
+  font-weight: 500;
+
+
+
+}
+
+.commodityAnalysis .record .tobs .changeItem {
+  font-weight: 600;
+  position: relative;
+}
+
+.commodityAnalysis .record .tobs .changeItem::after {
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #7340B3;
+  position: relative;
+}
+
+.commodityAnalysis .shoppData .shoppItem {
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.commodityAnalysis .shoppData .picture {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #ccc;
+
+}
+
+.commodityAnalysis .shoppData .shoppname {
+  margin-left: 24rpx;
+  position: relative;
+}
+
+.commodityAnalysis .shoppData .shoppname .name {
+  width: 398rpx;
+  height: 80rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 28rpx;
+  /* font-weight: 600; */
+  color: #4A4A4A;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.commodityAnalysis .shoppData .tpyeBut {
+  background: #f1ecf7;
+  border: 1px solid #f1ecf7;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #7340B3;
+  width: 136rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+
+.commodityAnalysis .fans {
+  margin-top: 42rpx;
+  text-align: center;
+  margin-bottom: 6rpx;
+
+}
+
+.commodityAnalysis .fans .number {
+  font-family: Verlag;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72rpx;
+  color: #7A4AB7;
+  margin-bottom: 8rpx;
+}
+
+.commodityAnalysis .fans .nameText {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #4A4A4A;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.align_i_conter {
+  align-items: center;
+
+}
+
+.ju-con-sb {
+  justify-content: space-between;
+}
+
+.ju-con-sa {
+  justify-content: space-around;
+}
+
+.align_i_end {
+  align-items: flex-end;
+
+}
+.f2-chart {
+  width: 100%;
+  height: 500rpx;
+}

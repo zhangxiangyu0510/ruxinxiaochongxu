@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "commonHeader":"/components/commonHeader/commonHeader",
+    "commonNoticeDialog":"/components/commonNoticeDialog/commonNoticeDialog",
+    "productItem":"/components/productItem/productItem"
+   
+  },
+  "navigationBarTitleText": "店铺预览",
+  "navigateToMiniProgramAppIdList": [
+       "wxc0e6a1cbe908790b",
+       "wx417689a96ccc65d6",
+       "wx8a63e3382df92d5b",
+       "wx5a9036a629064441"
+    ]
+}

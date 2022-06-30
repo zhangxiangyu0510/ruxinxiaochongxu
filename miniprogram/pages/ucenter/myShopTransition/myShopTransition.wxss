@@ -1,0 +1,23 @@
+/* pages/ucenter/myShopTransition/myShopTransition.wxss */
+.my_shop_transition{
+  padding-bottom: 44rpx;
+}
+.my_shop_transition .transition_icon{
+  width: 554rpx;
+  height: 418rpx;
+  background-color: #ccc;
+  margin: 0 auto;
+  margin-top: 356rpx;
+
+}
+.my_shop_transition  .transition_text{
+font-family: PingFang SC;
+font-style: normal;
+font-weight: normal;
+font-size: 40rpx;
+line-height: 56rpx;
+/* identical to box height */
+text-align: center;
+color: #000000;
+margin-top: 87rpx;
+}

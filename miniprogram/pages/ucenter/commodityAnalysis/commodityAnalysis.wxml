@@ -1,0 +1,55 @@
+<!--pages/ucenter/commodityAnalysis/commodityAnalysis.wxml-->
+<view class="commodityAnalysis">
+  <view class="topButs flex ju-con-sb">
+    <view class="picker flex align_i_end">
+      <view class="but ">2022年1月</view>
+      <view class="cutText">切换月份</view>
+    </view>
+    <view class="allBut">
+      开店以来
+    </view>
+  </view>
+  <view class="title">
+    商品销量
+  </view>
+  <view class="canvasText">
+    <view>12345</view>
+    <view class="text">人</view>
+  </view>
+  <view class="echartsBox">
+    <f2 class="f2-chart" onInit="{{onInitChart}}" />
+  </view>
+  <view class="record">
+    <view class="tobs">
+      <view bindtap="changeTobs" data-item="1" class="{{tabsIndex==1 ? 'item changeItem' : 'item'}}">销量排序</view>
+      <view bindtap="changeTobs" data-item="2" class="{{tabsIndex==2 ? 'item changeItem' : 'item'}}">购买用户排序</view>
+    </view>
+  </view>
+  <view class="shoppData">
+    <view class="shoppItem" bindtap="toDetailsPage" wx:for="{{3}}">
+      <view class="flex">
+        <view class="picture">
+          <img src="" alt="" />
+        </view>
+        <view class="shoppname">
+          <view class="name">如新滢白三效修护霜（暂为非直销品）</view>
+          <view class="tpyeBut flex">置顶商品</view>
+        </view>
+      </view>
+      <view class="fans flex ju-con-sa">
+        <view>
+          <view class="number">500</view>
+          <view class="nameText">商品销量</view>
+        </view>
+        <view>
+          <view class="number">500</view>
+          <view class="nameText">购买用户数量</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+
+</view>

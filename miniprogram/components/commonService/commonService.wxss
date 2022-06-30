@@ -1,0 +1,61 @@
+/* components/commonService/commonService.wxss */
+.commonService{
+  width:72rpx;
+  position:fixed;
+  right:32rpx;
+  bottom:198rpx;
+  z-index:99999;
+}
+.commonService_share{
+  height:72rpx;
+  position:relative;
+  width:72rpx;
+  /* background: #FF5E00; */
+  border-radius: 8rpx;
+  margin-bottom:20rpx;
+}
+.commonService_bg{
+  width:53.28rpx;
+  height:54.98rpx;
+  /* background: red; */
+}
+.commonService_bg .commonService_bg_img{
+  width:100%;
+  position: absolute;
+  right:0;
+  bottom:0;
+
+}
+.commonService_icon{
+  height:32rpx;
+  width:32rpx;
+  /* background: skyblue; */
+  
+}
+.commonService_icon .add_image{
+  width:32rpx;
+  position: absolute;
+  top:8rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.commonService_text{
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  position: absolute;
+  width:44rpx;
+  bottom:4rpx;
+  left:50%;
+  transform: translateX(-50%);
+  color: #FFF;
+}
+.commonService_customer{
+  height:72rpx;
+  width:72rpx;
+  /* background: #FF5E00; */
+  border-radius: 8rpx;
+  position:relative;
+}

@@ -1,0 +1,71 @@
+<!--pages/ucenter/replaceProduct/replaceProduct.wxml-->
+<!-- 组合推荐更换产品流程 -->
+<view class="replace_product">
+  <view wx:if="{{HybridRecommendListData.length}}">
+    <view class="top_slideshow">
+      <!-- 组合推荐 -->
+      <view class="recommend">
+        <!-- 产品 -->
+        <view class="goods_box">
+          <view wx:for="{{HybridRecommendListData}}" wx:key="{{index}}">
+            <view bindtap="changeGoodsItem" data-item="{{item}}" wx:if="{{item.shopProductItemList.length}}" class="goods_item">
+              <!-- <view class="gears" style="background-color: {{themeColor}}">栏位{{index+1}}</view> -->
+              <view class="goods_item_content">
+                <view class="left_img_box">
+                  <image src="{{item.image}}" alt="" />
+                </view>
+                <view class="right_box">
+                  <view class="goods_synopsis">{{item.title || '暂无名称'}}</view>
+                  <view class="retailPrice_item">
+                    <text class="retailPrice">零售价</text> <text class="number"><text>￥{{item.retailPrice || 0}}</text></text>
+                  </view>
+                  <view class="preferentialPrice_item_box">
+                    <view class="preferentialPrice_item">
+                      <text class="preferentialPrice" style="background-color: {{themeColor}};">星级价</text> <text class="number"><text style="color:{{themeColor}}">￥{{item.starPrice || 0}}</text></text>
+                    </view>
+             
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+        
+       
+
+          </view>
+
+        </view>
+
+      </view>
+
+      <!-- <xx-toast  hintText='推荐成功' ></xx-toast> -->
+      <!-- <view id="toast" >
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast">
+        <text class="weui-icon-success-no-circle weui-icon_toast"></text>
+        <view class="weui-toast__content">推荐成功</view>
+    </view> 
+ </view> -->
+
+
+    </view>
+    <view wx:if="{{isSort}}" class="footerbut">
+      <view  bindtap="amendGoodsSort" style="background-color: {{themeColor}};" class="but bgColor">保存调整</view>
+    </view>
+  </view>
+  <!-- 没有数据 -->
+  <!--  -->
+  <view wx:if="{{!isLoading && HybridRecommendListData.length==0 }}">
+    <view  class="noData">
+    <!-- <image src="../../../images/icons/undraw_happy.png"></image> -->
+    <view class="empty">
+          <image  src="{{emptyBg}}"></image>
+          <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image>
+        </view>
+    <!-- <image class="emptyBox" src="data:image/svg+xml,{{empty}}"></image> -->
+    <view class="text">暂无取消组合推荐产品</view>
+    <view bindtap="backPage" style="background-color: {{themeColor}};" class="backBut">返回</view>
+    </view>
+  </view>
+</view>

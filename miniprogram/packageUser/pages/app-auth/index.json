@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "indexDialog":"/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "commonToast":"../../../components/commonError/commonError"
+  },
+  "navigationBarTitleText": "登录",
+  "enablePullDownRefresh":false
+}

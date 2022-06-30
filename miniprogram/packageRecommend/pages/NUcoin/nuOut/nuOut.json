@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "notificationDialog":"/components/notificationDialog/notificationDialog"
+  },
+  "navigationBarTitleText": "即将过期NU币"
+}

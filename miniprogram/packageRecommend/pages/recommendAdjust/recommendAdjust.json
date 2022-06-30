@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+      "recommendList": "../../../components/recommendList/recommendList",
+      "commonNoticeDialog": "../../../components/commonNoticeDialog/commonNoticeDialog"
+  },
+  "navigationBarTitleText": "单品推荐",
+  "enablePullDownRefresh": false
+}

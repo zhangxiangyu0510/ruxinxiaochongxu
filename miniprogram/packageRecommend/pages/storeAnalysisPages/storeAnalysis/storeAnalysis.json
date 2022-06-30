@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "f2": "/components/wx-f2"
+  },
+  "navigationBarTitleText": "店铺分析",
+  "enablePullDownRefresh":false
+}
