@@ -1,0 +1,154 @@
+{
+    "entryPagePath": "pages/loadingPage/loadingPage",
+    "usingComponents": {
+        "commonGlobal": "/components/commonGlobal/commonGlobal",
+        "dialogGlobal": "/components/dialogGlobal/dialogGlobal",
+        "notificationDialog": "/components/notificationDialog/notificationDialog"
+    },
+    "pages": [
+        "pages/loadingPage/loadingPage",
+        "pages/index/index",
+        "pages/worker/worker",
+        "pages/news/news",
+        "pages/ucenter/index/index",
+        "pages/ucenter/myShopTransition/myShopTransition",
+        "pages/ucenter/myChange/myChange",
+        "pages/ucenter/NUShopping/NUShopping",
+        "pages/ucenter/NUAnalyse/NUAnalyse",
+        "pages/ucenter/commodityAnalysis/commodityAnalysis",
+        "pages/ucenter/commodityDetails/commodityDetails",
+        "pages/customPage/index",
+        "pages/originalPage/index"
+    ],
+    "subpackages": [{
+            "root": "packageRecommend",
+            "name": "packageRecommend",
+            "pages": [
+                "pages/myRecommend/myRecommend",
+                "pages/storeRanking/storeRanking",
+                "pages/NUcoin/myNUcoin/myNUcoin",
+                "pages/NUcoin/nuDetail/nuDetail",
+                "pages/NUcoin/nuOut/nuOut",
+                "pages/hybridRecommend/hybridRecommend",
+                "pages/outRecommend/outRecommend",
+                "pages/offcialRecommend/offcialRecommend",
+                "pages/confirmRecommended/confirmRecommended",
+                "pages/productClassification/productClassification",
+                "pages/customersStatistics/goodsUser/goodsUser",
+                "pages/customersStatistics/shopGoods/shopGoods",
+                "pages/customersStatistics/firstBuy/firstBuy",
+                "pages/customersStatistics/expenseDetail/expenseDetail",
+                "pages/customersStatistics/expense/expense",
+                "pages/customersStatistics/customersStatistics",
+                "pages/storeAnalysisPages/storeAnalysis/storeAnalysis",
+                "pages/storeAnalysisPages/orderAmount/orderAmount",
+                "pages/storeAnalysisPages/numberBuyers/numberBuyers",
+                "pages/storeAnalysisPages/newFans/newFans",
+                "pages/commodityAnalysisPages/commodityAnalysis/commodityAnalysis",
+                "pages/commodityAnalysisPages/commodityReport/commodityReport",
+                "pages/singleRecommend/singleRecommend",
+                "pages/recommendAdjust/recommendAdjust",
+                "pages/changeSkin/changeSkin",
+                "pages/productDetail/productDetail",
+                "pages/firstTip/firstTip",
+                "pages/firstAdjust/firstAdjust",
+                "pages/customersStatistics/noBuyGoods/noBuyGoods",
+                "pages/cancelRecommended/cancelRecommended",
+                "pages/cancleLine/cancleLine"
+            ]
+        },
+        {
+            "root": "packageUser",
+            "name": "packageUser",
+            "pages": [
+                "pages/app-auth/index",
+                "pages/phoneLogin/index",
+                "pages/myBadge/myBadge",
+                "pages/noticeDetail/noticeDetail",
+                "pages/bannerDetail/bannerDetail",
+                "pages/badgeDetail/badgeDetail",
+                "pages/shopowner/shopowner",
+                "pages/userInfo/userInfo",
+                "pages/shopownerReview/shopownerReview",
+                "pages/peopleConfiguration/peopleConfiguration",
+                "pages/mylevel/mylevel",
+                "pages/hierarchicalequity/hierarchicalequity",
+                "pages/protocol/protocol",
+                "pages/customerLabelingProcess/custormDetail/custormDetail",
+                "pages/customerLabelingProcess/customerlist/customerlist",
+                "pages/customerLabelingProcess/customerorderlist/customerorderlist",
+                "pages/customerLabelingProcess/virtualCoinslist/virtualCoinslist",
+                "pages/customerLabelingProcess/customerorderdetail/customerorderdetail",
+                "pages/customerLabelingProcess/fansList/fansList",
+                "pages/customerLabelingProcess/customerlabel/customerlabel",
+                "pages/customerLabelingProcess/customerlabelList/customerlabelList",
+                "pages/customerLabelingProcess/choosecustorm/choosecustorm",
+                "pages/customerLabelingProcess/setlabel/setlabel",
+                "pages/userAnalysis/userAnalysis",
+                "pages/userAnalysis/visitorsAnalysis/visitorsAnalysis",
+                "pages/userAnalysis/browseAnalysis/browseAnalysis",
+                "pages/userAnalysis/fansAnalysis/fansAnalysis",
+                "pages/termsManagement/index",
+                "pages/protocolDetails/index",
+                "pages/previewShop/index",
+                "pages/uploadAvatar/index"
+            ]
+        },
+        {
+            "root": "TUI-CustomerService",
+            "name": "TUI-CustomerService",
+            "pages": [
+                "pages/TUI-Conversation/conversation/conversation",
+                "pages/TUI-Chat/chat",
+                "pages/TUI-Conversation/create-conversation/create"
+            ],
+            "independent": false
+        }
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#fff"
+    },
+    "tabBar": {
+        "color": "#7F7F7F",
+        "selectedColor": "#4a4a4a",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "images/nav/index.png",
+                "selectedIconPath": "images/nav/index_selected.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/worker/worker",
+                "iconPath": "images/nav/work.png",
+                "selectedIconPath": "images/nav/work_selected.png",
+                "text": "工作台"
+            },
+            {
+                "pagePath": "pages/news/news",
+                "iconPath": "images/nav/news.png",
+                "selectedIconPath": "images/nav/news_selected.png",
+                "text": "消息"
+            },
+            {
+                "pagePath": "pages/ucenter/index/index",
+                "iconPath": "images/nav/mine.png",
+                "selectedIconPath": "images/nav/mine_selected.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "networkTimeout": {
+        "request": 100000,
+        "downloadFile": 100000,
+        "uploadFile": 100000,
+        "connectSocket": 100000
+    }
+}
